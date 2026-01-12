@@ -75,7 +75,7 @@ ul { list-style: none; }
     padding: 0 2rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:end
 }
 
 .brand-name {
@@ -84,8 +84,13 @@ ul { list-style: none; }
     letter-spacing: -0.5px;
     color: var(--text-title);
     font-weight: 500;
+    /* AGREGADO: Quitamos el aire extra para que centre perfecto */
+    line-height: 1; 
+    display: flex;
+    align-items: center;
 }
 
+/* 2. Ajustamos el Botón/Enlace */
 .nav-cta {
     font-size: 0.75rem;
     font-weight: 500;
@@ -93,14 +98,23 @@ ul { list-style: none; }
     letter-spacing: 2px;
     color: var(--text-main);
     position: relative;
-    padding-bottom: 4px;
+    
+    /* CAMBIO CLAVE: */
+    line-height: 1;      /* Quitamos altura de línea extra */
+    padding-bottom: 0;   /* Quitamos el relleno que desalineaba el texto */
+    display: flex;       /* Asegura comportamiento de caja flexible */
+    align-items: bottom !important;
 }
 
+/* 3. Ajustamos la Línea Dorada (Subrayado) */
 .nav-cta::after {
     content: '';
     position: absolute;
     width: 0; height: 1px;
-    bottom: 0; left: 0;
+    /* CAMBIO CLAVE: Bajamos la línea usando coordenadas negativas */
+    /* Antes era bottom: 0 (pegado al texto), ahora baja 6px */
+    bottom: -6px; 
+    left: 0;
     background-color: var(--accent-gold);
     transition: var(--transition);
 }
