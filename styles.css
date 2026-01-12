@@ -117,13 +117,12 @@ ul { list-style: none; }
     background-position: center;
     background-attachment: scroll !important;
     color: #fff; /* Texto blanco para contraste */
-    padding: 8rem 1rem 6rem;
+    padding: 12rem  1rem 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 80vh; /* Ocupa buena parte de la pantalla */
     margin-bottom: 4rem;
 }
 
@@ -456,7 +455,7 @@ ul { list-style: none; }
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .food-grid { grid-template-columns: 1fr; }
-    .hero-section { padding: 3rem 1rem; }
+    .hero-section { padding: 4rem 1rem; }
     /* Quitamos la restricción de altura en móvil también para que no recorte */
     .card-img-container { height: auto; aspect-ratio: auto; } 
     .container { padding: 0 1.5rem; }
