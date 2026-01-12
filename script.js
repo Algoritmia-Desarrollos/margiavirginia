@@ -1,7 +1,7 @@
-// script.js optimizado
+// script.js
+// Detectar scroll para animaciones
 document.addEventListener("DOMContentLoaded", function() {
     
-    // Configuración del observador
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -12,18 +12,14 @@ document.addEventListener("DOMContentLoaded", function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+                observer.unobserve(entry.target); // Solo animar una vez
             }
         });
     }, observerOptions);
 
-    // Seleccionamos elementos
-    const elementsToAnimate = document.querySelectorAll('.hero-section, .site-footer, .article-card, .food-item');
-    
+    const elementsToAnimate = document.querySelectorAll('.fade-in, .article-card, .food-item');
     elementsToAnimate.forEach(el => {
-        // OPTIMIZACIÓN: Solo agregamos la clase 'fade-in' (que oculta el elemento)
-        // si Javascript está funcionando. Esto evita que la página sea invisible si JS falla.
-        el.classList.add('fade-in'); 
+        el.classList.add('fade-in'); // Asegurar que tengan la clase base
         observer.observe(el);
     });
 });
