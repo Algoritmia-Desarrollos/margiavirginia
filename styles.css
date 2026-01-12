@@ -460,4 +460,41 @@ ul { list-style: none; }
     .card-img-container { height: auto; aspect-ratio: auto; } 
     .container { padding: 0 1.5rem; }
     .intro { margin-left: 0; border-left: none; padding-left: 0; font-style: italic; }
+
+    /* Estilos compartidos (esto ya lo tienes, déjalo así o adáptalo) */
+.search-input, .search-select {
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.95); /* Aquí forzamos el color de fondo */
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-main);
+    outline: none;
+    transition: var(--transition);
+}
+
+/* --- CORRECCIÓN PARA EL SELECT EN MÓVILES (INSTAGRAM/IOS) --- */
+.search-select {
+    /* 1. Esto elimina el estilo gris nativo de iPhone/Android */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* 2. Como borramos la flecha nativa, agregamos una nuestra */
+    /* Esta es una flechita gris oscura simple y elegante */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234A4A4A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1.2rem center;
+    background-size: 1rem;
+    
+    /* Damos espacio a la derecha para que el texto no tape la flecha */
+    padding-right: 3rem; 
+    
+    /* Forzamos color blanco si el navegador se pone rebelde */
+    background-color: #ffffff; 
+    
+    /* Aseguramos que el cursor muestre que es clicable */
+    cursor: pointer;
+}
 }
