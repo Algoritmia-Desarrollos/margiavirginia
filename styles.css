@@ -453,10 +453,16 @@ ul { list-style: none; }
 /* --- FOOTER --- */
 .site-footer {
     border-top: 1px solid var(--accent-light);
-    margin-top: 6rem;
-    padding: 4rem 0;
-    text-align: center;
+    margin-top: 2rem  ;
+padding: 4rem 1rem; /* Agregué un poco de padding lateral por seguridad en móviles */
     background-color: #fff;
+
+    /* MAGIA FLEXBOX PARA CENTRADO "MEDIO MEDIO" */
+    display: flex;
+    flex-direction: column; /* Apila los elementos uno debajo del otro */
+    align-items: center;    /* Centra horizontalmente los bloques (divs, p, etc.) */
+    justify-content: center; /* Centra verticalmente el contenido */
+    text-align: center;
 }
 
 .footer-brand {
