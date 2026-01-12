@@ -343,10 +343,10 @@ ul { list-style: none; }
 /* TIP BOX */
 .tip-box {
     background-color: #F4F6F4; /* Fondo verde/gris muy pálido */
-    padding: 3rem;
+    padding: 1.5rem;
     margin: 4rem 0;
     border-radius: var(--radius);
-    text-align: center;
+    text-align: left;
     position: relative;
 }
 
