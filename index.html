@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Virginia González Scherer</title>
+    
+    <meta property="og:title" content="Bitácora de Bienestar - Virginia González Scherer">
+    <meta property="og:description" content="Ayurveda, Nutrición y Vida Consciente.">
+    <meta property="og:image" content="https://maria-virginia.netlify.app/favicon.jpeg">
+    <meta property="og:type" content="website">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -18,31 +24,23 @@
     <header class="hero-section container">
         <h1 class="hero-title">Bitácora de Bienestar</h1>
         <p class="hero-subtitle">Ayurveda, Nutrición y Vida Consciente</p>
+        
+        <div style="margin-top: 25px;">
+            <a href="https://wa.me/5493413246408" target="_blank" class="btn-reserva">
+                RESERVAR CONSULTORÍA
+            </a>
+        </div>
     </header>
 
     <main class="container">
-        <div class="blog-grid">
-
-            <article class="article-card">
-                <a href="articulos/nutrir-tu-mente/"> 
-                    <div class="card-img-container">
-                        <img src="articulos/nutrir-tu-mente/1.png" alt="Nutrir Mente" class="card-img">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-category">Nutrición</span>
-                        <h3 class="card-title">El Arte de Nutrir tu Mente</h3>
-                        <p class="card-excerpt">Descubre los alimentos que aportan Prana y Ojas para tener claridad mental y paz interior.</p>
-                        <span class="read-more">Leer artículo completo &rarr;</span>
-                    </div>
-                </a>
-            </article>
-
-        </div>
+        <div class="blog-grid" id="blog-feed"></div>
     </main>
 
     <footer style="text-align: center; padding: 2rem; opacity: 0.6; font-size: 0.9rem;">
         &copy; 2025 Virginia González Scherer
     </footer>
+
+    <script src="data.js"></script>
 
 </body>
 </html>
