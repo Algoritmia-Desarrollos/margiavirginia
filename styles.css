@@ -378,7 +378,7 @@ ul { list-style: none; }
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .food-grid { grid-template-columns: 1fr; }
-    .hero-section { padding: 4rem 1rem; }
+    .hero-section { padding: 3rem 1rem; }
     .card-img-container { aspect-ratio: 16/9; } /* Más apaisado en móvil */
     .container { padding: 0 1.5rem; }
     .intro { margin-left: 0; border-left: none; padding-left: 0; font-style: italic; }
