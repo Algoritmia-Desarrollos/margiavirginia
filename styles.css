@@ -153,7 +153,7 @@ img { max-width: 100%; display: block; }
     background-color: transparent; /* Sin fondo blanco, más limpio */
     border-radius: 0;
     transition: transform 0.4s ease;
-    group: hover;
+
 }
 
 .article-card:hover { transform: translateY(-8px); }
@@ -207,6 +207,7 @@ img { max-width: 100%; display: block; }
     margin-bottom: 20px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -386,6 +387,6 @@ img { max-width: 100%; display: block; }
     .card-img-container { height: 250px; }
     
     /* Alineación izquierda estricta en móvil para lectura */
-    .hero-section, .post-header, .site-footer { text-align: left; }
+    .hero-section, .post-header { text-align: left; }
     .divider { margin-left: 0; }
 }
