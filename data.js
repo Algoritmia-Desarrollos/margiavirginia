@@ -5,7 +5,7 @@ const articulos = [
         slug: "nutrir-tu-mente",
         titulo: "El Arte de Nutrir tu Mente",
         categoria: "Nutrición",
-        foto: "1.png",
+        foto: "1.jpeg",
         descripcion: "Descubre los alimentos que aportan Prana y Ojas para tener claridad mental y paz interior."
     },
     // Agrega más artículos aquí...
