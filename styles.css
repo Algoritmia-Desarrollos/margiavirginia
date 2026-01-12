@@ -1,191 +1,391 @@
 /* =========================================
-   DISEÑO GLOBAL Y BLOG - VIRGINIA (ACTUALIZADO)
+   ESTILO HIGH-END WELLNESS - VIRGINIA
    ========================================= */
 
 :root {
+    /* PALETA DE COLORES */
     --bg-color: #F9F7F2;       /* Fondo Crema / Lino */
-    --card-bg: #FFFFFF;        /* Fondo Tarjetas */
-    --text-color: #3E362E;     /* Marrón oscuro texto */
-    --title-color: #2C241B;    /* Negro elegante */
+    --card-bg: #FFFFFF;        
+    --text-color: #3E362E;     /* Marrón Café */
+    --title-color: #241c15;    /* Casi negro, más intenso */
     --green-btn: #5E7E53;      /* Verde Oliva */
     --green-hover: #4A6341;
-    --gold-accent: #D4A017;    /* Dorado */
-    
+    --gold-accent: #C99626;    /* Dorado Mostaza elegante */
+    --light-border: rgba(62, 54, 46, 0.1);
+
+    /* FUENTES */
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Montserrat', sans-serif;
+    
+    /* SOMBRAS SUAVES (ELEVACIÓN) */
+    --shadow-soft: 0 10px 40px -10px rgba(62, 54, 46, 0.08);
+    --shadow-hover: 0 20px 50px -10px rgba(62, 54, 46, 0.15);
+}
+
+/* --- TEXTURA DE PAPEL (RUIDO DE FONDO) --- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: -1;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-sans);
-    line-height: 1.7; /* Un poco más de aire para leer mejor */
+    line-height: 1.8;
     font-size: 16px;
+    font-weight: 300; /* Montserrat Light para elegancia */
+    overflow-x: hidden;
 }
 
-a { text-decoration: none; color: inherit; transition: 0.3s; }
+a { text-decoration: none; color: inherit; transition: all 0.4s ease; }
+img { max-width: 100%; display: block; }
 
-/* --- HEADER / NAV --- */
+/* --- ANIMACIONES DE ENTRADA (FADE UP) --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- NAVBAR (GLASSMORPHISM) --- */
 .navbar {
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    background-color: var(--bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    background: rgba(249, 247, 242, 0.85); /* Fondo semitransparente */
+    backdrop-filter: blur(12px); /* Efecto borroso detrás */
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
 }
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .brand-name {
     font-family: var(--font-serif);
     font-size: 1.1rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: var(--title-color);
-    text-transform: uppercase;
+    font-weight: 600;
 }
 
+.nav-cta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--gold-accent);
+    padding-bottom: 2px;
+}
+
+.nav-cta:hover { color: var(--gold-accent); }
+
+/* --- CONTENEDOR GENERAL --- */
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* --- HERO SECTION (INICIO) --- */
+/* --- HERO SECTION --- */
 .hero-section {
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 4rem 1rem 3rem;
 }
+
+.hero-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--green-btn);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
 .hero-title {
     font-family: var(--font-serif);
-    font-size: 2.5rem;
+    font-size: 3.5rem; /* Más grande e impactante */
     color: var(--title-color);
-    margin-bottom: 10px;
-}
-.hero-subtitle {
-    font-size: 1.1rem;
-    color: var(--green-btn);
+    margin-bottom: 15px;
+    line-height: 1.1;
 }
 
-/* --- GRID DE ARTÍCULOS (HOME) --- */
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- GRID DE ARTÍCULOS --- */
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 3rem;
+    padding-bottom: 4rem;
 }
 
-/* TARJETA DEL ARTÍCULO */
+/* TARJETA MODERNA */
 .article-card {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.02);
+    background-color: transparent; /* Sin fondo blanco, más limpio */
+    border-radius: 0;
+    transition: transform 0.4s ease;
+    group: hover;
 }
-.article-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
+
+.article-card:hover { transform: translateY(-8px); }
+
 .card-img-container {
     width: 100%;
-    height: 250px;
+    height: 350px; /* Más altas, estilo editorial */
     overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: var(--shadow-soft);
 }
+
 .card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.8s ease;
 }
-.article-card:hover .card-img { transform: scale(1.05); }
 
-.card-content { padding: 25px; }
-.card-category {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--green-btn);
-    display: block;
+.article-card:hover .card-img { transform: scale(1.08); }
+
+.card-content { padding: 25px 5px 0 5px; }
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
-    font-weight: 600;
 }
+
+.card-category {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-accent);
+    font-weight: 700;
+}
+
 .card-title {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
     color: var(--title-color);
     line-height: 1.2;
 }
+
 .card-excerpt {
     font-size: 0.95rem;
     color: #666;
     margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
+
 .read-more {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--title-color);
+    position: relative;
+    padding-left: 15px;
+}
+
+.read-more::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%; transform: translateY(-50%);
+    width: 6px; height: 6px;
+    background-color: var(--gold-accent);
+    border-radius: 50%;
+}
+
+/* --- PÁGINA DE ARTÍCULO (EDITORIAL) --- */
+.post-header {
+    text-align: center;
+    margin: 2rem 0 3rem;
+}
+
+.post-header h1 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--title-color);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.divider {
+    width: 80px; height: 1px;
+    background-color: var(--gold-accent);
+    margin: 0 auto 30px;
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 40px;
+}
+
+.post-content {
+    font-size: 1.15rem;
+    max-width: 740px;
+    margin: 0 auto;
+}
+
+.intro {
+    font-size: 1.3rem;
+    color: var(--title-color);
+    font-family: var(--font-serif);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* LAYOUT DE INGREDIENTES (TIPO REVISTA) */
+.ingredients-section {
+    margin: 50px 0;
+}
+.ingredients-section h3 {
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--green-btn);
+    margin-bottom: 30px;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 30px;
+}
+
+.food-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: transform 0.3s;
+}
+.food-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); }
+
+.food-name {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--gold-accent);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.food-desc { font-size: 0.95rem; color: #555; line-height: 1.5; }
+
+/* TIP BOX ELEGANTE */
+.tip-box {
+    background-color: #fff;
+    border: 1px solid var(--gold-accent);
+    padding: 30px;
+    margin: 50px 0;
+    position: relative;
+    border-radius: 2px;
+}
+.tip-box::before {
+    content: '"';
+    position: absolute;
+    top: -20px; left: 20px;
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    color: var(--bg-color);
+    text-shadow: 0 0 0 var(--gold-accent); /* Truco para contorno */
+    background: var(--bg-color); /* Tapar la línea */
+    padding: 0 10px;
+    line-height: 0.5;
+}
+
+.tip-header {
+    font-family: var(--font-serif);
+    color: var(--green-btn);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 10px;
+}
+
+/* BOTÓN PREMIUM */
+.btn-reserva {
+    display: inline-block;
+    background-color: var(--green-btn);
+    color: #fff;
+    padding: 16px 36px;
+    border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 600;
-    border-bottom: 1px solid var(--gold-accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 10px 20px rgba(94, 126, 83, 0.3);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
-/* --- ESTILOS INTERNOS DEL POST --- */
-.post-header { text-align: center; margin-top: 20px; margin-bottom: 30px; }
-.category { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--green-btn); display: block; margin-bottom: 10px; }
-h1 { font-family: var(--font-serif); font-size: 2.5rem; color: var(--title-color); line-height: 1.2; margin-bottom: 15px; }
-.divider { width: 60px; height: 3px; background-color: var(--gold-accent); margin: 0 auto; }
-
-.featured-image img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-
-.intro { font-size: 1.2rem; font-weight: 500; margin-bottom: 25px; color: var(--title-color); }
-p { margin-bottom: 20px; }
-
-/* CAJA INGREDIENTES */
-.ingredients-box { background-color: #fff; border: 1px solid rgba(0,0,0,0.05); padding: 30px; border-radius: 12px; margin: 40px 0; }
-.ingredients-box h3 { font-family: var(--font-serif); text-align: center; color: var(--green-btn); font-size: 1.8rem; margin-bottom: 30px; }
-.food-list { list-style: none; }
-.food-list li { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; }
-.food-list li:last-child { border-bottom: none; }
-.food-name { display: block; font-weight: 700; color: var(--title-color); font-size: 1.1rem; margin-bottom: 5px; }
-
-/* NUEVO: CAJA DE CONSEJO (TIP BOX) */
-.tip-box {
-    background-color: #FAF9F6; /* Un blanco roto muy sutil */
-    border-left: 4px solid var(--gold-accent); /* Borde dorado elegante a la izquierda */
-    padding: 25px;
-    margin: 40px 0;
-    border-radius: 0 8px 8px 0;
-}
-.tip-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+.btn-reserva:hover {
+    background-color: transparent;
     color: var(--green-btn);
-    font-family: var(--font-serif);
-    font-weight: bold;
-    font-size: 1.2rem;
+    border-color: var(--green-btn);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(94, 126, 83, 0.2);
 }
-.tip-icon { margin-right: 10px; font-size: 1.4rem; }
 
-/* CITA Y CTA */
-.quote-box { text-align: center; font-family: var(--font-serif); font-size: 1.4rem; font-style: italic; color: var(--green-btn); padding: 20px; border-top: 1px solid var(--gold-accent); border-bottom: 1px solid var(--gold-accent); margin: 40px 0; }
-.cta-section { text-align: center; padding: 40px 20px; }
-.btn-reserva { display: inline-block; background-color: var(--green-btn); color: #ffffff; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 20px; transition: background 0.3s; box-shadow: 0 4px 10px rgba(94, 126, 83, 0.3); }
-.btn-reserva:hover { background-color: var(--green-hover); transform: translateY(-2px); }
-.site-footer { text-align: center; padding: 40px 0; font-size: 0.9rem; opacity: 0.7; }
+/* FOOTER MINIMALISTA */
+.site-footer {
+    border-top: 1px solid var(--light-border);
+    margin-top: 60px;
+    padding: 50px 0;
+    text-align: center;
+}
+.footer-brand {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--title-color);
+    margin-bottom: 10px;
+}
 
-/* --- RESPONSIVE --- */
-@media (max-width: 600px) {
-    .hero-title { font-size: 2rem; }
-    .blog-grid { grid-template-columns: 1fr; }
+/* RESPONSIVE */
+@media (max-width: 700px) {
+    .hero-title { font-size: 2.5rem; }
+    .food-grid { grid-template-columns: 1fr; } /* Una columna en móvil */
+    .post-header h1 { font-size: 2.2rem; }
+    .card-img-container { height: 250px; }
     
-    /* Alineación izquierda en móvil */
-    .post-header, .post-content, .intro, .ingredients-box h3, .quote-box, .cta-section, .site-footer, .tip-box { text-align: left; }
-    .divider { margin: 0; margin-bottom: 20px; }
-    h1 { font-size: 2.2rem; }
-    .ingredients-box { padding: 25px 20px; }
-    
-    /* Estilo Cita Móvil */
-    .quote-box { padding: 20px 0; border-left: 3px solid var(--gold-accent); border-top: none; border-bottom: none; padding-left: 20px; font-size: 1.2rem; }
-    
-    /* Botón Full Width */
-    .btn-reserva { width: 100%; text-align: center; display: block; }
-    .site-footer { padding-left: 20px; text-align: left; }
+    /* Alineación izquierda estricta en móvil para lectura */
+    .hero-section, .post-header, .site-footer { text-align: left; }
+    .divider { margin-left: 0; }
 }
