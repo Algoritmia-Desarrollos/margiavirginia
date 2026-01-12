@@ -1,18 +1,16 @@
 // data.js
 
 const articulos = [
-    // --- ARTÍCULO NUEVO (Copia desde aquí) ---
     {
-        slug: "nutrir-tu-mente",       // El nombre de la carpeta
+        slug: "nutrir-tu-mente",
         titulo: "El Arte de Nutrir tu Mente",
         categoria: "Nutrición",
-        foto: "1.png",                 // El nombre de la foto dentro de esa carpeta
+        foto: "1.png",
         descripcion: "Descubre los alimentos que aportan Prana y Ojas para tener claridad mental y paz interior."
     },
-    // --- HASTA AQUÍ (Pega encima para nuevos posts) ---
+    // Agrega más artículos aquí...
 ];
 
-// Lógica para generar las tarjetas automáticamente
 const contenedor = document.getElementById('blog-feed');
 
 articulos.forEach(art => {
@@ -20,7 +18,14 @@ articulos.forEach(art => {
     <article class="article-card">
         <a href="articulos/${art.slug}/"> 
             <div class="card-img-container">
-                <img src="articulos/${art.slug}/${art.foto}" alt="${art.titulo}" class="card-img">
+                <img 
+                    src="articulos/${art.slug}/${art.foto}" 
+                    alt="${art.titulo}" 
+                    class="card-img"
+                    loading="lazy" 
+                    width="400" 
+                    height="400"
+                > 
             </div>
             <div class="card-content">
                 <span class="card-category">${art.categoria}</span>

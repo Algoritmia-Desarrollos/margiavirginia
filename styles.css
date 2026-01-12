@@ -4,18 +4,17 @@
    ========================================= */
 
 :root {
-    /* PALETA DE COLORES NEUTRA Y ELEGANTE */
+/* ... (tus colores siguen igual) ... */
     --bg-color: #FAFAF9;       
     --card-bg: #FFFFFF;
     --text-main: #4A4A4A;      
     --text-title: #2C2C2C;     
-    
-    /* ACENTOS SOFISTICADOS */
     --accent-green: #6B7F68;   
     --accent-gold: #BFA06D;    
     --accent-light: #E8E6E1;   
 
-    /* FUENTES */
+    /* FUENTES OPTIMIZADAS */
+    /* font-display: swap evita que el texto sea invisible mientras carga la fuente */
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Montserrat', sans-serif;
     
@@ -26,6 +25,13 @@
     /* EFECTOS */
     --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.03);
     --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Agrega esto para mejorar la carga de fuentes */
+@font-face {
+    font-family: 'Playfair Display';
+    font-display: swap; 
+    /* Esto le dice al navegador: "Muestra una fuente básica YA, y cámbiala a Playfair cuando termine de descargar" */
 }
 
 /* --- RESET BÁSICO --- */
