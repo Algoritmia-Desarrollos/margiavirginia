@@ -195,7 +195,7 @@ ul { list-style: none; }
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--accent-gold);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5em;
     font-weight: 600;
 }
 
