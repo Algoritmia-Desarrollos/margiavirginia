@@ -115,7 +115,7 @@ ul { list-style: none; }
     background-image: url('hero.webp'); 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efecto Parallax elegante */
+    background-attachment: scroll !important;
     color: #fff; /* Texto blanco para contraste */
     padding: 8rem 1rem 6rem;
     display: flex;
