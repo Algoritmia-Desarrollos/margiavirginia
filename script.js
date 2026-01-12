@@ -1,5 +1,4 @@
-// script.js
-// Detectar scroll para animaciones
+// script.js (Versión Corregida "A prueba de fallos")
 document.addEventListener("DOMContentLoaded", function() {
     
     const observerOptions = {
@@ -12,14 +11,18 @@ document.addEventListener("DOMContentLoaded", function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Solo animar una vez
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const elementsToAnimate = document.querySelectorAll('.fade-in, .article-card, .food-item');
+    // CORRECCIÓN AQUÍ:
+    // Ahora seleccionamos TAMBIÉN cualquier cosa que ya tenga la clase .fade-in
+    // para asegurarnos de que nada se quede invisible por error.
+    const elementsToAnimate = document.querySelectorAll('.fade-in, .hero-section, .site-footer, .article-card, .food-item');
+    
     elementsToAnimate.forEach(el => {
-        el.classList.add('fade-in'); // Asegurar que tengan la clase base
+        el.classList.add('fade-in'); 
         observer.observe(el);
     });
 });
