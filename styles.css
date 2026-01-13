@@ -295,23 +295,201 @@ ul { list-style: none; }
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--accent-green);
-    display: block;
-    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.6;
+}
+
+.read-more {
+    font-size: 0.75rem;
     font-weight: 600;
-}
-
-.card-title {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: var(--text-title);
-    line-height: 1.25;
+    border-bottom: 1px solid var(--accent-light);
+    padding-bottom: 2px;
+    transition: var(--transition);
 }
 
-.card-excerpt {
+.article-card:hover .read-more {
+    border-color: var(--accent-gold);
+}
+
+/* --- ARTÍCULO INTERNO --- */
+.blog-post {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.post-header {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.post-header h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: var(--text-title);
+    margin: 1rem 0;
+    line-height: 1.15;
+}
+
+.divider {
+    width: 60px;
+    height: 1px;
+    background-color: var(--accent-gold);
+    margin: 2rem auto;
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    margin-bottom: 4rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.post-content {
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+.intro {
+    font-size: 1.25rem;
+    color: var(--text-title);
+    font-family: var(--font-serif);
+    margin-bottom: 3rem;
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 1.5rem;
+}
+
+/* Sección de Ingredientes */
+.ingredients-section {
+    margin: 5rem 0;
+}
+
+.ingredients-section h3 {
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--text-title);
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.food-item {
+    background: #fff;
+    padding: 2rem;
+    border: 1px solid var(--accent-light);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.food-item:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-5px);
+}
+
+.food-name {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--text-title);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.food-desc {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-main);
+    line-height: 1.7;
+}
+
+/* TIP BOX */
+.tip-box {
+    background-color: #F4F6F4;
+    padding: 1.5rem;
+    margin: 4rem 0;
+    border-radius: var(--radius);
+    text-align: left;
+    position: relative;
+}
+
+.tip-header {
+    font-family: var(--font-serif);
+    color: var(--accent-green);
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: var(--transition);
+}
+
+.btn-reserva:hover {
+    background-color: var(--accent-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(191, 160, 109, 0.3);
+}
+
+/* --- BLOG GRID (MODIFICADO PARA IMÁGENES COMPLETAS) --- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 3rem;
+    padding-bottom: 6rem;
+    align-items: start; /* Alinea las tarjetas al inicio para que no se estiren raro */
+}
+
+.article-card {
+    background: transparent;
+    cursor: pointer;
+}
+
+/* CAMBIO PRINCIPAL AQUÍ: */
+.card-img-container {
+    width: 100%;
+    /* Quitamos el aspect-ratio fijo para que la caja se adapte a la foto */
+    height: auto; 
+    overflow: hidden;
+    border-radius: var(--radius);
     margin-bottom: 1.5rem;
+    background-color: transparent; /* Fondo transparente por si acaso */
+}
+
+.card-img {
+    width: 100%;
+    height: auto; /* La altura es automática según la imagen real */
+    display: block;
+    object-fit: contain; /* Asegura que se vea todo sin cortar */
+    transition: transform 0.7s ease;
+}
+
+.article-card:hover .card-img {
+    transform: scale(1.03); /* Zoom un poco más suave */
+}
+
+.card-content {
+    padding: 0 0.5rem;
+}
+
+.card-category {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-green);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     line-clamp: 2;
@@ -454,7 +632,7 @@ ul { list-style: none; }
 .site-footer {
     border-top: 1px solid var(--accent-light);
     margin-top: 2rem  ;
-padding: 4rem 1rem; /* Agregué un poco de padding lateral por seguridad en móviles */
+    padding: 4rem 1rem; /* Agregué un poco de padding lateral por seguridad en móviles */
     background-color: #fff;
 
     /* MAGIA FLEXBOX PARA CENTRADO "MEDIO MEDIO" */
@@ -474,6 +652,12 @@ padding: 4rem 1rem; /* Agregué un poco de padding lateral por seguridad en móv
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
+    /* FIX: Force visibility on mobile to prevent blank screen if JS fails or delays */
+    .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
     .food-grid { grid-template-columns: 1fr; }
     .hero-section { padding: 4rem 1rem; }
     /* Quitamos la restricción de altura en móvil también para que no recorte */
@@ -482,39 +666,39 @@ padding: 4rem 1rem; /* Agregué un poco de padding lateral por seguridad en móv
     .intro { margin-left: 0; border-left: none; padding-left: 0; font-style: italic; }
 
     /* Estilos compartidos (esto ya lo tienes, déjalo así o adáptalo) */
-.search-input, .search-select {
-    padding: 12px 20px;
-    border-radius: 50px;
-    border: 1px solid rgba(255,255,255,0.5);
-    background-color: rgba(255,255,255,0.95); /* Aquí forzamos el color de fondo */
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    color: var(--text-main);
-    outline: none;
-    transition: var(--transition);
-}
+    .search-input, .search-select {
+        padding: 12px 20px;
+        border-radius: 50px;
+        border: 1px solid rgba(255,255,255,0.5);
+        background-color: rgba(255,255,255,0.95); /* Aquí forzamos el color de fondo */
+        font-family: var(--font-sans);
+        font-size: 0.9rem;
+        color: var(--text-main);
+        outline: none;
+        transition: var(--transition);
+    }
 
-/* --- CORRECCIÓN PARA EL SELECT EN MÓVILES (INSTAGRAM/IOS) --- */
-.search-select {
-    /* 1. Esto elimina el estilo gris nativo de iPhone/Android */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    /* --- CORRECCIÓN PARA EL SELECT EN MÓVILES (INSTAGRAM/IOS) --- */
+    .search-select {
+        /* 1. Esto elimina el estilo gris nativo de iPhone/Android */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
 
-    /* 2. Como borramos la flecha nativa, agregamos una nuestra */
-    /* Esta es una flechita gris oscura simple y elegante */
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234A4A4A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 1.2rem center;
-    background-size: 1rem;
-    
-    /* Damos espacio a la derecha para que el texto no tape la flecha */
-    padding-right: 3rem; 
-    
-    /* Forzamos color blanco si el navegador se pone rebelde */
-    background-color: #ffffff; 
-    
-    /* Aseguramos que el cursor muestre que es clicable */
-    cursor: pointer;
-}
+        /* 2. Como borramos la flecha nativa, agregamos una nuestra */
+        /* Esta es una flechita gris oscura simple y elegante */
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234A4A4A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 1.2rem center;
+        background-size: 1rem;
+        
+        /* Damos espacio a la derecha para que el texto no tape la flecha */
+        padding-right: 3rem; 
+        
+        /* Forzamos color blanco si el navegador se pone rebelde */
+        background-color: #ffffff; 
+        
+        /* Aseguramos que el cursor muestre que es clicable */
+        cursor: pointer;
+    }
 }
