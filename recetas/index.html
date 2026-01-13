@@ -13,19 +13,19 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virginia González Scherer - Ayurveda & Bienestar</title>
+    <title>Recetas - Virginia González Scherer</title>
     
-    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+    <link rel="icon" type="image/jpeg" href="../favicon.jpeg">
     
-    <meta property="og:title" content="Virginia González Scherer - Ayurveda & Bienestar">
-    <meta property="og:description" content="Guía personalizada para que cada comida sea un acto de sanación.">
+    <meta property="og:title" content="Recetas Saludables - Virginia González Scherer">
+    <meta property="og:description" content="Recetas ayurvédicas y saludables para nutrir tu cuerpo y alma.">
     <meta property="og:image" content="https://www.virginia-bienestar.site/favicon.jpeg">
     <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     
     <!-- Vercel Web Analytics -->
     <script>
@@ -52,10 +52,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="brand-name">Ma. Virginia</a>
+            <a href="../index.html" class="brand-name">Ma. Virginia</a>
             <div class="nav-menu">
-                <a href="#" class="nav-link active">Artículos</a>
-                <a href="recetas/index.html" class="nav-link">Recetas</a>
+                <a href="../index.html" class="nav-link">Artículos</a>
+                <a href="#" class="nav-link active">Recetas</a>
                 <a href="https://wa.me/5493413246408" target="_blank" class="nav-cta">Reservar Asesoria</a>
             </div>
             <button class="hamburger" aria-label="Menu">
@@ -68,8 +68,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu">
-        <a href="#" class="mobile-link">Artículos</a>
-        <a href="recetas/index.html" class="mobile-link">Recetas</a>
+        <a href="../index.html" class="mobile-link">Artículos</a>
+        <a href="#" class="mobile-link">Recetas</a>
         <a href="https://wa.me/5493413246408" target="_blank" class="mobile-cta">Reservar Asesoria</a>
     </div>
 
@@ -77,24 +77,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
-            <span class="hero-tag">Articulos de Bienestar</span>
-            <h1 class="hero-title">Maria Virginia <br> González Scherer</h1>
-            <p class="hero-subtitle">Un espacio para reconectar con tu naturaleza, sanar desde la raíz y encontrar el equilibrio que tu cuerpo necesita.</p>
-            
-            
-
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Buscar artículo..." class="search-input">
-                
-                <select id="categoryFilter" class="search-select">
-                    <option value="all">Todas las categorías</option>
-                    </select>
-            </div>
+            <span class="hero-tag">Cocina Consciente</span>
+            <h1 class="hero-title">Recetas Ayurvédicas</h1>
+            <p class="hero-subtitle">Alimentos que sanan, nutren y equilibran tu energía vital.</p>
         </div>
     </header>
 
     <main class="container">
-        <div class="blog-grid" id="blog-feed"></div>
+        <div class="blog-grid">
+            
+            <!-- Receta 1 -->
+            <article class="article-card fade-in visible">
+                <a href="medallon-quinoa/index.html"> 
+                    <div class="card-img-container">
+                        <img 
+                            src="medallon-quinoa/medallon-quinoa.jpg" 
+                            alt="Medallón de Quinoa y Vegetales" 
+                            class="card-img"
+                            loading="lazy" 
+                            width="400" 
+                            height="400"
+                            onerror="this.src='../favicon.jpeg'"
+                        > 
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Almuerzo / Cena</span>
+                        <h3 class="card-title">Medallón de Quinoa y Vegetales</h3>
+                        <p class="card-excerpt">Una receta tridóshica, ligera y nutritiva. Ideal para equilibrar Vata, Pitta y Kapha sin generar toxinas.</p>
+                        <span class="read-more">Ver receta &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+        </div>
     </main>
 
      <footer class="site-footer fade-in">
@@ -103,7 +118,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     </footer>
 
-    <script src="data.js"></script>
-    <script src="script.js"></script> 
+    <script src="../script.js"></script> 
 </body>
 </html>
