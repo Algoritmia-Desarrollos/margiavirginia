@@ -32,7 +32,14 @@
 
 /* --- RESET BÁSICO --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+
+html { 
+    scroll-behavior: smooth; 
+    font-size: 16px;
+    /* Estabilización para móviles */
+    height: 100%;
+    overflow-x: hidden; 
+}
 
 body {
     background-color: var(--bg-color);
@@ -41,6 +48,11 @@ body {
     line-height: 1.8;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
+    /* Estabilización para móviles */
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative; /* Ayuda a posicionar elementos fijos correctamente */
 }
 
 a { text-decoration: none; color: inherit; transition: var(--transition); }
@@ -62,14 +74,29 @@ ul { list-style: none; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
 /* --- NAVBAR --- */
+/* --- NAVBAR --- */
 .navbar {
-    position: sticky;
+    position: fixed; /* Cambiado de sticky a fixed para que siempre esté visible */
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
     padding: 1.5rem 0;
-    background: white;
+    background: rgba(255, 255, 255, 0.95); /* Un poco de transparencia */
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0,0,0,0.03);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.02); /* Sombra suave para separar del contenido */
+    transform: translateZ(0); /* Fuerza aceleración de hardware para evitar parpadeos en móvil */
+    transition: padding 0.3s ease; /* Transición suave si cambia el padding */
+}
+
+@media (max-width: 768px) {
+    /* Navbar mantiene su tamaño original */
+}
+
+/* Compensamos el espacio del navbar fijo */
+body {
+    padding-top: 75px;
 }
 
 .nav-container {
