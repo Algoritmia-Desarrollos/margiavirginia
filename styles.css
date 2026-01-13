@@ -675,7 +675,10 @@ ul { list-style: none; }
         align-items: center;
     }
 
-    .post-header, .ingredients-section h3 {
+    .post-header {
+        text-align: center;
+    }
+    .ingredients-section h3 {
         text-align: left;
     }
     /* Quitamos la restricción de altura en móvil también para que no recorte */
