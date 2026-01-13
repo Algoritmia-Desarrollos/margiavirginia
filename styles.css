@@ -662,7 +662,22 @@ ul { list-style: none; }
     }
 
     .food-grid { grid-template-columns: 1fr; }
-    .hero-section { padding: 4rem 1rem; }
+    .hero-section { 
+        padding: 4rem 1rem;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .hero-content { margin: 0; }
+
+    .site-footer {
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .post-header, .ingredients-section h3 {
+        text-align: left;
+    }
     /* Quitamos la restricción de altura en móvil también para que no recorte */
     .card-img-container { height: auto; aspect-ratio: auto; } 
     .container { padding: 0 1.5rem; }
