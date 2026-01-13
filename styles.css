@@ -344,7 +344,7 @@ ul { list-style: none; }
     width: 60px;
     height: 1px;
     background-color: var(--accent-gold);
-    margin: 2rem auto;
+    margin: 2rem 0px;
 }
 
 .featured-image img {
@@ -671,8 +671,8 @@ ul { list-style: none; }
     .hero-content { margin: 0; }
 
     .site-footer {
-        text-align: left;
-        align-items: flex-start;
+        text-align: center;
+        align-items: center;
     }
 
     .post-header, .ingredients-section h3 {
