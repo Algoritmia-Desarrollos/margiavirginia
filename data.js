@@ -8,6 +8,13 @@ const articulos = [
         foto: "1.jpeg",
         descripcion: "Descubre los alimentos que aportan Prana y Ojas para tener claridad mental y paz interior."
     },
+    {
+        slug: "guia-blends-ayurvedicos",
+        titulo: "Guía de Blends Ayurvédicos",
+        categoria: "Ayurveda",
+        foto: "blends.png",
+        descripcion: "El arte de la alquimia emocional: elige tus hierbas para nutrir el alma y equilibrar tus emociones."
+    },
     // Agrega más artículos aquí para probar el filtro...
     /* Ejemplo:
     {
