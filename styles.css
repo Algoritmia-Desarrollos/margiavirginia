@@ -13,10 +13,13 @@
     --accent-gold: #BFA06D;    
     --accent-light: #E8E6E1;   
 
-    /* FUENTES OPTIMIZADAS */
+/* FUENTES OPTIMIZADAS */
     /* font-display: swap evita que el texto sea invisible mientras carga la fuente */
     --font-serif: 'Playfair Display', serif;
-    --font-sans: 'Montserrat', sans-serif;
+    
+    /* CAMBIO AQUÍ: Ponemos 'Lato' para que coincida con tu HTML */
+    --font-sans: 'Lato', sans-serif;
+    
     
     /* ESPACIADO Y BORDES */
     --radius: 4px;             
@@ -35,8 +38,8 @@ body {
     background-color: var(--bg-color);
     color: var(--text-main);
     font-family: var(--font-sans);
-    line-height: 1.9;
-    font-weight: 300;
+    line-height: 1.8;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
 }
 
