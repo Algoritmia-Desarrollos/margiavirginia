@@ -574,7 +574,7 @@ ul { list-style: none; }
     font-family: var(--font-serif);
     font-size: 1.8rem;
     color: var(--text-title);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     font-weight: 400;
 }
 
