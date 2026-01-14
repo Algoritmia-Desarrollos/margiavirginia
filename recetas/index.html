@@ -59,8 +59,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="hero-tag">Cocina Consciente</span>
             <h1 class="hero-title">Recetas Ayurvédicas</h1>
             <p class="hero-subtitle">Alimentos que sanan, nutren y equilibran tu energía vital.</p>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar receta..." class="search-input">
+                
+                <select id="categoryFilter" class="search-select">
+                    <option value="all">Todas las categorías</option>
+                    <option value="Almuerzo / Cena">Almuerzo / Cena</option>
+                    <option value="Ayurveda & Nutrición">Ayurveda & Nutrición</option>
+                </select>
+            </div>
         </div>
     </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const articles = document.querySelectorAll('.article-card');
+
+            function filterRecipes() {
+                const searchText = searchInput.value.toLowerCase();
+                const selectedCategory = categoryFilter.value;
+
+                articles.forEach(article => {
+                    const title = article.querySelector('.card-title').textContent.toLowerCase();
+                    const excerpt = article.querySelector('.card-excerpt').textContent.toLowerCase();
+                    const category = article.querySelector('.card-category').textContent;
+
+                    const matchesText = title.includes(searchText) || excerpt.includes(searchText);
+                    const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
+
+                    if (matchesText && matchesCategory) {
+                        article.style.display = '';
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+            }
+
+            searchInput.addEventListener('input', filterRecipes);
+            categoryFilter.addEventListener('change', filterRecipes);
+        });
+    </script>
 
     <main class="container">
         <div class="blog-grid">
@@ -83,6 +124,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <span class="card-category">Almuerzo / Cena</span>
                         <h3 class="card-title">Medallón de Quinoa y Vegetales</h3>
                         <p class="card-excerpt">Una receta tridóshica, ligera y nutritiva. Ideal para equilibrar Vata, Pitta y Kapha sin generar toxinas.</p>
+                        <span class="read-more">Ver receta &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Receta 2: Tofu -->
+            <article class="article-card fade-in visible">
+                <a href="../articulos/tofu/index.html"> 
+                    <div class="card-img-container">
+                        <img 
+                            src="../articulos/tofu/tofu-dorado.png" 
+                            alt="Tofu Dorado" 
+                            class="card-img"
+                            loading="lazy" 
+                            width="400" 
+                            height="400"
+                            onerror="this.src='../favicon.jpeg'"
+                        > 
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Ayurveda & Nutrición</span>
+                        <h3 class="card-title">TOFU: El secreto de la "Proteína de Naturaleza Serena"</h3>
+                        <p class="card-excerpt">Descubre cómo preparar el tofu según el Ayurveda para potenciar su energía y digestibilidad.</p>
                         <span class="read-more">Ver receta &rarr;</span>
                     </div>
                 </a>
