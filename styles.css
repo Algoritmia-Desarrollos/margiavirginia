@@ -489,19 +489,19 @@ body {
 /* CAMBIO PRINCIPAL AQUÍ: */
 .card-img-container {
     width: 100%;
-    /* Quitamos el aspect-ratio fijo para que la caja se adapte a la foto */
-    height: auto; 
+    aspect-ratio: 1 / 1; /* Cuadrado perfecto */
     overflow: hidden;
     border-radius: var(--radius);
     margin-bottom: 1.5rem;
-    background-color: transparent; /* Fondo transparente por si acaso */
+    background-color: #f0f0f0; /* Fondo suave mientras carga */
 }
 
 .card-img {
     width: 100%;
-    height: auto; /* La altura es automática según la imagen real */
+    height: 100%; /* Llena el contenedor */
     display: block;
-    object-fit: contain; /* Asegura que se vea todo sin cortar */
+    object-fit: cover; /* Recorta para llenar sin deformar */
+    object-position: center; /* Centra la imagen */
     transition: transform 0.7s ease;
 }
 
@@ -569,7 +569,9 @@ body {
 
 .featured-image img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1 / 1; /* Cuadrado perfecto */
+    object-fit: cover;
+    object-position: center;
     border-radius: var(--radius);
     margin-bottom: 4rem;
     box-shadow: var(--shadow-soft);
@@ -706,7 +708,7 @@ body {
         text-align: left;
     }
     /* Quitamos la restricción de altura en móvil también para que no recorte */
-    .card-img-container { height: auto; aspect-ratio: auto; } 
+    /* .card-img-container { height: auto; aspect-ratio: auto; }  <-- Eliminado para mantener 1:1 en móvil */ 
     .container { padding: 0 1.5rem; }
     .intro { margin-left: 0; border-left: none; padding-left: 0; font-style: italic; }
 

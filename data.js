@@ -29,16 +29,13 @@ const articulos = [
         foto: "cover.png",
         descripcion: "Para equilibrar tu sistema nervioso, nutrir tu Agni y vivir con Naturaleza Serena."
     },
-    // Agrega más artículos aquí para probar el filtro...
-    /* Ejemplo:
     {
-        slug: "rutina-manana",
-        titulo: "Rutina Dinacharya",
-        categoria: "Estilo de Vida",
-        foto: "2.jpeg",
-        descripcion: "Cómo empezar tu día según el Ayurveda."
+        slug: "queso-caju-calabaza",
+        titulo: "Castañas de Cajú & Semillas de Calabaza",
+        categoria: "Ayurveda & Nutrición",
+        foto: "queso-caju.jpeg",
+        descripcion: "Equilibrio perfecto que no inflama y satisface el alma. Aliado del sistema nervioso y rico en minerales."
     }
-    */
 ];
 
 // Elementos del DOM
