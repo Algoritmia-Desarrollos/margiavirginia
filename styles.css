@@ -80,7 +80,7 @@ ul { list-style: none; }
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1200;
     padding: 1.5rem 0;
     background: rgba(255, 255, 255, 0.95); /* Un poco de transparencia */
     backdrop-filter: blur(10px);

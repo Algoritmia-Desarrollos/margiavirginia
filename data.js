@@ -22,6 +22,13 @@ const articulos = [
         foto: "tofu-dorado.png",
         descripcion: "Descubre cómo preparar el tofu según el Ayurveda para potenciar su energía y digestibilidad."
     },
+    {
+        slug: "rutina-5-pasos",
+        titulo: "Rutina de 5 pasos “Comienza tu día a pleno”",
+        categoria: "Ayurveda & Bienestar",
+        foto: "cover.png",
+        descripcion: "Para equilibrar tu sistema nervioso, nutrir tu Agni y vivir con Naturaleza Serena."
+    },
     // Agrega más artículos aquí para probar el filtro...
     /* Ejemplo:
     {
