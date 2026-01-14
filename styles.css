@@ -67,11 +67,11 @@ ul { list-style: none; }
 }
 
 .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
 }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
+.fade-in.visible { opacity: 1; transform: none; }
 
 /* --- NAVBAR --- */
 /* --- NAVBAR --- */
@@ -682,7 +682,6 @@ body {
 @media (max-width: 768px) {
     /* FIX: Force visibility on mobile to prevent blank screen if JS fails or delays */
     .fade-in {
-        opacity: 1 !important;
         transform: none !important;
     }
 
@@ -1050,7 +1049,7 @@ p {
     }
 }
 
-/* --- SOBRE MÍ --- */
+/* --- SOBRE Mï¿½ --- */
 .about-content {
     max-width: 800px;
     margin: 4rem auto;

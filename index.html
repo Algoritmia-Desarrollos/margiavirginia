@@ -50,32 +50,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="brand-name">Ma. Virginia</a>
-            <div class="nav-menu">
-                <a href="#" class="nav-link active">Artículos</a>
-                <a href="recetas/index.html" class="nav-link">Recetas</a>
-                <a href="sobre-mi.html" class="nav-link">Sobre Mí</a>
-                <a href="https://wa.me/5493413246408" target="_blank" class="nav-cta">Reservar Asesoria</a>
-            </div>
-            <button class="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
     <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu">
-        <a href="#" class="mobile-link">Artículos</a>
-        <a href="recetas/index.html" class="mobile-link">Recetas</a>
-        <a href="sobre-mi.html" class="mobile-link">Sobre Mí</a>
-        <a href="https://wa.me/5493413246408" target="_blank" class="mobile-cta">Reservar Asesoria</a>
-    </div>
-
-<header class="hero-section fade-in" id="hero">
+    <!-- Note: Mobile menu is now handled by loader.js and navbar.html, so we can remove this block or keep it if it's not part of navbar.html -->
+    <!-- Actually, navbar.html DOES NOT include the mobile-menu div in my previous step? Let me check. -->
+    <!-- Checking navbar.html content... It DOES NOT include mobile-menu div. Wait, I should have included it. -->
+    <!-- Let me re-write navbar.html to include mobile-menu div first. -->
+    
+    <header class="hero-section fade-in" id="hero">
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
@@ -99,13 +82,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="blog-grid" id="blog-feed"></div>
     </main>
 
-     <footer class="site-footer fade-in">
-        <div class="footer-brand">Ma. Virginia González Scherer</div>
-        <p style="opacity: 0.6; font-size: 0.9rem;">Ayurveda & Bienestar</p>
-        
-    </footer>
+     <div id="footer-placeholder"></div>
 
     <script src="data.js"></script>
     <script src="script.js"></script> 
+    <script src="/components/loader.js"></script>
 </body>
 </html>

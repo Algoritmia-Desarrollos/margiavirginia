@@ -15,6 +15,13 @@ const articulos = [
         foto: "blends.png",
         descripcion: "El arte de la alquimia emocional: elige tus hierbas para nutrir el alma y equilibrar tus emociones."
     },
+    {
+        slug: "tofu",
+        titulo: "TOFU: El secreto de la 'Proteína de Naturaleza Serena'",
+        categoria: "Ayurveda & Nutrición",
+        foto: "tofu-dorado.png",
+        descripcion: "Descubre cómo preparar el tofu según el Ayurveda para potenciar su energía y digestibilidad."
+    },
     // Agrega más artículos aquí para probar el filtro...
     /* Ejemplo:
     {
