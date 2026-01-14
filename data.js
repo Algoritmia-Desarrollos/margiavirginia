@@ -124,8 +124,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (searchInput && categoryFilter) {
             cargarCategorias();
             
-            // Event Listeners para filtrar en tiempo real
-            searchInput.addEventListener('input', filtrarArticulos);
+            // Event Listeners para filtrar en tiempo real (con debounce)
+            let debounceTimer;
+            searchInput.addEventListener('input', () => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(filtrarArticulos, 300);
+            });
             categoryFilter.addEventListener('change', filtrarArticulos);
         }
     }

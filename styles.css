@@ -27,7 +27,10 @@
     
     /* EFECTOS */
     --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.03);
-    --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.03);
+    /* Optimized transition: removed 'all' to prevent layout thrashing */
+    --transition-timing: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition: transform var(--transition-timing), opacity var(--transition-timing), background-color var(--transition-timing), color var(--transition-timing), border-color var(--transition-timing);
 }
 
 /* --- RESET BÁSICO --- */
@@ -55,7 +58,7 @@ body {
     position: relative; /* Ayuda a posicionar elementos fijos correctamente */
 }
 
-a { text-decoration: none; color: inherit; transition: var(--transition); }
+a { text-decoration: none; color: inherit; transition: color var(--transition-timing); }
 img { max-width: 100%; display: block; height: auto; }
 ul { list-style: none; }
 
@@ -132,7 +135,9 @@ body {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    transition: var(--transition);
+    letter-spacing: 1.5px;
+    transition: transform var(--transition-timing), background-color var(--transition-timing), color var(--transition-timing), box-shadow var(--transition-timing);
+    will-change: transform;
     line-height: 1;
     margin-left: 1rem; /* Separación del resto del menú */
 }
@@ -268,7 +273,9 @@ body {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    transition: var(--transition);
+    letter-spacing: 1.5px;
+    transition: transform var(--transition-timing), background-color var(--transition-timing), box-shadow var(--transition-timing);
+    will-change: transform;
 }
 
 .btn-reserva:hover {
@@ -307,7 +314,10 @@ body {
     height: auto; /* La altura es automática según la imagen real */
     display: block;
     object-fit: contain; /* Asegura que se vea todo sin cortar */
+    object-fit: contain; /* Asegura que se vea todo sin cortar */
     transition: transform 0.7s ease;
+    will-change: transform;
+    backface-visibility: hidden; /* Improves rendering on some browsers */
 }
 
 .article-card:hover .card-img {
@@ -419,7 +429,9 @@ body {
     padding: 2rem;
     border: 1px solid var(--accent-light);
     border-radius: var(--radius);
-    transition: var(--transition);
+    border-radius: var(--radius);
+    transition: transform var(--transition-timing), border-color var(--transition-timing);
+    will-change: transform;
 }
 
 .food-item:hover {
@@ -463,7 +475,8 @@ body {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    transition: var(--transition);
+    transition: transform var(--transition-timing), background-color var(--transition-timing);
+    will-change: transform;
 }
 
 .btn-reserva:hover {
@@ -502,7 +515,10 @@ body {
     display: block;
     object-fit: cover; /* Recorta para llenar sin deformar */
     object-position: center; /* Centra la imagen */
+    object-position: center; /* Centra la imagen */
     transition: transform 0.7s ease;
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 .article-card:hover .card-img {
@@ -664,6 +680,8 @@ body {
     margin-top: 2rem  ;
     padding: 4rem 1rem; /* Agregué un poco de padding lateral por seguridad en móviles */
     background-color: #fff;
+    content-visibility: auto; /* Optimizes rendering for off-screen content */
+    contain-intrinsic-size: 1000px; /* Placeholder height estimate */
 
     /* MAGIA FLEXBOX PARA CENTRADO "MEDIO MEDIO" */
     display: flex;
@@ -722,7 +740,7 @@ body {
         font-size: 0.9rem;
         color: var(--text-main);
         outline: none;
-        transition: var(--transition);
+        transition: border-color var(--transition-timing), background-color var(--transition-timing), box-shadow var(--transition-timing);
     }
 
     /* --- CORRECCIÓN PARA EL SELECT EN MÓVILES (INSTAGRAM/IOS) --- */
@@ -783,7 +801,7 @@ body {
     bottom: -4px;
     left: 0;
     background-color: var(--accent-gold);
-    transition: var(--transition);
+    transition: width var(--transition-timing);
 }
 
 .nav-link:hover::after, .nav-link.active::after {
