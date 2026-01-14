@@ -1,3 +1,50 @@
+// data.js
+
+const articulos = [
+    {
+        slug: "nutrir-tu-mente",
+        titulo: "El Arte de Nutrir tu Mente",
+        categoria: "Nutrición", // Asegúrate de usar mayúsculas/minúsculas consistentemente
+        foto: "1.jpeg",
+        descripcion: "Descubre los alimentos que aportan Prana y Ojas para tener claridad mental y paz interior."
+    },
+    {
+        slug: "guia-blends-ayurvedicos",
+        titulo: "Guía de Blends Ayurvédicos",
+        categoria: "Ayurveda",
+        foto: "blends.png",
+        descripcion: "El arte de la alquimia emocional: elige tus hierbas para nutrir el alma y equilibrar tus emociones."
+    },
+    {
+        slug: "tofu",
+        titulo: "TOFU: El secreto de la 'Proteína de Naturaleza Serena'",
+        categoria: "Ayurveda & Nutrición",
+        foto: "tofu-dorado.png",
+        descripcion: "Descubre cómo preparar el tofu según el Ayurveda para potenciar su energía y digestibilidad."
+    },
+    {
+        slug: "rutina-5-pasos",
+        titulo: "Rutina de 5 pasos “Comienza tu día a pleno”",
+        categoria: "Ayurveda & Bienestar",
+        foto: "cover.png",
+        descripcion: "Para equilibrar tu sistema nervioso, nutrir tu Agni y vivir con Naturaleza Serena."
+    },
+    // Agrega más artículos aquí para probar el filtro...
+    /* Ejemplo:
+    {
+        slug: "rutina-manana",
+        titulo: "Rutina Dinacharya",
+        categoria: "Estilo de Vida",
+        foto: "2.jpeg",
+        descripcion: "Cómo empezar tu día según el Ayurveda."
+    }
+    */
+];
+
+// Elementos del DOM
+const contenedor = document.getElementById('blog-feed');
+const searchInput = document.getElementById('searchInput');
+const categoryFilter = document.getElementById('categoryFilter');
 
 // 1. Función para Renderizar Artículos
 function mostrarArticulos(lista) {
