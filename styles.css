@@ -194,15 +194,19 @@ body {
 .hero-section .hero-subtitle { color: rgba(255,255,255,0.9); font-weight: 400; }
 
 /* --- ESTILOS DEL BUSCADOR --- */
+/* --- ESTILOS DEL BUSCADOR --- */
 .search-container {
     background: rgba(255, 255, 255, 0.15); /* Fondo semitransparente tipo cristal */
     backdrop-filter: blur(10px);
     padding: 1.5rem;
     border-radius: var(--radius);
-    display: flex;
+    
+    /* CAMBIO A GRID PARA ANCHOS EXACTOS */
+    display: grid;
+    grid-template-columns: 1fr 220px 220px; /* Input flexible, Selects fijos */
     gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
     margin-top: 2rem;
@@ -219,10 +223,11 @@ body {
     color: var(--text-main);
     outline: none;
     transition: var(--transition);
+    width: 100%; /* Ocupan todo el ancho de su celda de grid */
 }
 
-.search-input { flex: 1; min-width: 200px; }
-.search-select { flex: 0 0 auto; cursor: pointer; min-width: 220px; text-align: center; }
+.search-input { min-width: 0; } /* Reset */
+.search-select { cursor: pointer; text-align: center; }
 
 .search-input:focus, .search-select:focus {
     box-shadow: 0 0 0 3px rgba(191, 160, 109, 0.4); /* Brillo dorado */
@@ -230,9 +235,11 @@ body {
 }
 
 /* Responsivo para el buscador */
-@media (max-width: 600px) {
-    .search-container { flex-direction: column; padding: 1rem; }
-    .search-input, .search-select { width: 100%; }
+@media (max-width: 768px) {
+    .search-container { 
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        padding: 1rem; 
+    }
 }
 
 .hero-tag {
