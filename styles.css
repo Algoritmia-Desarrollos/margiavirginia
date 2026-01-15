@@ -222,7 +222,7 @@ body {
 }
 
 .search-input { flex: 1; min-width: 200px; }
-.search-select { flex: 0 0 auto; cursor: pointer; }
+.search-select { flex: 0 0 auto; cursor: pointer; min-width: 220px; text-align: center; }
 
 .search-input:focus, .search-select:focus {
     box-shadow: 0 0 0 3px rgba(191, 160, 109, 0.4); /* Brillo dorado */
@@ -326,6 +326,20 @@ body {
 
 .card-content {
     padding: 0 0.5rem;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.card-date {
+    font-size: 0.65rem;
+    color: #999;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 .card-category {

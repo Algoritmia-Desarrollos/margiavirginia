@@ -68,23 +68,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <option value="Almuerzo / Cena">Almuerzo / Cena</option>
                     <option value="Ayurveda & Nutrición">Ayurveda & Nutrición</option>
                 </select>
+
+                <select id="sortOrder" class="search-select">
+                    <option value="newest">Más recientes</option>
+                    <option value="oldest">Más antiguos</option>
+                </select>
             </div>
         </div>
     </header>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('searchInput');
-            const categoryFilter = document.getElementById('categoryFilter');
-            const articles = document.querySelectorAll('.article-card');
+            const sortOrder = document.getElementById('sortOrder');
+            const articles = Array.from(document.querySelectorAll('.article-card'));
+            const grid = document.querySelector('.blog-grid');
 
-            function filterRecipes() {
-                const searchText = searchInput.value.toLowerCase();
+            function filterAndSortRecipes() {
+                // Función auxiliar para normalizar texto
+                const normalizar = (texto) => {
+                    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+                };
+
+                const searchText = normalizar(searchInput.value);
                 const selectedCategory = categoryFilter.value;
+                const order = sortOrder.value;
 
-                articles.forEach(article => {
-                    const title = article.querySelector('.card-title').textContent.toLowerCase();
-                    const excerpt = article.querySelector('.card-excerpt').textContent.toLowerCase();
+                // 1. Filtrar
+                const visibleArticles = articles.filter(article => {
+                    const title = normalizar(article.querySelector('.card-title').textContent);
+                    const excerpt = normalizar(article.querySelector('.card-excerpt').textContent);
                     const category = article.querySelector('.card-category').textContent;
 
                     const matchesText = title.includes(searchText) || excerpt.includes(searchText);
@@ -92,14 +104,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     if (matchesText && matchesCategory) {
                         article.style.display = '';
+                        return true;
                     } else {
                         article.style.display = 'none';
+                        return false;
                     }
                 });
+
+                // 2. Ordenar (solo los visibles, pero reordenamos todos en el DOM)
+                visibleArticles.sort((a, b) => {
+                    const dateA = new Date(a.dataset.date);
+                    const dateB = new Date(b.dataset.date);
+
+                    if (order === 'newest') {
+                        return dateB - dateA;
+                    } else {
+                        return dateA - dateB;
+                    }
+                });
+
+                // Re-append en orden
+                visibleArticles.forEach(article => grid.appendChild(article));
             }
 
-            searchInput.addEventListener('input', filterRecipes);
-            categoryFilter.addEventListener('change', filterRecipes);
+            searchInput.addEventListener('input', filterAndSortRecipes);
+            categoryFilter.addEventListener('change', filterAndSortRecipes);
+            sortOrder.addEventListener('change', filterAndSortRecipes);
         });
     </script>
 
@@ -107,7 +137,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="blog-grid">
             
             <!-- Receta 1 -->
-            <article class="article-card fade-in visible">
+            <article class="article-card fade-in visible" data-date="2025-01-15">
                 <a href="albondigas-arvejas/index.html"> 
                     <div class="card-img-container">
                         <img 
@@ -121,7 +151,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         > 
                     </div>
                     <div class="card-content">
-                        <span class="card-category">Almuerzo / Cena</span>
+                        <div class="card-meta">
+                            <span class="card-category">Almuerzo / Cena</span>
+                            <span class="card-date">15 de enero de 2025</span>
+                        </div>
                         <h3 class="card-title">Albóndigas de Arvejas</h3>
                         <p class="card-excerpt">Proteína vegetal y claridad mental. Un equilibrio perfecto de vegetales y especias para tu bienestar.</p>
                         <span class="read-more">Ver receta &rarr;</span>
@@ -130,7 +163,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </article>
 
             <!-- Receta 2 -->
-            <article class="article-card fade-in visible">
+            <article class="article-card fade-in visible" data-date="2024-12-20">
                 <a href="medallon-quinoa/index.html"> 
                     <div class="card-img-container">
                         <img 
@@ -144,7 +177,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         > 
                     </div>
                     <div class="card-content">
-                        <span class="card-category">Almuerzo / Cena</span>
+                        <div class="card-meta">
+                            <span class="card-category">Almuerzo / Cena</span>
+                            <span class="card-date">20 de diciembre de 2024</span>
+                        </div>
                         <h3 class="card-title">Medallón de Quinoa y Vegetales</h3>
                         <p class="card-excerpt">Una receta tridóshica, ligera y nutritiva. Ideal para equilibrar Vata, Pitta y Kapha sin generar toxinas.</p>
                         <span class="read-more">Ver receta &rarr;</span>
@@ -153,7 +189,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </article>
 
             <!-- Receta 2: Tofu -->
-            <article class="article-card fade-in visible">
+            <article class="article-card fade-in visible" data-date="2024-11-15">
                 <a href="../articulos/tofu/index.html"> 
                     <div class="card-img-container">
                         <img 
@@ -167,7 +203,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         > 
                     </div>
                     <div class="card-content">
-                        <span class="card-category">Ayurveda & Nutrición</span>
+                        <div class="card-meta">
+                            <span class="card-category">Ayurveda & Nutrición</span>
+                            <span class="card-date">15 de noviembre de 2024</span>
+                        </div>
                         <h3 class="card-title">TOFU: El secreto de la "Proteína de Naturaleza Serena"</h3>
                         <p class="card-excerpt">Descubre cómo preparar el tofu según el Ayurveda para potenciar su energía y digestibilidad.</p>
                         <span class="read-more">Ver receta &rarr;</span>
@@ -176,11 +215,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </article>
 
             <!-- Receta 3: Queso Cajú -->
-            <article class="article-card fade-in visible">
+            <article class="article-card fade-in visible" data-date="2024-10-30">
                 <a href="../articulos/queso-caju-calabaza/index.html"> 
                     <div class="card-img-container">
                         <img 
-                            src="../articulos/queso-caju-calabaza/queso-caju.jpeg" 
+                            src="../articulos/queso-caju-calabaza/queso-caju.png" 
                             alt="Castañas de Cajú & Semillas de Calabaza" 
                             class="card-img"
                             loading="lazy" 
@@ -190,7 +229,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         > 
                     </div>
                     <div class="card-content">
-                        <span class="card-category">Ayurveda & Nutrición</span>
+                        <div class="card-meta">
+                            <span class="card-category">Ayurveda & Nutrición</span>
+                            <span class="card-date">30 de octubre de 2024</span>
+                        </div>
                         <h3 class="card-title">Castañas de Cajú & Semillas de Calabaza</h3>
                         <p class="card-excerpt">Equilibrio perfecto que no inflama y satisface el alma. Aliado del sistema nervioso y rico en minerales.</p>
                         <span class="read-more">Ver receta &rarr;</span>
