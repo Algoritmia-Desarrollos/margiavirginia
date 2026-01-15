@@ -2,6 +2,13 @@
 
 const articulos = [
     {
+        slug: "del-estado-de-alerta-al-equilibrio",
+        titulo: "Del Estado de Alerta al Equilibrio",
+        categoria: "Ayurveda & Bienestar",
+        foto: "cover.png",
+        descripcion: "El cortisol alto no es tu enemigo, es tu cuerpo intentando protegerte. Descubre cómo devolverle la calma con Ayurveda."
+    },
+    {
         slug: "nutrir-tu-mente",
         titulo: "El Arte de Nutrir tu Mente",
         categoria: "Nutrición", // Asegúrate de usar mayúsculas/minúsculas consistentemente
