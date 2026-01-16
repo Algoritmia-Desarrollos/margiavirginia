@@ -32,22 +32,6 @@ const articulos = [
         foto: "blends.png",
         descripcion: "El arte de la alquimia emocional: elige tus hierbas para nutrir el alma y equilibrar tus emociones.",
         fecha: "2024-11-25"
-    },
-    {
-        slug: "tofu",
-        titulo: "TOFU: El secreto de la 'Proteína de Naturaleza Serena'",
-        categoria: "Ayurveda & Nutrición",
-        foto: "tofu-dorado.png",
-        descripcion: "Descubre cómo preparar el tofu según el Ayurveda para potenciar su energía y digestibilidad.",
-        fecha: "2024-11-15"
-    },
-    {
-        slug: "queso-caju-calabaza",
-        titulo: "Castañas de Cajú & Semillas de Calabaza",
-        categoria: "Ayurveda & Nutrición",
-        foto: "queso-caju.jpeg",
-        descripcion: "Equilibrio perfecto que no inflama y satisface el alma. Aliado del sistema nervioso y rico en minerales.",
-        fecha: "2024-10-30"
     }
 ];
 
@@ -55,11 +39,11 @@ const articulos = [
 const contenedor = document.getElementById('blog-feed');
 const searchInput = document.getElementById('searchInput');
 const categoryFilter = document.getElementById('categoryFilter');
-const sortOrder = document.getElementById('sortOrder'); // Nuevo elemento
+const sortOrder = document.getElementById('sortOrder');
 
 // 1. Función para Renderizar Artículos
 function mostrarArticulos(lista) {
-    contenedor.innerHTML = ''; // Limpiar contenido actual
+    contenedor.innerHTML = ''; 
 
     if (lista.length === 0) {
         contenedor.innerHTML = '<p style="text-align:center; grid-column: 1/-1; opacity: 0.7;">No se encontraron artículos con esos criterios.</p>';
@@ -67,14 +51,11 @@ function mostrarArticulos(lista) {
     }
 
     lista.forEach(art => {
-        // Formatear fecha
         const fechaFormateada = new Date(art.fecha).toLocaleDateString('es-AR', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
+            year: 'numeric', month: 'long', day: 'numeric'
         });
 
-        // Animación fade-in para los resultados filtrados
+        // Construcción de la ruta de imagen segura
         const tarjeta = `
         <article class="article-card fade-in visible">
             <a href="articulos/${art.slug}/"> 
@@ -104,12 +85,9 @@ function mostrarArticulos(lista) {
     });
 }
 
-// 2. Función para llenar el Select de Categorías dinámicamente
 function cargarCategorias() {
     if(!categoryFilter) return;
-
     const categoriasUnicas = [...new Set(articulos.map(a => a.categoria))];
-
     categoriasUnicas.forEach(cat => {
         const option = document.createElement('option');
         option.value = cat;
@@ -118,55 +96,34 @@ function cargarCategorias() {
     });
 }
 
-// 3. Función de Filtrado y Ordenamiento
 function filtrarYOrdenarArticulos() {
-    // Función auxiliar para normalizar texto (quitar tildes y minúsculas)
-    const normalizar = (texto) => {
-        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-    };
-
+    const normalizar = (texto) => texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
     const textoBusqueda = normalizar(searchInput.value);
     const categoriaSeleccionada = categoryFilter.value;
     const orden = sortOrder ? sortOrder.value : 'newest';
 
-    // 1. Filtrar
     let articulosFiltrados = articulos.filter(art => {
         const tituloNormalizado = normalizar(art.titulo);
         const descripcionNormalizada = normalizar(art.descripcion);
-        
-        const coincideTexto = tituloNormalizado.includes(textoBusqueda) || 
-                              descripcionNormalizada.includes(textoBusqueda);
-        
-        const coincideCategoria = categoriaSeleccionada === 'all' || 
-                                  art.categoria === categoriaSeleccionada;
+        const coincideTexto = tituloNormalizado.includes(textoBusqueda) || descripcionNormalizada.includes(textoBusqueda);
+        const coincideCategoria = categoriaSeleccionada === 'all' || art.categoria === categoriaSeleccionada;
         return coincideTexto && coincideCategoria;
     });
 
-    // 2. Ordenar
     articulosFiltrados.sort((a, b) => {
         const fechaA = new Date(a.fecha);
         const fechaB = new Date(b.fecha);
-        
-        if (orden === 'newest') {
-            return fechaB - fechaA; // Más reciente primero
-        } else {
-            return fechaA - fechaB; // Más antiguo primero
-        }
+        return orden === 'newest' ? fechaB - fechaA : fechaA - fechaB;
     });
 
     mostrarArticulos(articulosFiltrados);
 }
 
-// Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     if (contenedor) {
-        // Cargar categorías
         if (categoryFilter) cargarCategorias();
-
-        // Mostrar inicial (ordenado por defecto)
         filtrarYOrdenarArticulos();
         
-        // Event Listeners
         let debounceTimer;
         if (searchInput) {
             searchInput.addEventListener('input', () => {
