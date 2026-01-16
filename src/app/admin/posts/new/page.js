@@ -420,7 +420,65 @@ export default function NewPost() {
             </div>
 
             {/* AI Button moved here for better layout */}
-            <div className="mb-4 flex justify-end">
+            <div className="mb-4 flex justify-end gap-3">
+                <input 
+                    type="file" 
+                    accept=".pdf,.txt" 
+                    className="hidden" 
+                    id="pdf-upload"
+                    onChange={async (e) => {
+                        const file = e.target.files[0]
+                        if (!file) return
+                        
+                        setRewriteLoading(true)
+                        try {
+                            // 1. Extract Text
+                            const formData = new FormData()
+                            formData.append('file', file)
+                            
+                            const extractRes = await fetch('/api/extract-pdf', {
+                                method: 'POST',
+                                body: formData
+                            })
+                            const extractData = await extractRes.json()
+                            
+                            if (!extractData.text) throw new Error('No se pudo leer el archivo')
+                            
+                            // 2. Rewrite with AI
+                            const rewriteRes = await fetch('/api/rewrite-content', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ 
+                                    content: extractData.text,
+                                    instruction: "Escribe un artículo de blog completo, estructurado y atractivo basado en este texto. Usa formato HTML con <h2>, <p>, <ul>."
+                                })
+                            })
+                            const rewriteData = await rewriteRes.json()
+                            
+                            if (rewriteData.rewritten) {
+                                setFormData(prev => ({ ...prev, content: rewriteData.rewritten }))
+                            } else {
+                                alert('Error al generar el artículo')
+                            }
+                        } catch (error) {
+                            console.error(error)
+                            alert('Error procesando el archivo: ' + error.message)
+                        } finally {
+                            setRewriteLoading(false)
+                            // Reset input
+                            e.target.value = ''
+                        }
+                    }}
+                />
+                <button
+                    type="button"
+                    onClick={() => document.getElementById('pdf-upload').click()}
+                    disabled={rewriteLoading}
+                    className="text-sm px-5 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-all flex items-center gap-2 font-medium"
+                >
+                    {rewriteLoading ? 'Leyendo y Escribiendo...' : '📄 Subir PDF/Texto Base'}
+                </button>
+
                 <button
                     type="button"
                     onClick={handleRewriteContent}
