@@ -1,0 +1,220 @@
+/* =========================================
+   ESTILO BLOG POST - VIRGINIA
+   ========================================= */
+
+:root {
+    --bg-color: #FAFAF9;       
+    --card-bg: #FFFFFF;
+    --text-main: #4A4A4A;      
+    --text-title: #2C2C2C;     
+    --accent-green: #6B7F68;   
+    --accent-gold: #BFA06D;    
+    --accent-light: #E8E6E1;   
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Lato', sans-serif;
+    --radius: 4px;             
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.03);
+    --transition-timing: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- ARTÍCULO INTERNO --- */
+.blog-post-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.post-header {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.post-header h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: var(--text-title);
+    margin: 1rem 0;
+    line-height: 1.15;
+}
+
+.hero-tag {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-gold);
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    opacity: 0.85;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.divider {
+    width: 60px;
+    height: 1px;
+    background-color: var(--accent-gold);
+    margin: 2rem auto;
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    margin-bottom: 4rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.post-content {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: var(--text-main);
+    font-family: var(--font-sans);
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.intro {
+    font-size: 1.25rem;
+    color: var(--text-title);
+    font-family: var(--font-serif);
+    margin-bottom: 3rem;
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 1.5rem;
+}
+
+/* Sección de Ingredientes */
+.ingredients-section {
+    margin: 5rem 0;
+}
+
+.ingredients-section h3 {
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--text-title);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.food-item {
+    background: #fff;
+    padding: 2rem;
+    border: 1px solid var(--accent-light);
+    border-radius: var(--radius);
+    transition: transform var(--transition-timing), border-color var(--transition-timing);
+}
+
+.food-item:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-5px);
+}
+
+.food-name {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--text-title);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.food-desc {
+    font-size: 1rem;
+    color: var(--text-main);
+    line-height: 1.7;
+}
+
+/* TIP BOX */
+.tip-box {
+    background-color: #F4F6F4;
+    padding: 1.5rem;
+    margin: 4rem 0;
+    border-radius: var(--radius);
+    text-align: left;
+    position: relative;
+}
+
+.tip-header {
+    font-family: var(--font-serif);
+    color: var(--accent-green);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.light-bg {
+    background-color: #fff;
+    border: 1px solid var(--accent-light);
+}
+
+/* LISTAS */
+.clean-list {
+    list-style: none;
+    padding: 0;
+}
+
+.clean-list li {
+    margin-bottom: 1rem;
+}
+
+.ingredient-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredient-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--accent-light);
+}
+
+.ingredient-item:last-child {
+    border-bottom: none;
+}
+
+/* BOTONES */
+.btn-reserva {
+    display: inline-block;
+    background-color: var(--text-title);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: transform var(--transition-timing), background-color var(--transition-timing), box-shadow var(--transition-timing);
+    text-decoration: none;
+}
+
+.btn-reserva:hover {
+    background-color: var(--accent-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(191, 160, 109, 0.3);
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .food-grid { grid-template-columns: 1fr; }
+    .intro { margin-left: 0; border-left: none; padding-left: 0; font-style: italic; }
+    .post-header h1 { font-size: 2rem; }
+}

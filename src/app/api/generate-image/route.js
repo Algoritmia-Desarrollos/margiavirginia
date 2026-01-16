@@ -4,7 +4,11 @@ import { NextResponse } from 'next/server'
 export async function POST(req) {
   try {
     const apiKey = process.env.OPENAI_API_KEY
+    console.log('--- API: generate-image STARTED ---')
+    console.log('API Key configured:', !!apiKey)
+
     if (!apiKey) {
+      console.error('Error: OpenAI API Key is missing')
       return NextResponse.json({ error: 'OpenAI API Key not configured' }, { status: 500 })
     }
 

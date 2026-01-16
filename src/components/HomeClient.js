@@ -9,28 +9,27 @@ export default function HomeClient({ initialArticles }) {
   const [sortOrder, setSortOrder] = useState('newest')
 
   const categories = useMemo(() => {
-    return ['all', ...new Set(initialArticles.map(a => a.categoria))]
+    return ['all', ...new Set(initialArticles.map(a => a.category).filter(Boolean))]
   }, [initialArticles])
 
   const filteredArticles = useMemo(() => {
-    const normalize = (text) => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+    const normalize = (text) => text ? text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase() : ""
     const term = normalize(searchTerm)
 
     let filtered = initialArticles.filter(art => {
-      // Check if type includes 'article' (handles 'article', 'article,recipe', etc.)
-      // Also handle legacy data where type might be undefined (assume article)
-      if (art.type && !art.type.includes('article')) return false
+      // Only show articles, exclude recipes
+      if (!art.type || !art.type.includes('article') || art.type.includes('recipe')) return false
       
-      const title = normalize(art.titulo || art.title) // Handle both naming conventions
-      const desc = normalize(art.descripcion || art.description)
+      const title = normalize(art.title)
+      const desc = normalize(art.description)
       const matchesText = title.includes(term) || desc.includes(term)
-      const matchesCategory = category === 'all' || art.categoria === category
+      const matchesCategory = category === 'all' || art.category === category
       return matchesText && matchesCategory
     })
 
     return filtered.sort((a, b) => {
-      const dateA = new Date(a.fecha)
-      const dateB = new Date(b.fecha)
+      const dateA = new Date(a.date)
+      const dateB = new Date(b.date)
       return sortOrder === 'newest' ? dateB - dateA : dateA - dateB
     })
   }, [initialArticles, searchTerm, category, sortOrder])
@@ -81,12 +80,12 @@ export default function HomeClient({ initialArticles }) {
         <div className="blog-grid" id="blog-feed">
             {filteredArticles.length > 0 ? (
                 filteredArticles.map(art => (
-                    <article key={art.slug} className="article-card fade-in visible">
+                    <article key={art.id || art.slug} className="article-card fade-in visible">
                         <Link href={art.type.includes('recipe') ? `/recetas/${art.slug}` : `/articulos/${art.slug}`}>
                             <div className="card-img-container">
                                 <Image 
-                                    src={art.type.includes('recipe') ? `/recetas/${art.slug}/${art.foto}` : `/articulos/${art.slug}/${art.foto}`}
-                                    alt={art.titulo} 
+                                    src={art.image_url || '/hero.webp'}
+                                    alt={art.title || 'Article image'} 
                                     width={400} 
                                     height={400}
                                     className="card-img"
@@ -94,17 +93,17 @@ export default function HomeClient({ initialArticles }) {
                             </div>
                             <div className="card-content">
                                 <div className="card-meta">
-                                    <span className="card-category">{art.categoria}</span>
+                                    <span className="card-category">{art.category}</span>
                                     <span className="card-date">
-                                        {new Date(art.fecha).toLocaleDateString('es-AR', {
+                                        {new Date(art.date).toLocaleDateString('es-AR', {
                                             year: 'numeric',
                                             month: 'long',
                                             day: 'numeric'
                                         })}
                                     </span>
                                 </div>
-                                <h3 className="card-title">{art.titulo}</h3>
-                                <p className="card-excerpt">{art.descripcion}</p>
+                                <h3 className="card-title">{art.title}</h3>
+                                <p className="card-excerpt">{art.description}</p>
                                 <span className="read-more">Leer {art.type.includes('recipe') ? 'receta' : 'artículo'} completo &rarr;</span>
                             </div>
                         </Link>

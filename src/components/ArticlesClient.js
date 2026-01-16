@@ -3,15 +3,15 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default function RecipesClient({ initialArticles }) {
+export default function ArticlesClient({ initialArticles }) {
   const [searchTerm, setSearchTerm] = useState('')
   const [category, setCategory] = useState('all')
   const [sortOrder, setSortOrder] = useState('newest')
 
   const categories = useMemo(() => {
-    // Filter only recipes for categories
-    const recipes = initialArticles.filter(a => a.type && a.type.includes('recipe'))
-    return ['all', ...new Set(recipes.map(a => a.category).filter(Boolean))]
+    // Filter only articles for categories
+    const articles = initialArticles.filter(a => a.type && a.type.includes('article'))
+    return ['all', ...new Set(articles.map(a => a.category).filter(Boolean))]
   }, [initialArticles])
 
   const filteredArticles = useMemo(() => {
@@ -19,8 +19,8 @@ export default function RecipesClient({ initialArticles }) {
     const term = normalize(searchTerm)
 
     let filtered = initialArticles.filter(art => {
-      // Check if type includes 'recipe'
-      if (!art.type || !art.type.includes('recipe')) return false
+      // Check if type includes 'article' AND does NOT include 'recipe'
+      if (!art.type || !art.type.includes('article') || art.type.includes('recipe')) return false
       
       const title = normalize(art.title)
       const desc = normalize(art.description)
@@ -42,14 +42,14 @@ export default function RecipesClient({ initialArticles }) {
         <div className="hero-overlay"></div>
         
         <div className="hero-content">
-            <span className="hero-tag">Cocina Consciente</span>
-            <h1 className="hero-title">Recetas Ayurvédicas</h1>
-            <p className="hero-subtitle">Alimentos que sanan, nutren y equilibran tu energía vital.</p>
+            <span className="hero-tag">Bienestar Integral</span>
+            <h1 className="hero-title">Artículos y Reflexiones</h1>
+            <p className="hero-subtitle">Contenido para nutrir tu mente y expandir tu consciencia.</p>
             
             <div className="search-container">
                 <input 
                   type="text" 
-                  placeholder="Buscar receta..." 
+                  placeholder="Buscar artículo..." 
                   className="search-input"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
@@ -83,11 +83,11 @@ export default function RecipesClient({ initialArticles }) {
             {filteredArticles.length > 0 ? (
                 filteredArticles.map(art => (
                     <article key={art.slug} className="article-card fade-in visible">
-                        <Link href={`/recetas/${art.slug}`}>
+                        <Link href={`/articulos/${art.slug}`}>
                             <div className="card-img-container">
                                 <Image 
                                     src={art.image_url || '/hero.webp'}
-                                    alt={art.title || 'Recipe image'} 
+                                    alt={art.title || 'Article image'} 
                                     width={400} 
                                     height={400}
                                     className="card-img"
@@ -106,14 +106,14 @@ export default function RecipesClient({ initialArticles }) {
                                 </div>
                                 <h3 className="card-title">{art.title}</h3>
                                 <p className="card-excerpt">{art.description}</p>
-                                <span className="read-more">Ver receta &rarr;</span>
+                                <span className="read-more">Leer artículo &rarr;</span>
                             </div>
                         </Link>
                     </article>
                 ))
             ) : (
                 <p style={{ textAlign: 'center', gridColumn: '1/-1', opacity: 0.7 }}>
-                    No se encontraron recetas con esos criterios.
+                    No se encontraron artículos con esos criterios.
                 </p>
             )}
         </div>

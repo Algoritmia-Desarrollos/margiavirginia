@@ -1,9 +1,13 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import HomeClient from '@/components/HomeClient'
-import { articles } from '@/lib/data'
+import { getAllPosts } from '@/lib/content'
 
-export default function Home() {
+export const revalidate = 60 // Revalidate every minute
+
+export default async function Home() {
+  const articles = await getAllPosts()
+  
   return (
     <>
       <Navbar />

@@ -1,51 +1,46 @@
-import fs from 'fs'
-import path from 'path'
+import { supabase } from './supabaseClient'
 
-export async function getPostContent(slug, type) {
-  // Determine folder based on type or try both
-  let filePath
-  if (type === 'recipe') {
-    // Try recipes folder first
-    filePath = path.join(process.cwd(), 'public', 'recetas', slug, 'content.html')
-    if (!fs.existsSync(filePath)) {
-      // Fallback to articulos if not found (some recipes are in articulos)
-      filePath = path.join(process.cwd(), 'public', 'articulos', slug, 'content.html')
-    }
-  } else {
-    filePath = path.join(process.cwd(), 'public', 'articulos', slug, 'content.html')
+export async function getAllPosts() {
+  const { data, error } = await supabase
+    .from('posts')
+    .select('*')
+    .order('date', { ascending: false })
+  
+  if (error) {
+    console.error('Error fetching posts:', error)
+    return []
   }
+  return data
+}
 
-  if (!fs.existsSync(filePath)) {
+export async function getPostBySlug(slug) {
+  const { data, error } = await supabase
+    .from('posts')
+    .select('*')
+    .eq('slug', slug)
+    .single()
+  
+  if (error) {
     return null
   }
+  return data
+}
 
-  const fileContent = fs.readFileSync(filePath, 'utf8')
+export async function getLatestPosts(limit = 3) {
+  const { data, error } = await supabase
+    .from('posts')
+    .select('*')
+    .order('date', { ascending: false })
+    .limit(limit)
   
-  // Extract content inside <article class="blog-post">...</article>
-  // We use a simple regex for now. 
-  // Note: This assumes the HTML structure is consistent.
-  const match = fileContent.match(/<article class="(?:blog-post|recipe-post)">([\s\S]*?)<\/article>/)
-  
-  if (match && match[1]) {
-    // Fix image paths: src="cover.png" -> src="/articulos/slug/cover.png"
-    // or src="../../..." -> fix relative paths
-    let content = match[1]
-    
-    // Replace relative image paths
-    // If src="cover.png", it should be "/folder/slug/cover.png"
-    // If src="../../styles.css", we don't care about styles as we use globals.
-    
-    const folder = filePath.includes('public\\recetas') || filePath.includes('public/recetas') ? 'recetas' : 'articulos'
-    
-    content = content.replace(/src="([^"]+)"/g, (match, src) => {
-      if (src.startsWith('http') || src.startsWith('/')) return match
-      // If relative path like "cover.png" or "./cover.png"
-      const cleanSrc = src.replace(/^\.\//, '')
-      return `src="/${folder}/${slug}/${cleanSrc}"`
-    })
-
-    return content
+  if (error) {
+    return []
   }
-  
-  return null
+  return data
+}
+
+// Legacy function kept for compatibility if needed, but should be replaced
+export async function getPostContent(slug, type) {
+  const post = await getPostBySlug(slug)
+  return post ? post.content : null
 }

@@ -1,12 +1,15 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { articles } from '@/lib/data'
-import { getPostContent } from '@/lib/content'
+import { getPostBySlug, getAllPosts } from '@/lib/content'
 import { notFound } from 'next/navigation'
+import '@/styles/blog-post.css'
+
+export const revalidate = 60
 
 export async function generateStaticParams() {
-  return articles
-    .filter(a => a.type === 'recipe')
+  const posts = await getAllPosts()
+  return posts
+    .filter(p => p.type.includes('recipe'))
     .map((post) => ({
       slug: post.slug,
     }))
@@ -14,15 +17,9 @@ export async function generateStaticParams() {
 
 export default async function RecipePage({ params }) {
   const { slug } = await params
-  const post = articles.find(a => a.slug === slug)
+  const post = await getPostBySlug(slug)
   
   if (!post) {
-    notFound()
-  }
-
-  const content = await getPostContent(slug, 'recipe')
-
-  if (!content) {
     notFound()
   }
 
@@ -30,7 +27,7 @@ export default async function RecipePage({ params }) {
     <>
       <Navbar />
       <main className="container pt-20 ">
-        <article className="blog-post" dangerouslySetInnerHTML={{ __html: content }} />
+        <article className="blog-post" dangerouslySetInnerHTML={{ __html: post.content }} />
       </main>
       <Footer />
     </>
