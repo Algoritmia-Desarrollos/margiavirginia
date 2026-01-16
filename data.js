@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "segundo-despertar",
+        titulo: "El Segundo Despertar",
+        categoria: "Ayurveda & Bienestar",
+        foto: "cover.png",
+        descripcion: "Una etapa donde el fuego de la juventud se transforma en la luz de la sabiduría. Abrazando la perimenopausia desde el Ayurveda.",
+        fecha: "2025-01-20"
+    },
+    {
         slug: "del-estado-de-alerta-al-equilibrio",
         titulo: "Del Estado de Alerta al Equilibrio",
         categoria: "Ayurveda & Bienestar",
@@ -32,17 +40,33 @@ const articulos = [
         foto: "blends.png",
         descripcion: "El arte de la alquimia emocional: elige tus hierbas para nutrir el alma y equilibrar tus emociones.",
         fecha: "2024-11-25"
+    },
+    {
+        slug: "tofu",
+        titulo: "TOFU: Proteína Serena",
+        categoria: "Ayurveda & Nutrición",
+        foto: "tofu-dorado.png",
+        descripcion: "Descubre cómo preparar el tofu según el Ayurveda para potenciar su energía y digestibilidad.",
+        fecha: "2024-11-15"
+    },
+    {
+        slug: "queso-caju-calabaza",
+        titulo: "Castañas de Cajú & Semillas de Calabaza",
+        categoria: "Ayurveda & Nutrición",
+        foto: "queso-caju.jpeg",
+        descripcion: "Equilibrio perfecto que no inflama y satisface el alma. Aliado del sistema nervioso.",
+        fecha: "2024-10-30"
     }
 ];
 
-// Elementos del DOM
+// Lógica de renderizado (Igual que en el Clean Pack)
 const contenedor = document.getElementById('blog-feed');
 const searchInput = document.getElementById('searchInput');
 const categoryFilter = document.getElementById('categoryFilter');
 const sortOrder = document.getElementById('sortOrder');
 
-// 1. Función para Renderizar Artículos
 function mostrarArticulos(lista) {
+    if (!contenedor) return;
     contenedor.innerHTML = ''; 
 
     if (lista.length === 0) {
@@ -55,7 +79,6 @@ function mostrarArticulos(lista) {
             year: 'numeric', month: 'long', day: 'numeric'
         });
 
-        // Construcción de la ruta de imagen segura
         const tarjeta = `
         <article class="article-card fade-in visible">
             <a href="articulos/${art.slug}/"> 
@@ -97,9 +120,11 @@ function cargarCategorias() {
 }
 
 function filtrarYOrdenarArticulos() {
+    if (!contenedor) return;
+    
     const normalizar = (texto) => texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-    const textoBusqueda = normalizar(searchInput.value);
-    const categoriaSeleccionada = categoryFilter.value;
+    const textoBusqueda = searchInput ? normalizar(searchInput.value) : "";
+    const categoriaSeleccionada = categoryFilter ? categoryFilter.value : "all";
     const orden = sortOrder ? sortOrder.value : 'newest';
 
     let articulosFiltrados = articulos.filter(art => {
