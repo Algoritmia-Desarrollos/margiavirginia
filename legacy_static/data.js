@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "segundo-despertar",
+        titulo: "El Segundo Despertar",
+        categoria: "Ayurveda & Bienestar",
+        foto: "cover.png",
+        descripcion: "Abrazando la Perimenopausia desde el Ayurveda. Una etapa donde el fuego de la juventud se transforma en la luz de la sabiduría.",
+        fecha: "2026-01-16"
+    },
+    {
         slug: "del-estado-de-alerta-al-equilibrio",
         titulo: "Del Estado de Alerta al Equilibrio",
         categoria: "Ayurveda & Bienestar",
@@ -32,22 +40,6 @@ const articulos = [
         foto: "blends.png",
         descripcion: "El arte de la alquimia emocional: elige tus hierbas para nutrir el alma y equilibrar tus emociones.",
         fecha: "2024-11-25"
-    },
-    {
-        slug: "tofu",
-        titulo: "TOFU: El secreto de la 'Proteína de Naturaleza Serena'",
-        categoria: "Ayurveda & Nutrición",
-        foto: "tofu-dorado.png",
-        descripcion: "Descubre cómo preparar el tofu según el Ayurveda para potenciar su energía y digestibilidad.",
-        fecha: "2024-11-15"
-    },
-    {
-        slug: "queso-caju-calabaza",
-        titulo: "Castañas de Cajú & Semillas de Calabaza",
-        categoria: "Ayurveda & Nutrición",
-        foto: "queso-caju.jpeg",
-        descripcion: "Equilibrio perfecto que no inflama y satisface el alma. Aliado del sistema nervioso y rico en minerales.",
-        fecha: "2024-10-30"
     }
 ];
 
