@@ -1,37 +1,41 @@
 import { NextResponse } from 'next/server'
-import pdfParse from 'pdf-parse'
+// Force rebuild
 
 export async function POST(req) {
+  console.log('--- API: extract-pdf STARTED ---')
+  const pdfParse = require('pdf-parse')
   try {
-    // const apiKey = process.env.OPENAI_API_KEY
-    // if (!apiKey) {
-    //   return NextResponse.json({ error: 'OpenAI API Key not configured' }, { status: 500 })
-    // }
-    // const openai = new OpenAI({ apiKey })
-
     const formData = await req.formData()
     const file = formData.get('file')
 
     if (!file) {
+      console.log('Error: No file received')
       return NextResponse.json({ error: 'File is required' }, { status: 400 })
     }
 
-    const buffer = Buffer.from(await file.arrayBuffer())
+    console.log(`File received: ${file.name}, type: ${file.type}, size: ${file.size}`)
+
+    const arrayBuffer = await file.arrayBuffer()
+    const buffer = Buffer.from(arrayBuffer)
+    console.log('Buffer created successfully')
     
     let text = ''
     
     if (file.type === 'application/pdf') {
+      console.log('Parsing PDF...')
       const pdf = await pdfParse(buffer)
+      console.log('PDF Parsed. Text length:', pdf.text.length)
       text = pdf.text
     } else {
-      // Assume text file
+      console.log('Reading as text...')
       text = buffer.toString('utf-8')
     }
 
+    console.log('Returning response...')
     return NextResponse.json({ text })
 
   } catch (error) {
-    console.error('Error extracting PDF:', error)
-    return NextResponse.json({ error: 'Failed to extract PDF' }, { status: 500 })
+    console.error('CRITICAL ERROR in extract-pdf:', error)
+    return NextResponse.json({ error: 'Failed to extract PDF: ' + error.message }, { status: 500 })
   }
 }

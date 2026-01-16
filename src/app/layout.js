@@ -22,6 +22,8 @@ export const metadata = {
   authors: [{ name: 'Virginia González Scherer' }],
   icons: {
     icon: '/favicon.jpeg',
+    shortcut: '/favicon.jpeg',
+    apple: '/favicon.jpeg',
   },
   openGraph: {
     title: 'Virginia González Scherer - Ayurveda & Bienestar',
