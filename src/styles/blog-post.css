@@ -178,7 +178,7 @@
 }
 
 .ingredient-item {
-    padding: 1rem 0;
+    padding: 1rem 1rem;
     border-bottom: 1px solid var(--accent-light);
 }
 
