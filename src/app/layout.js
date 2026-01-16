@@ -38,7 +38,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={`${lato.variable} ${playfair.variable}`}>
+    <html lang="es" className={`${lato.variable} ${playfair.variable}`} suppressHydrationWarning={true}>
       <body>{children}</body>
     </html>
   )

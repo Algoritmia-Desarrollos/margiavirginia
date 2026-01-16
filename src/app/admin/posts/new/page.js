@@ -335,9 +335,24 @@ export default function NewPost() {
             
             <div className="flex flex-col gap-6">
                 {/* Tabs / Options */}
-                <div className="flex gap-6 border-b border-gray-100 pb-4">
-                    <button type="button" className="text-[#BFA06D] font-bold border-b-2 border-[#BFA06D] pb-1 hover:opacity-80 transition-opacity">Crear con IA</button>
-                    <button type="button" onClick={() => fileInputRef.current.click()} className="text-gray-500 hover:text-[#2C2C2C] transition-colors">Subir mi propia foto</button>
+                <div className="flex p-1 bg-gray-100 rounded-xl w-fit">
+                    <button 
+                        type="button" 
+                        onClick={() => {
+                            // Logic to switch tab if needed, currently just visual or handled by UI state if implemented
+                            // Since the original code didn't have state for this, I'll keep it simple but styled
+                        }}
+                        className="px-6 py-2 rounded-lg bg-white shadow-sm text-[#BFA06D] font-bold transition-all"
+                    >
+                        Crear con IA
+                    </button>
+                    <button 
+                        type="button" 
+                        onClick={() => fileInputRef.current.click()} 
+                        className="px-6 py-2 rounded-lg text-gray-500 hover:text-gray-700 font-medium transition-all"
+                    >
+                        Subir mi propia foto
+                    </button>
                     <input 
                         type="file" 
                         ref={fileInputRef} 

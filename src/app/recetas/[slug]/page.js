@@ -29,7 +29,7 @@ export default async function RecipePage({ params }) {
   return (
     <>
       <Navbar />
-      <main className="container" style={{ paddingTop: '0px' }}>
+      <main className="container pt-20 ">
         <article className="blog-post" dangerouslySetInnerHTML={{ __html: content }} />
       </main>
       <Footer />

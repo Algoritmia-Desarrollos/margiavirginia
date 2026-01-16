@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="pt-[75px]">
+      <main className="pt-[0px]">
         <HomeClient initialArticles={articles} />
       </main>
       <Footer />

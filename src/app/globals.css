@@ -2,6 +2,9 @@
    ESTILO PREMIUM WELLNESS - VIRGINIA
    (Versión: Imágenes Completas Adaptables)
    ========================================= */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
 /* ... (tus colores siguen igual) ... */
@@ -216,14 +219,15 @@ body {
 .search-input, .search-select {
     padding: 12px 20px;
     border-radius: 50px;
-    border: 1px solid rgba(255,255,255,0.5);
-    background-color: rgba(255,255,255,0.95);
+    border: 1px solid #E8E6E1; /* Borde más visible */
+    background-color: #ffffff; /* Fondo blanco puro */
     font-family: var(--font-sans);
     font-size: 0.9rem;
     color: var(--text-main);
     outline: none;
     transition: var(--transition);
     width: 100%; /* Ocupan todo el ancho de su celda de grid */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave para dar profundidad */
 }
 
 .search-input { min-width: 0; } /* Reset */

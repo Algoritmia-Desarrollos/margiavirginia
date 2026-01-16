@@ -7,7 +7,7 @@ export default function Recipes() {
   return (
     <>
       <Navbar />
-      <main className="pt-[75px]">
+      <main className="pt-[0px]">
         <RecipesClient initialArticles={articles} />
       </main>
       <Footer />

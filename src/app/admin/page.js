@@ -50,7 +50,7 @@ export default function AdminDashboard() {
           </span>
           <button
             onClick={() => supabase.auth.signOut()}
-            className="text-[#6B7F68] hover:text-[#2C2C2C] font-medium underline decoration-1 underline-offset-4"
+            className="px-5 py-2 rounded-full border border-[#6B7F68] text-[#6B7F68] hover:bg-[#6B7F68] hover:text-white transition-all font-medium text-sm"
           >
             Salir
           </button>
