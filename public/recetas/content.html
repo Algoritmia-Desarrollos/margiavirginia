@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWWX2F70HP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZWWX2F70HP');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas - Virginia González Scherer</title>
+    
+    <link rel="icon" type="image/jpeg" href="../favicon.jpeg">
+    
+    <meta property="og:title" content="Recetas Saludables - Virginia González Scherer">
+    <meta property="og:description" content="Recetas ayurvédicas y saludables para nutrir tu cuerpo y alma.">
+    <meta property="og:image" content="https://www.virginia-bienestar.site/favicon.jpeg">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    
+    <!-- Vercel Web Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KW87W229');</script>
+<!-- End Google Tag Manager -->
+
+
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KW87W229"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <div id="navbar-placeholder"></div>
+
+<header class="hero-section fade-in" id="hero">
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <span class="hero-tag">Cocina Consciente</span>
+            <h1 class="hero-title">Recetas Ayurvédicas</h1>
+            <p class="hero-subtitle">Alimentos que sanan, nutren y equilibran tu energía vital.</p>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar receta..." class="search-input">
+                
+                <select id="categoryFilter" class="search-select">
+                    <option value="all">Todas las categorías</option>
+                    <option value="Almuerzo / Cena">Almuerzo / Cena</option>
+                    <option value="Ayurveda & Nutrición">Ayurveda & Nutrición</option>
+                </select>
+
+                <select id="sortOrder" class="search-select">
+                    <option value="newest">Más recientes</option>
+                    <option value="oldest">Más antiguos</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sortOrder = document.getElementById('sortOrder');
+            const articles = Array.from(document.querySelectorAll('.article-card'));
+            const grid = document.querySelector('.blog-grid');
+
+            function filterAndSortRecipes() {
+                // Función auxiliar para normalizar texto
+                const normalizar = (texto) => {
+                    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+                };
+
+                const searchText = normalizar(searchInput.value);
+                const selectedCategory = categoryFilter.value;
+                const order = sortOrder.value;
+
+                // 1. Filtrar
+                const visibleArticles = articles.filter(article => {
+                    const title = normalizar(article.querySelector('.card-title').textContent);
+                    const excerpt = normalizar(article.querySelector('.card-excerpt').textContent);
+                    const category = article.querySelector('.card-category').textContent;
+
+                    const matchesText = title.includes(searchText) || excerpt.includes(searchText);
+                    const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
+
+                    if (matchesText && matchesCategory) {
+                        article.style.display = '';
+                        return true;
+                    } else {
+                        article.style.display = 'none';
+                        return false;
+                    }
+                });
+
+                // 2. Ordenar (solo los visibles, pero reordenamos todos en el DOM)
+                visibleArticles.sort((a, b) => {
+                    const dateA = new Date(a.dataset.date);
+                    const dateB = new Date(b.dataset.date);
+
+                    if (order === 'newest') {
+                        return dateB - dateA;
+                    } else {
+                        return dateA - dateB;
+                    }
+                });
+
+                // Re-append en orden
+                visibleArticles.forEach(article => grid.appendChild(article));
+            }
+
+            searchInput.addEventListener('input', filterAndSortRecipes);
+            categoryFilter.addEventListener('change', filterAndSortRecipes);
+            sortOrder.addEventListener('change', filterAndSortRecipes);
+        });
+    </script>
+
+    <main class="container">
+        <div class="blog-grid">
+            
+            <!-- Receta 1 -->
+            <article class="article-card fade-in visible" data-date="2025-01-15">
+                <a href="albondigas-arvejas/index.html"> 
+                    <div class="card-img-container">
+                        <img 
+                            src="albondigas-arvejas/cover.png" 
+                            alt="Albóndigas de Arvejas" 
+                            class="card-img"
+                            loading="lazy" 
+                            width="400" 
+                            height="400"
+                            onerror="this.src='../favicon.jpeg'"
+                        > 
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Almuerzo / Cena</span>
+                            <span class="card-date">15 de enero de 2025</span>
+                        </div>
+                        <h3 class="card-title">Albóndigas de Arvejas</h3>
+                        <p class="card-excerpt">Proteína vegetal y claridad mental. Un equilibrio perfecto de vegetales y especias para tu bienestar.</p>
+                        <span class="read-more">Ver receta &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Receta 2 -->
+            <article class="article-card fade-in visible" data-date="2024-12-20">
+                <a href="medallon-quinoa/index.html"> 
+                    <div class="card-img-container">
+                        <img 
+                            src="medallon-quinoa/medallon-quinoa.jpg" 
+                            alt="Medallón de Quinoa y Vegetales" 
+                            class="card-img"
+                            loading="lazy" 
+                            width="400" 
+                            height="400"
+                            onerror="this.src='../favicon.jpeg'"
+                        > 
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Almuerzo / Cena</span>
+                            <span class="card-date">20 de diciembre de 2024</span>
+                        </div>
+                        <h3 class="card-title">Medallón de Quinoa y Vegetales</h3>
+                        <p class="card-excerpt">Una receta tridóshica, ligera y nutritiva. Ideal para equilibrar Vata, Pitta y Kapha sin generar toxinas.</p>
+                        <span class="read-more">Ver receta &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Receta 2: Tofu -->
+            <article class="article-card fade-in visible" data-date="2024-11-15">
+                <a href="../articulos/tofu/index.html"> 
+                    <div class="card-img-container">
+                        <img 
+                            src="../articulos/tofu/tofu-dorado.png" 
+                            alt="Tofu Dorado" 
+                            class="card-img"
+                            loading="lazy" 
+                            width="400" 
+                            height="400"
+                            onerror="this.src='../favicon.jpeg'"
+                        > 
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Ayurveda & Nutrición</span>
+                            <span class="card-date">15 de noviembre de 2024</span>
+                        </div>
+                        <h3 class="card-title">TOFU: El secreto de la "Proteína de Naturaleza Serena"</h3>
+                        <p class="card-excerpt">Descubre cómo preparar el tofu según el Ayurveda para potenciar su energía y digestibilidad.</p>
+                        <span class="read-more">Ver receta &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Receta 3: Queso Cajú -->
+            <article class="article-card fade-in visible" data-date="2024-10-30">
+                <a href="../articulos/queso-caju-calabaza/index.html"> 
+                    <div class="card-img-container">
+                        <img 
+                            src="../articulos/queso-caju-calabaza/queso-caju.png" 
+                            alt="Castañas de Cajú & Semillas de Calabaza" 
+                            class="card-img"
+                            loading="lazy" 
+                            width="400" 
+                            height="400"
+                            onerror="this.src='../favicon.jpeg'"
+                        > 
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Ayurveda & Nutrición</span>
+                            <span class="card-date">30 de octubre de 2024</span>
+                        </div>
+                        <h3 class="card-title">Castañas de Cajú & Semillas de Calabaza</h3>
+                        <p class="card-excerpt">Equilibrio perfecto que no inflama y satisface el alma. Aliado del sistema nervioso y rico en minerales.</p>
+                        <span class="read-more">Ver receta &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+        </div>
+    </main>
+
+     <div id="footer-placeholder"></div>
+
+    <script src="/components/loader.js"></script>
+
+    <script src="../script.js"></script> 
+
+    <!-- Vercel Speed Insights -->
+    <script>
+      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>

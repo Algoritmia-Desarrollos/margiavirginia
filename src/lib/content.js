@@ -6,13 +6,13 @@ export async function getPostContent(slug, type) {
   let filePath
   if (type === 'recipe') {
     // Try recipes folder first
-    filePath = path.join(process.cwd(), 'public', 'recetas', slug, 'index.html')
+    filePath = path.join(process.cwd(), 'public', 'recetas', slug, 'content.html')
     if (!fs.existsSync(filePath)) {
       // Fallback to articulos if not found (some recipes are in articulos)
-      filePath = path.join(process.cwd(), 'public', 'articulos', slug, 'index.html')
+      filePath = path.join(process.cwd(), 'public', 'articulos', slug, 'content.html')
     }
   } else {
-    filePath = path.join(process.cwd(), 'public', 'articulos', slug, 'index.html')
+    filePath = path.join(process.cwd(), 'public', 'articulos', slug, 'content.html')
   }
 
   if (!fs.existsSync(filePath)) {
