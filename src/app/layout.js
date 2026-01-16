@@ -21,9 +21,9 @@ export const metadata = {
   keywords: ['Ayurveda', 'Bienestar', 'Recetas Saludables', 'Alimentación Consciente', 'Virginia González Scherer', 'Nutrición'],
   authors: [{ name: 'Virginia González Scherer' }],
   icons: {
-    icon: '/favicon.jpeg',
-    shortcut: '/favicon.jpeg',
-    apple: '/favicon.jpeg',
+    icon: '/hero.webp',
+    shortcut: '/hero.webp',
+    apple: '/hero.webp',
   },
   openGraph: {
     title: 'Virginia González Scherer - Ayurveda & Bienestar',

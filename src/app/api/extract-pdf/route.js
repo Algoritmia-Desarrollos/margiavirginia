@@ -1,9 +1,22 @@
 import { NextResponse } from 'next/server'
-// Force rebuild
+// Force rebuild 2
 
 export async function POST(req) {
   console.log('--- API: extract-pdf STARTED ---')
-  const pdfParse = require('pdf-parse')
+  
+  let pdfParse
+  try {
+    pdfParse = require('pdf-parse')
+    // Handle "default" export if it exists (ESM interop)
+    if (pdfParse.default) {
+        pdfParse = pdfParse.default
+    }
+    console.log('pdfParse library loaded. Type:', typeof pdfParse)
+  } catch (e) {
+    console.error('Failed to require pdf-parse:', e)
+    return NextResponse.json({ error: 'Server Error: Could not load PDF library' }, { status: 500 })
+  }
+
   try {
     const formData = await req.formData()
     const file = formData.get('file')
