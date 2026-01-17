@@ -578,3 +578,24 @@ ul { list-style: none; }
     .intro { margin-left: 0; border-left: none; padding-left: 0; font-style: italic; }
     .container { padding: 0 1.5rem; }
 }
+/* --- SOBRE MÍ --- */
+.about-content {
+    max-width: 800px;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+.about-text {
+    font-size: 1.15rem;
+    line-height: 2;
+    color: var(--text-main);
+    margin-bottom: 2rem;
+}
+
+.highlight-text {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    margin-top: 3rem;
+    font-style: italic;
+}
