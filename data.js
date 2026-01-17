@@ -41,22 +41,7 @@ const articulos = [
         descripcion: "El arte de la alquimia emocional: elige tus hierbas para nutrir el alma y equilibrar tus emociones.",
         fecha: "2024-11-25"
     },
-    {
-        slug: "tofu",
-        titulo: "TOFU: Proteína Serena",
-        categoria: "Ayurveda & Nutrición",
-        foto: "tofu-dorado.png",
-        descripcion: "Descubre cómo preparar el tofu según el Ayurveda para potenciar su energía y digestibilidad.",
-        fecha: "2024-11-15"
-    },
-    {
-        slug: "queso-caju-calabaza",
-        titulo: "Castañas de Cajú & Semillas de Calabaza",
-        categoria: "Ayurveda & Nutrición",
-        foto: "queso-caju.jpeg",
-        descripcion: "Equilibrio perfecto que no inflama y satisface el alma. Aliado del sistema nervioso.",
-        fecha: "2024-10-30"
-    }
+    
 ];
 
 // Lógica de renderizado (Igual que en el Clean Pack)
