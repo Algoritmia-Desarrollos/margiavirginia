@@ -272,7 +272,6 @@ ul { list-style: none; }
     color: var(--accent-gold);
     margin-bottom: 0.5em;
     font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-title {
@@ -578,7 +577,7 @@ ul { list-style: none; }
     .intro { margin-left: 0; border-left: none; padding-left: 0; font-style: italic; }
     .container { padding: 0 1.5rem; }
 }
-/* --- SOBRE MÍ --- */
+/* --- SOBRE Mï¿½ --- */
 .about-content {
     max-width: 800px;
     margin: 4rem auto;

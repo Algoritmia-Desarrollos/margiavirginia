@@ -44,58 +44,114 @@ const articulos = [
     
 ];
 
-// Lógica de renderizado (Igual que en el Clean Pack)
-const contenedor = document.getElementById('blog-feed');
+const recetas = [
+    {
+        slug: "albondigas-arvejas",
+        titulo: "Albóndigas de Arvejas",
+        categoria: "Almuerzo / Cena",
+        foto: "cover.png",
+        descripcion: "Proteína vegetal y claridad mental. Un equilibrio perfecto de vegetales y especias para tu bienestar.",
+        fecha: "2025-01-15"
+    },
+    {
+        slug: "medallon-quinoa",
+        titulo: "Medallón de Quinoa y Vegetales",
+        categoria: "Almuerzo / Cena",
+        foto: "medallon-quinoa.jpg",
+        descripcion: "Una receta tridóshica, ligera y nutritiva. Ideal para equilibrar Vata, Pitta y Kapha sin generar toxinas.",
+        fecha: "2024-12-20"
+    },
+    {
+        slug: "tofu",
+        titulo: "TOFU: Proteína Serena",
+        categoria: "Ayurveda & Nutrición",
+        foto: "tofu-dorado.png",
+        descripcion: "Descubre cómo preparar el tofu según el Ayurveda para potenciar su energía y digestibilidad.",
+        fecha: "2024-11-15"
+    },
+    {
+        slug: "queso-caju-calabaza",
+        titulo: "Castañas de Cajú & Calabaza",
+        categoria: "Ayurveda & Nutrición",
+        foto: "queso-caju.png",
+        descripcion: "Equilibrio perfecto que no inflama y satisface el alma. Aliado del sistema nervioso.",
+        fecha: "2024-10-30"
+    }
+];
+
+// Lógica de renderizado
+const blogContainer = document.getElementById('blog-feed');
+const recipeContainer = document.getElementById('recipe-feed');
 const searchInput = document.getElementById('searchInput');
 const categoryFilter = document.getElementById('categoryFilter');
 const sortOrder = document.getElementById('sortOrder');
 
-function mostrarArticulos(lista) {
-    if (!contenedor) return;
-    contenedor.innerHTML = ''; 
+// Determinar qué datos y contenedor usar
+let currentData = [];
+let currentContainer = null;
+let pathPrefix = "";
+
+if (blogContainer) {
+    currentData = articulos;
+    currentContainer = blogContainer;
+    pathPrefix = "articulos/";
+} else if (recipeContainer) {
+    currentData = recetas;
+    currentContainer = recipeContainer;
+    pathPrefix = ""; // En recetas/index.html, los links son relativos a la carpeta actual
+}
+
+function mostrarItems(lista) {
+    if (!currentContainer) return;
+    currentContainer.innerHTML = ''; 
 
     if (lista.length === 0) {
-        contenedor.innerHTML = '<p style="text-align:center; grid-column: 1/-1; opacity: 0.7;">No se encontraron artículos con esos criterios.</p>';
+        currentContainer.innerHTML = '<p style="text-align:center; grid-column: 1/-1; opacity: 0.7;">No se encontraron resultados con esos criterios.</p>';
         return;
     }
 
-    lista.forEach(art => {
-        const fechaFormateada = new Date(art.fecha).toLocaleDateString('es-AR', {
+    lista.forEach(item => {
+        const fechaFormateada = new Date(item.fecha).toLocaleDateString('es-AR', {
             year: 'numeric', month: 'long', day: 'numeric'
         });
 
+        // Construir rutas
+        const linkPath = `${pathPrefix}${item.slug}/`;
+        const imgPath = `${pathPrefix}${item.slug}/${item.foto}`;
+
         const tarjeta = `
         <article class="article-card fade-in visible">
-            <a href="articulos/${art.slug}/"> 
+            <a href="${linkPath}"> 
                 <div class="card-img-container">
                     <img 
-                        src="articulos/${art.slug}/${art.foto}" 
-                        alt="${art.titulo}" 
+                        src="${imgPath}" 
+                        alt="${item.titulo}" 
                         class="card-img"
                         loading="lazy" 
                         width="400" 
                         height="400"
+                        onerror="this.src='../favicon.jpeg'"
                     > 
                 </div>
                 <div class="card-content">
                     <div class="card-meta">
-                        <span class="card-category">${art.categoria}</span>
+                        <span class="card-category">${item.categoria}</span>
                         <span class="card-date">${fechaFormateada}</span>
                     </div>
-                    <h3 class="card-title">${art.titulo}</h3>
-                    <p class="card-excerpt">${art.descripcion}</p>
-                    <span class="read-more">Leer artículo completo &rarr;</span>
+                    <h3 class="card-title">${item.titulo}</h3>
+                    <p class="card-excerpt">${item.descripcion}</p>
+                    <span class="read-more">Ver más &rarr;</span>
                 </div>
             </a>
         </article>
         `;
-        contenedor.innerHTML += tarjeta;
+        currentContainer.innerHTML += tarjeta;
     });
 }
 
 function cargarCategorias() {
     if(!categoryFilter) return;
-    const categoriasUnicas = [...new Set(articulos.map(a => a.categoria))];
+    const categoriasUnicas = [...new Set(currentData.map(a => a.categoria))];
     categoriasUnicas.forEach(cat => {
         const option = document.createElement('option');
         option.value = cat;
@@ -104,44 +160,44 @@ function cargarCategorias() {
     });
 }
 
-function filtrarYOrdenarArticulos() {
-    if (!contenedor) return;
+function filtrarYOrdenar() {
+    if (!currentContainer) return;
     
     const normalizar = (texto) => texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
     const textoBusqueda = searchInput ? normalizar(searchInput.value) : "";
     const categoriaSeleccionada = categoryFilter ? categoryFilter.value : "all";
     const orden = sortOrder ? sortOrder.value : 'newest';
 
-    let articulosFiltrados = articulos.filter(art => {
-        const tituloNormalizado = normalizar(art.titulo);
-        const descripcionNormalizada = normalizar(art.descripcion);
+    let itemsFiltrados = currentData.filter(item => {
+        const tituloNormalizado = normalizar(item.titulo);
+        const descripcionNormalizada = normalizar(item.descripcion);
         const coincideTexto = tituloNormalizado.includes(textoBusqueda) || descripcionNormalizada.includes(textoBusqueda);
-        const coincideCategoria = categoriaSeleccionada === 'all' || art.categoria === categoriaSeleccionada;
+        const coincideCategoria = categoriaSeleccionada === 'all' || item.categoria === categoriaSeleccionada;
         return coincideTexto && coincideCategoria;
     });
 
-    articulosFiltrados.sort((a, b) => {
+    itemsFiltrados.sort((a, b) => {
         const fechaA = new Date(a.fecha);
         const fechaB = new Date(b.fecha);
         return orden === 'newest' ? fechaB - fechaA : fechaA - fechaB;
     });
 
-    mostrarArticulos(articulosFiltrados);
+    mostrarItems(itemsFiltrados);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (contenedor) {
+    if (currentContainer) {
         if (categoryFilter) cargarCategorias();
-        filtrarYOrdenarArticulos();
+        filtrarYOrdenar();
         
         let debounceTimer;
         if (searchInput) {
             searchInput.addEventListener('input', () => {
                 clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(filtrarYOrdenarArticulos, 300);
+                debounceTimer = setTimeout(filtrarYOrdenar, 300);
             });
         }
-        if (categoryFilter) categoryFilter.addEventListener('change', filtrarYOrdenarArticulos);
-        if (sortOrder) sortOrder.addEventListener('change', filtrarYOrdenarArticulos);
+        if (categoryFilter) categoryFilter.addEventListener('change', filtrarYOrdenar);
+        if (sortOrder) sortOrder.addEventListener('change', filtrarYOrdenar);
     }
 });

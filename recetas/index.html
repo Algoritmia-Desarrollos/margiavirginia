@@ -31,8 +31,6 @@
                 <input type="text" id="searchInput" placeholder="Buscar receta..." class="search-input">
                 <select id="categoryFilter" class="search-select">
                     <option value="all">Todas las categorías</option>
-                    <option value="Almuerzo / Cena">Almuerzo / Cena</option>
-                    <option value="Ayurveda & Nutrición">Ayurveda & Nutrición</option>
                 </select>
                 <select id="sortOrder" class="search-select">
                     <option value="newest">Más recientes</option>
@@ -43,118 +41,13 @@
     </header>
 
     <main class="container">
-        <div class="blog-grid">
-            
-            <article class="article-card fade-in visible" data-date="2025-01-15">
-                <a href="albondigas-arvejas/index.html"> 
-                    <div class="card-img-container">
-                        <img src="albondigas-arvejas/cover.png" alt="Albóndigas de Arvejas" class="card-img" loading="lazy" onerror="this.src='../favicon.jpeg'"> 
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="card-category">Almuerzo / Cena</span>
-                            <span class="card-date">15 de enero de 2025</span>
-                        </div>
-                        <h3 class="card-title">Albóndigas de Arvejas</h3>
-                        <p class="card-excerpt">Proteína vegetal y claridad mental. Un equilibrio perfecto de vegetales y especias para tu bienestar.</p>
-                        <span class="read-more">Ver receta &rarr;</span>
-                    </div>
-                </a>
-            </article>
-
-            <article class="article-card fade-in visible" data-date="2024-12-20">
-                <a href="medallon-quinoa/index.html"> 
-                    <div class="card-img-container">
-                        <img src="medallon-quinoa/medallon-quinoa.jpg" alt="Medallón de Quinoa" class="card-img" loading="lazy"> 
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="card-category">Almuerzo / Cena</span>
-                            <span class="card-date">20 de diciembre de 2024</span>
-                        </div>
-                        <h3 class="card-title">Medallón de Quinoa y Vegetales</h3>
-                        <p class="card-excerpt">Una receta tridóshica, ligera y nutritiva. Ideal para equilibrar Vata, Pitta y Kapha sin generar toxinas.</p>
-                        <span class="read-more">Ver receta &rarr;</span>
-                    </div>
-                </a>
-            </article>
-
-            <article class="article-card fade-in visible" data-date="2024-11-15">
-                <a href="../articulos/tofu/index.html"> 
-                    <div class="card-img-container">
-                        <img src="../recetas/tofu/tofu-dorado.png" alt="Tofu Dorado" class="card-img" loading="lazy"> 
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="card-category">Ayurveda & Nutrición</span>
-                            <span class="card-date">15 de noviembre de 2024</span>
-                        </div>
-                        <h3 class="card-title">TOFU: Proteína Serena</h3>
-                        <p class="card-excerpt">Descubre cómo preparar el tofu según el Ayurveda para potenciar su energía y digestibilidad.</p>
-                        <span class="read-more">Ver receta &rarr;</span>
-                    </div>
-                </a>
-            </article>
-
-            <article class="article-card fade-in visible" data-date="2024-10-30">
-                <a href="../articulos/queso-caju-calabaza/index.html"> 
-                    <div class="card-img-container">
-                        <img src="../recetas/queso-caju-calabaza/queso-caju.png" alt="Queso Cajú" class="card-img" loading="lazy"> 
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="card-category">Ayurveda & Nutrición</span>
-                            <span class="card-date">30 de octubre de 2024</span>
-                        </div>
-                        <h3 class="card-title">Castañas de Cajú & Calabaza</h3>
-                        <p class="card-excerpt">Equilibrio perfecto que no inflama y satisface el alma. Aliado del sistema nervioso.</p>
-                        <span class="read-more">Ver receta &rarr;</span>
-                    </div>
-                </a>
-            </article>
-        </div>
+        <div class="blog-grid" id="recipe-feed"></div>
     </main>
 
     <div id="footer-placeholder"></div>
+    
+    <script src="../data.js"></script>
     <script src="/components/loader.js"></script>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sortOrder = document.getElementById('sortOrder');
-            const searchInput = document.getElementById('searchInput');
-            const categoryFilter = document.getElementById('categoryFilter');
-            const grid = document.querySelector('.blog-grid');
-            const articles = Array.from(document.querySelectorAll('.article-card'));
-
-            function filterAndSortRecipes() {
-                const normalizar = (t) => t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-                const searchText = normalizar(searchInput.value);
-                const selectedCategory = categoryFilter.value;
-                const order = sortOrder.value;
-
-                const visibleArticles = articles.filter(article => {
-                    const title = normalizar(article.querySelector('.card-title').textContent);
-                    const category = article.querySelector('.card-category').textContent;
-                    const matchesText = title.includes(searchText);
-                    const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
-                    
-                    article.style.display = (matchesText && matchesCategory) ? '' : 'none';
-                    return matchesText && matchesCategory;
-                });
-
-                visibleArticles.sort((a, b) => {
-                    const dateA = new Date(a.dataset.date);
-                    const dateB = new Date(b.dataset.date);
-                    return order === 'newest' ? dateB - dateA : dateA - dateB;
-                });
-
-                visibleArticles.forEach(article => grid.appendChild(article));
-            }
-
-            searchInput.addEventListener('input', filterAndSortRecipes);
-            categoryFilter.addEventListener('change', filterAndSortRecipes);
-            sortOrder.addEventListener('change', filterAndSortRecipes);
-        });
-    </script>
 </body>
 </html>
