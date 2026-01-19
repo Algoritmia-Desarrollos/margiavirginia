@@ -2,12 +2,20 @@
 
 const articulos = [
     {
+        slug: "ritual-piel-radiante",
+        titulo: "El Ritual Ayurvédico para una Piel Radiante",
+        categoria: "Ayurveda & Bienestar",
+        foto: "ritual-piel.jpg",
+        descripcion: "Belleza que nace desde tu interior. Descubre cómo tener una piel radiante según el Ayurveda.",
+        fecha: "2026-01-19"
+    },
+    {
         slug: "segundo-despertar",
         titulo: "El Segundo Despertar",
         categoria: "Ayurveda & Bienestar",
         foto: "cover.png",
         descripcion: "Una etapa donde el fuego de la juventud se transforma en la luz de la sabiduría. Abrazando la perimenopausia desde el Ayurveda.",
-        fecha: "2025-01-20"
+        fecha: "2026-01-17"
     },
     {
         slug: "del-estado-de-alerta-al-equilibrio",
@@ -15,7 +23,7 @@ const articulos = [
         categoria: "Ayurveda & Bienestar",
         foto: "cover.png",
         descripcion: "El cortisol alto no es tu enemigo, es tu cuerpo intentando protegerte. Descubre cómo devolverle la calma con Ayurveda.",
-        fecha: "2025-01-15"
+        fecha: "2026-01-15"
     },
     {
         slug: "rutina-5-pasos",
@@ -23,7 +31,7 @@ const articulos = [
         categoria: "Ayurveda & Bienestar",
         foto: "cover.png",
         descripcion: "Para equilibrar tu sistema nervioso, nutrir tu Agni y vivir con Naturaleza Serena.",
-        fecha: "2025-01-14"
+        fecha: "2026-01-12"
     },
     {
         slug: "nutrir-tu-mente",
@@ -31,7 +39,7 @@ const articulos = [
         categoria: "Nutrición",
         foto: "1.jpeg",
         descripcion: "Descubre los alimentos que aportan Prana y Ojas para tener claridad mental y paz interior.",
-        fecha: "2024-12-10"
+        fecha: "2026-01-10"
     },
     {
         slug: "guia-blends-ayurvedicos",
@@ -39,7 +47,7 @@ const articulos = [
         categoria: "Ayurveda",
         foto: "blends.png",
         descripcion: "El arte de la alquimia emocional: elige tus hierbas para nutrir el alma y equilibrar tus emociones.",
-        fecha: "2024-11-25"
+        fecha: "2026-01-06"
     }
 ];
 
@@ -66,7 +74,7 @@ const recetas = [
         categoria: "Almuerzo / Cena",
         foto: "cover.png",
         descripcion: "Proteína vegetal y claridad mental. Un equilibrio perfecto de vegetales y especias para tu bienestar.",
-        fecha: "2025-01-15"
+        fecha: "2026-01-14"
     },
     {
         slug: "medallon-quinoa",
@@ -74,7 +82,7 @@ const recetas = [
         categoria: "Almuerzo / Cena",
         foto: "medallon-quinoa.jpg",
         descripcion: "Una receta tridóshica, ligera y nutritiva. Ideal para equilibrar Vata, Pitta y Kapha sin generar toxinas.",
-        fecha: "2024-12-20"
+        fecha: "2026-01-12"
     },
     {
         slug: "tofu",
@@ -82,7 +90,7 @@ const recetas = [
         categoria: "Ayurveda & Nutrición",
         foto: "tofu-dorado.png",
         descripcion: "Descubre cómo preparar el tofu según el Ayurveda para potenciar su energía y digestibilidad.",
-        fecha: "2024-11-15"
+        fecha: "2026-01-10"
     },
     {
         slug: "queso-caju-calabaza",
@@ -90,7 +98,7 @@ const recetas = [
         categoria: "Ayurveda & Nutrición",
         foto: "queso-caju.png",
         descripcion: "Equilibrio perfecto que no inflama y satisface el alma. Aliado del sistema nervioso.",
-        fecha: "2024-10-30"
+        fecha: "2026-01-08"
     }
 ];
 
