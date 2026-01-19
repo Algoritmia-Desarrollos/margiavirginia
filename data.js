@@ -40,11 +40,26 @@ const articulos = [
         foto: "blends.png",
         descripcion: "El arte de la alquimia emocional: elige tus hierbas para nutrir el alma y equilibrar tus emociones.",
         fecha: "2024-11-25"
-    },
-    
+    }
 ];
 
 const recetas = [
+    {
+        slug: "budin-coco-almendras",
+        titulo: "Budín Coco Almendras y Manzana",
+        categoria: "Desayuno / Merienda",
+        foto: "budin-coco.jpg",
+        descripcion: "Budín nutritivo, ligero y saciante. Sin gluten y antiinflamatorio.",
+        fecha: "2026-01-19"
+    },
+    {
+        slug: "hummus-remolacha",
+        titulo: "Hummus de Remolacha y Lentejas",
+        categoria: "Ayurveda & Nutrición",
+        foto: "hummus-remolacha.jpg",
+        descripcion: "Alquimia de Belleza y Nutrición Celular. Una receta que es pura medicina estética ingerida.",
+        fecha: "2026-01-19"
+    },
     {
         slug: "albondigas-arvejas",
         titulo: "Albóndigas de Arvejas",
@@ -111,9 +126,12 @@ function mostrarItems(lista) {
     }
 
     lista.forEach(item => {
-        const fechaFormateada = new Date(item.fecha).toLocaleDateString('es-AR', {
-            year: 'numeric', month: 'long', day: 'numeric'
-        });
+        let fechaFormateada = "";
+        if (item.fecha) {
+            fechaFormateada = new Date(item.fecha).toLocaleDateString('es-AR', {
+                year: 'numeric', month: 'long', day: 'numeric'
+            });
+        }
 
         // Construir rutas
         const linkPath = `${pathPrefix}${item.slug}/`;
@@ -179,6 +197,8 @@ function filtrarYOrdenar() {
     itemsFiltrados.sort((a, b) => {
         const fechaA = new Date(a.fecha);
         const fechaB = new Date(b.fecha);
+        // Safety check for invalid dates
+        if (isNaN(fechaA) || isNaN(fechaB)) return 0;
         return orden === 'newest' ? fechaB - fechaA : fechaA - fechaB;
     });
 
