@@ -53,6 +53,14 @@ const articulos = [
 
 const recetas = [
     {
+        slug: "kitchari-purificante",
+        titulo: "Kitchari Purificante con Vegetales",
+        categoria: "Almuerzo / Cena",
+        foto: "kitchari-purificante.png",
+        descripcion: "El Reset Total, alimento medicina por excelencia del Ayurveda. Resetea tu sistema digestivo.",
+        fecha: "2026-01-21"
+    },
+    {
         slug: "budin-coco-almendras",
         titulo: "Budín Coco Almendras y Manzana",
         categoria: "Desayuno / Merienda",
