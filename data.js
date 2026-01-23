@@ -48,6 +48,14 @@ const articulos = [
         foto: "blends.png",
         descripcion: "El arte de la alquimia emocional: elige tus hierbas para nutrir el alma y equilibrar tus emociones.",
         fecha: "2026-01-06"
+    },
+    {
+        slug: "especias-farmacia-natural",
+        titulo: "Las Especias, Tu Farmacia Natural",
+        categoria: "Ayurveda & Nutrición",
+        foto: "especias-farmacia-natural.png",
+        descripcion: "Descubre cómo las especias activan la digestión, equilibran los doshas y fortalecen el metabolismo.",
+        fecha: "2026-01-23"
     }
 ];
 
@@ -107,6 +115,22 @@ const recetas = [
         foto: "queso-caju.png",
         descripcion: "Equilibrio perfecto que no inflama y satisface el alma. Aliado del sistema nervioso.",
         fecha: "2026-01-08"
+    },
+    {
+        slug: "bolitas-vitalidad",
+        titulo: "Bolitas de Vitalidad",
+        categoria: "Ayurveda & Nutrición",
+        foto: "bolitas-vitalidad.png",
+        descripcion: "Una Dulce Medicina. Snack perfecto para calmar el sistema nervioso y nutrir los tejidos profundos.",
+        fecha: "2026-01-23"
+    },
+    {
+        slug: "pesto-albahaca",
+        titulo: "Pesto de Albahaca y Pistachos",
+        categoria: "Ayurveda & Nutrición",
+        foto: "pesto-albahaca.png",
+        descripcion: "Nutrición y Sabor Antiinflamatorio. Una mezcla diseñada para nutrir tus tejidos y calmar tu sistema nervioso.",
+        fecha: "2026-01-23"
     }
 ];
 
