@@ -61,6 +61,22 @@ const articulos = [
 
 const recetas = [
     {
+        slug: "barritas-rejuvenecedoras",
+        titulo: "Barritas Rejuvenecedoras de Damascos y Coco",
+        categoria: "Ayurveda & Nutrición",
+        foto: "barritas-rejuvenecedoras.png",
+        descripcion: "Un snack antiinflamatorio, nutritivo y equilibrante. En Ayurveda las consideramos un Rasayana.",
+        fecha: "2026-01-27"
+    },
+    {
+        slug: "snacks-piel-radiante",
+        titulo: "5 Días de Snacks para una Piel Radiante",
+        categoria: "Ayurveda & Belleza",
+        foto: "snacks-piel-radiante.png",
+        descripcion: "La piel es el espejo de nuestra salud digestiva: el mejor cosmético es el que se come.",
+        fecha: "2026-01-27"
+    },
+    {
         slug: "kitchari-purificante",
         titulo: "Kitchari Purificante con Vegetales",
         categoria: "Almuerzo / Cena",
