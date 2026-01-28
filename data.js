@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "reset-metabolismo",
+        titulo: "¿Te sientes inflamada y pesada?",
+        categoria: "Ayurveda & Bienestar",
+        foto: "reset-metabolismo.png",
+        descripcion: "Si sientes que tu metabolismo está lento, es una señal de que tu fuego digestivo necesita un respiro. Aprende a resetearlo en 4 pasos.",
+        fecha: "2026-01-28"
+    },
+    {
         slug: "ritual-piel-radiante",
         titulo: "El Ritual Ayurvédico para una Piel Radiante",
         categoria: "Ayurveda & Bienestar",
