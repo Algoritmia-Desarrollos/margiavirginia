@@ -69,6 +69,14 @@ const articulos = [
 
 const recetas = [
     {
+        slug: "budin-resplandor-vital",
+        titulo: "Budín \"Resplandor Vital\"",
+        categoria: "Ayurveda & Nutrición",
+        foto: "budin-resplandor-vital.png",
+        descripcion: "Este budín es una caricia para el sistema digestivo y un combustible de belleza para tu piel.",
+        fecha: "2026-02-03"
+    },
+    {
         slug: "barritas-rejuvenecedoras",
         titulo: "Barritas Rejuvenecedoras de Damascos y Coco",
         categoria: "Ayurveda & Nutrición",

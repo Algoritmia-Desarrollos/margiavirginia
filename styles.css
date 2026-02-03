@@ -73,7 +73,7 @@ ul { list-style: none; }
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1101; /* Fix: Ensure navbar is above mobile menu (1050) */
     padding: 1.5rem 0;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -171,6 +171,7 @@ ul { list-style: none; }
     cursor: pointer;
     padding: 0;
     z-index: 1100;
+    position: relative; /* Fix: Ensure it stays above mobile menu */
 }
 
 .hamburger span {
@@ -203,7 +204,7 @@ ul { list-style: none; }
     align-items: center;
     gap: 2rem;
     transform: translateX(100%);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.2s ease-out;
 }
 
 .mobile-menu.open { transform: translateX(0); }
@@ -620,10 +621,44 @@ ul { list-style: none; }
     margin-bottom: 2rem;
 }
 
-.highlight-text {
+
+    .highlight-text {
     font-family: var(--font-serif);
     font-size: 1.5rem;
     color: var(--accent-gold);
     margin-top: 3rem;
     font-style: italic;
+}
+
+/* --- MOBILE BLOG POST FIXES --- */
+@media (max-width: 768px) {
+    .ingredient-list {
+        padding: 1.5rem; 
+        margin: 1.5rem 0;
+    }
+    
+    .post-header h1 {
+        font-size: 2rem;
+    }
+
+    .post-content {
+        text-align: left; /* Keep body text readable */
+    }
+    
+    .intro {
+        font-size: 1.1rem;
+        /* Restore border for consistency but smaller */
+        border-left: 2px solid var(--accent-gold);
+        padding-left: 1rem;
+        font-style: normal;
+        margin-left: 0.5rem;
+    }
+
+    .food-grid {
+        gap: 1rem;
+    }
+
+    .food-item {
+        padding: 1.5rem;
+    }
 }
