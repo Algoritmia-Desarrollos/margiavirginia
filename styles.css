@@ -165,7 +165,7 @@ ul { list-style: none; }
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
-    height: 25px;
+    height: 30px;
     background: transparent;
     border: none;
     cursor: pointer;
