@@ -164,8 +164,8 @@ ul { list-style: none; }
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -175,7 +175,7 @@ ul { list-style: none; }
 }
 
 .hamburger span {
-    width: 30px;
+    width: 25px;
     height: 2px;
     background: var(--text-title);
     border-radius: 10px;
