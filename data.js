@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "guia-rasayana",
+        titulo: "Guía Rasayana: El camino para recuperar tu esencia y vitalidad celular",
+        categoria: "Ayurveda & Bienestar",
+        foto: "rasayana.jpg",
+        descripcion: "Rasayana es la terapia de rejuvenecimiento por excelencia del Ayurveda. Descubre los 3 pilares según tu Dosha.",
+        fecha: "2026-02-06"
+    },
+    {
         slug: "reset-metabolismo",
         titulo: "¿Te sientes inflamada y pesada?",
         categoria: "Ayurveda & Bienestar",
