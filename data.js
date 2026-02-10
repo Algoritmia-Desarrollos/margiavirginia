@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "viajar-sin-perder-centro",
+        titulo: "El Arte de Viajar sin Perder el Centro",
+        categoria: "Ayurveda & Bienestar",
+        foto: "viajar-equilibrio.png",
+        descripcion: "Viajar es una de las experiencias más enriquecedoras, pero para nuestro cuerpo representa un desafío de adaptación constante. Aprende a mantener tu equilibrio.",
+        fecha: "2026-02-09"
+    },
+    {
         slug: "guia-rasayana",
         titulo: "Guía Rasayana: El camino para recuperar tu esencia y vitalidad celular",
         categoria: "Ayurveda & Bienestar",
