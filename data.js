@@ -197,24 +197,11 @@ let pathPrefix = "";
     if (blogContainer) {
         currentData = articulos;
         currentContainer = blogContainer;
-        pathPrefix = "articulos/";
+        pathPrefix = "/articulos/";
     } else if (recipeContainer) {
         currentData = recetas;
         currentContainer = recipeContainer;
-        // Check if we are in the root directory (homepage) or in a subdirectory
-        if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html')) {
-             // Simple check: if we are at root level, we need to prepend 'recetas/'
-             // But wait, if we are at /recetas/index.html, we also end with / or index.html
-             // Let's check if 'recetas' is in the path.
-             if (window.location.pathname.includes('/recetas/')) {
-                 pathPrefix = ""; 
-             } else {
-                 pathPrefix = "recetas/";
-             }
-        } else {
-             // Fallback
-             pathPrefix = "recetas/";
-        }
+        pathPrefix = "/recetas/";
     }
 
 function mostrarItems(lista) {
@@ -249,7 +236,7 @@ function mostrarItems(lista) {
                         loading="lazy" 
                         width="400" 
                         height="400"
-                        onerror="this.src='../favicon.jpeg'"
+                        onerror="this.src='/favicon.jpeg'"
                     > 
                 </div>
                 <div class="card-content">
