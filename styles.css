@@ -601,13 +601,13 @@ ul { list-style: none; }
 
 /* --- RESPONSIVE FINAL --- */
 @media (max-width: 768px) {
-    .hero-section { padding: 4rem 1rem; text-align: left; align-items: flex-start; }
-    .hero-content { margin: 0; }
+    .hero-section { padding: 4rem 1rem; text-align: center; align-items: center; }
+    .hero-content { margin: 0 auto; }
     .food-grid { grid-template-columns: 1fr; }
-    .intro { margin-left: 0; border-left: none; padding-left: 0; font-style: italic; }
-    .container { padding: 0 1.5rem; }
+    /* .intro { margin: 0 auto; text-align: center; border-left: none; padding: 0; font-style: italic; } */
+    .container { padding: 0 1.5rem; text-align: center; }
 }
-/* --- SOBRE M� --- */
+/* --- SOBRE M --- */
 .about-content {
     max-width: 800px;
     margin: 4rem auto;
@@ -642,16 +642,17 @@ ul { list-style: none; }
     }
 
     .post-content {
-        text-align: left; /* Keep body text readable */
+        text-align: center; /* Center everything as requested */
     }
     
     .intro {
         font-size: 1.1rem;
-        /* Restore border for consistency but smaller */
-        border-left: 2px solid var(--accent-gold);
-        padding-left: 1rem;
+        border-left: none; /* Remove border for centered layout */
+        padding-left: 0;
         font-style: normal;
-        margin-left: 0.5rem;
+        margin: 0 auto; /* Center the block */
+        text-align: center; /* Center the text */
+        max-width: 90%; /* Prevent full width for better reading if centered */
     }
 
     .food-grid {
