@@ -85,6 +85,14 @@ const articulos = [
 
 const recetas = [
     {
+        slug: "equilibrio-quinoa",
+        titulo: "El Poder de la Quinoa en el Equilibrio Integral",
+        categoria: "Almuerzo / Cena",
+        foto: "equilibrio-quinoa.webp",
+        descripcion: "La quinoa es mucho más que un grano; en el Ayurveda se valora como un alimento 'tridóshico' que equilibra a todas las constituciones.",
+        fecha: "2026-02-16"
+    },
+    {
         slug: "budin-resplandor-vital",
         titulo: "Budín \"Resplandor Vital\"",
         categoria: "Ayurveda & Nutrición",
