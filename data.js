@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "tiroides-equilibrio-integral",
+        titulo: "Tiroides y Equilibrio Integral",
+        categoria: "Ayurveda & Bienestar",
+        foto: "tiroides.webp",
+        descripcion: "¿Sentís que tu energía se agota o que tu metabolismo está fuera de control? Descubrí cómo el Ayurveda entiende la tiroides como el termostato de tu fuego interno (Agni) y cómo sanarla desde la raíz.",
+        fecha: "2026-02-20"
+    },
+    {
         slug: "viajar-sin-perder-centro",
         titulo: "El Arte de Viajar sin Perder el Centro",
         categoria: "Ayurveda & Bienestar",
