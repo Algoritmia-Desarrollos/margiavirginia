@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "sistema-linfatico-equilibrio-integral",
+        titulo: "Sistema Linfático y Equilibrio Integral",
+        categoria: "Ayurveda & Bienestar",
+        foto: "sistema_linfatico.png",
+        descripcion: "Limpiando las aguas internas. El sistema linfático es el gran héroe invisible: es nuestra red de drenaje, limpieza y defensa.",
+        fecha: "2026-02-27"
+    },
+    {
         slug: "tiroides-equilibrio-integral",
         titulo: "Tiroides y Equilibrio Integral",
         categoria: "Ayurveda & Bienestar",
