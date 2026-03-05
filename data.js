@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "el-alimento-como-medicina-emocional",
+        titulo: "El Alimento como Medicina Emocional",
+        categoria: "Ayurveda & Nutrición",
+        foto: "alimento-medicina-emocional.png",
+        descripcion: "La relación entre lo que ingerimos y cómo nos sentimos es profunda; no solo alimentamos el cuerpo, sino también la mente y el espíritu. Un Camino hacia el Equilibrio Integral.",
+        fecha: "2026-03-05"
+    },
+    {
         slug: "sistema-linfatico-equilibrio-integral",
         titulo: "Sistema Linfático y Equilibrio Integral",
         categoria: "Ayurveda & Bienestar",
