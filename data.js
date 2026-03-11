@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "tu-plato-es-el-espejo-de-tu-sentir",
+        titulo: "Tu plato es el espejo de tu sentir",
+        categoria: "Ayurveda & Nutrición",
+        foto: "plato-espejo.png",
+        descripcion: "En Ayurveda, la alimentación no se rige por tendencias de temporada ni por contar calorías. Se rige por un diálogo profundo: ¿Cómo te sientes hoy?",
+        fecha: "2026-03-11"
+    },
+    {
         slug: "el-alimento-como-medicina-emocional",
         titulo: "El Alimento como Medicina Emocional",
         categoria: "Ayurveda & Nutrición",
