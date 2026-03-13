@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "la-inteligencia-de-las-hormonas",
+        titulo: "La Inteligencia de las Hormonas",
+        categoria: "Ayurveda & Nutrición",
+        foto: "inteligencia-hormonas.png",
+        descripcion: "En la mirada de Ayurveda, las hormonas no son mensajeros aislados, sino el reflejo fiel de nuestro estado interno. Cuando hablamos de salud hormonal, hablamos de equilibrio integral.",
+        fecha: "2026-03-13"
+    },
+    {
         slug: "tu-plato-es-el-espejo-de-tu-sentir",
         titulo: "Tu plato es el espejo de tu sentir",
         categoria: "Ayurveda & Nutrición",
