@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estrategia de Creativos — Fransa Negocios Inmobiliarios</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f9; color: #1a1a2e; font-size: 13px; line-height: 1.6; }
+
+  .cover { background: #0D1B2A; color: white; padding: 60px 60px 50px; position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; right: -80px; bottom: -80px; width: 350px; height: 350px; border-radius: 50%; background: rgba(201,163,83,0.06); }
+  .cover::after  { content: ''; position: absolute; right: 60px; top: -40px; width: 180px; height: 180px; border-radius: 50%; background: rgba(201,163,83,0.04); }
+  .cover-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #C9A353; margin-bottom: 14px; font-weight: 700; }
+  .cover h1 { font-size: 34px; font-weight: 800; line-height: 1.15; margin-bottom: 10px; }
+  .cover h1 span { color: #C9A353; }
+  .cover-sub { font-size: 13px; color: #7a8fa6; margin-top: 6px; }
+  .cover-meta { margin-top: 32px; display: flex; gap: 36px; }
+  .cm { text-align: left; }
+  .cm .num { font-size: 28px; font-weight: 800; color: #C9A353; }
+  .cm .lbl { font-size: 10px; color: #7a8fa6; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* INSIGHTS BAR */
+  .insights { background: #1a2a3a; padding: 28px 60px; border-bottom: 1px solid #243447; }
+  .insights h2 { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #C9A353; margin-bottom: 16px; font-weight: 700; }
+  .insights-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .insight-box { background: rgba(201,163,83,0.07); border: 1px solid rgba(201,163,83,0.2); border-radius: 8px; padding: 14px; }
+  .insight-box .stat { font-size: 22px; font-weight: 800; color: #C9A353; }
+  .insight-box .stat-label { font-size: 11px; color: #94a3b8; margin-top: 2px; line-height: 1.4; }
+
+  /* INTRO */
+  .intro { background: white; padding: 32px 60px; border-bottom: 1px solid #e8ecf0; }
+  .intro h2 { font-size: 15px; color: #0D1B2A; margin-bottom: 10px; font-weight: 700; }
+  .intro p { color: #4a5568; font-size: 13px; max-width: 800px; line-height: 1.8; }
+  .method-grid { display: flex; gap: 14px; margin-top: 20px; }
+  .method-box { flex: 1; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; }
+  .method-box .lv { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #C9A353; margin-bottom: 3px; }
+  .method-box .ti { font-size: 12px; font-weight: 700; color: #0D1B2A; margin-bottom: 3px; }
+  .method-box .de { font-size: 11px; color: #718096; }
+
+  .section-divider { height: 5px; background: linear-gradient(90deg, #C9A353 0%, #0D1B2A 60%); }
+
+  /* CAMPAIGN */
+  .campaign { margin: 28px 36px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+  .campaign-header { padding: 22px 30px; display: flex; align-items: flex-start; gap: 18px; }
+  .campaign-header.c1 { background: linear-gradient(135deg, #0D1B2A 0%, #152535 100%); }
+  .campaign-header.c2 { background: linear-gradient(135deg, #1a3040 0%, #0d2030 100%); }
+  .campaign-header.c3 { background: linear-gradient(135deg, #251535 0%, #1a0d28 100%); }
+  .campaign-num { width: 42px; height: 42px; border-radius: 50%; background: rgba(201,163,83,0.15); border: 2px solid #C9A353; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; color: #C9A353; flex-shrink: 0; }
+  .campaign-info h2 { font-size: 17px; font-weight: 800; color: white; margin-bottom: 5px; }
+  .objective-badge { display: inline-block; background: rgba(201,163,83,0.2); border: 1px solid #C9A353; color: #C9A353; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 6px; }
+  .campaign-info .audience { font-size: 11px; color: #7a8fa6; }
+  .campaign-body { background: white; }
+
+  /* ADSET */
+  .adset { border-bottom: 1px solid #eef0f4; padding: 26px 30px; }
+  .adset:last-child { border-bottom: none; }
+  .adset-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+  .adset-icon { width: 38px; height: 38px; border-radius: 10px; background: #f0f4f8; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .adset-info h3 { font-size: 13px; font-weight: 700; color: #0D1B2A; line-height: 1.4; }
+  .adset-info p { font-size: 11px; color: #718096; margin-top: 3px; line-height: 1.6; }
+  .awareness-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 9px; border-radius: 4px; margin-top: 6px; }
+  .aw-cold { background: #dbeafe; color: #1d4ed8; }
+  .aw-warm { background: #fef3c7; color: #92400e; }
+  .aw-hot  { background: #dcfce7; color: #166534; }
+
+  /* CARDS */
+  .cards-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; }
+  .card-top { padding: 10px 11px 7px; display: flex; align-items: center; justify-content: space-between; }
+  .card-num { width: 22px; height: 22px; border-radius: 50%; background: #0D1B2A; color: white; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  .format-badge { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 7px; border-radius: 4px; }
+  .fmt-reel   { background: #fce7f3; color: #9d174d; }
+  .fmt-carru  { background: #ede9fe; color: #5b21b6; }
+  .fmt-static { background: #e0f2fe; color: #0369a1; }
+  .fmt-video  { background: #fef3c7; color: #92400e; }
+
+  .card-body { padding: 0 11px 11px; }
+  .card-angle { font-size: 10px; font-weight: 700; color: #C9A353; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .card-title { font-size: 12px; font-weight: 700; color: #0D1B2A; margin-bottom: 6px; line-height: 1.4; }
+  .card-desc { font-size: 11px; color: #4a5568; line-height: 1.65; }
+
+  .card-hook { margin-top: 9px; background: #0D1B2A; border-radius: 7px; padding: 8px 10px; }
+  .hook-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #C9A353; margin-bottom: 3px; }
+  .hook-text { font-size: 10px; color: #cbd5e1; font-style: italic; line-height: 1.55; }
+
+  .card-tip { margin-top: 7px; background: #f0fdf4; border-left: 3px solid #22c55e; border-radius: 0 5px 5px 0; padding: 6px 8px; }
+  .tip-label { font-size: 9px; font-weight: 700; color: #166534; margin-bottom: 1px; }
+  .tip-text { font-size: 10px; color: #166534; line-height: 1.4; }
+
+  .card-cta { margin-top: 7px; font-size: 10px; color: #059669; font-weight: 700; }
+  .card-cta::before { content: '→ CTA WhatsApp: '; }
+
+  /* FOOTER */
+  .footer { background: #0D1B2A; color: #7a8fa6; text-align: center; padding: 24px; font-size: 11px; margin-top: 28px; }
+  .footer strong { color: #C9A353; }
+
+  /* KEY INSIGHT CALLOUT */
+  .insight-callout { margin: 0 30px 20px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 12px 16px; display: flex; gap: 10px; align-items: flex-start; }
+  .insight-callout .icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .insight-callout p { font-size: 11px; color: #78350f; line-height: 1.6; }
+  .insight-callout strong { color: #92400e; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">Estrategia Publicitaria · Meta Ads · 2026</div>
+  <h1>Plan de Creativos<br><span>Fransa Negocios Inmobiliarios</span></h1>
+  <div class="cover-sub">Basado en análisis de la cuenta + investigación de los anuncios inmobiliarios que mejor convierten a nivel global y en LATAM</div>
+  <div class="cover-meta">
+    <div class="cm"><div class="num">3</div><div class="lbl">Campañas</div></div>
+    <div class="cm"><div class="num">8</div><div class="lbl">Conjuntos de anuncios</div></div>
+    <div class="cm"><div class="num">40</div><div class="lbl">Ideas de creativos</div></div>
+    <div class="cm"><div class="num">100%</div><div class="lbl">WhatsApp conversión</div></div>
+  </div>
+</div>
+
+<!-- INSIGHTS DE INVESTIGACIÓN -->
+<div class="insights">
+  <h2>Lo que dice la investigación — Por qué estos creativos funcionan</h2>
+  <div class="insights-grid">
+    <div class="insight-box">
+      <div class="stat">403%</div>
+      <div class="stat-label">más consultas reciben las propiedades anunciadas con video vs. sin video</div>
+    </div>
+    <div class="insight-box">
+      <div class="stat">2 seg</div>
+      <div class="stat-label">es el tiempo que tiene el primer frame de un reel para retener la atención. Si no engancha, se pasa</div>
+    </div>
+    <div class="insight-box">
+      <div class="stat">10x</div>
+      <div class="stat-label">más efectivo es un testimonio en video grabado con celular que uno escrito o producido formalmente</div>
+    </div>
+    <div class="insight-box">
+      <div class="stat">&lt;5 min</div>
+      <div class="stat-label">es el tiempo máximo para responder un contacto de WhatsApp antes de que el lead se enfríe definitivamente</div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <h2>Cómo está organizada esta estrategia</h2>
+  <p>Cada campaña apunta a un perfil de persona distinto. Dentro de cada campaña, cada conjunto de anuncios habla de un problema específico que tiene esa persona. Los creativos son variaciones del mismo mensaje usando formatos, ángulos y niveles de consciencia diferentes, para cubrir el mayor espectro posible de momentos de decisión.</p>
+  <div class="method-grid">
+    <div class="method-box">
+      <div class="lv">Nivel 1 — Campaña</div>
+      <div class="ti">¿A quién le hablamos?</div>
+      <div class="de">Define el segmento de audiencia: compradores urbanos, inversores del interior, o personas que ya nos conocen.</div>
+    </div>
+    <div class="method-box">
+      <div class="lv">Nivel 2 — Conjunto de anuncios</div>
+      <div class="ti">¿Qué problema tiene?</div>
+      <div class="de">Cada adset habla de un problema o momento de decisión específico de ese segmento. Sin mezclar mensajes.</div>
+    </div>
+    <div class="method-box">
+      <div class="lv">Nivel 3 — Creativos</div>
+      <div class="ti">¿Cómo lo comunicamos?</div>
+      <div class="de">Variaciones del mismo mensaje: distintos formatos (reel, carrusel, estático), distintos ángulos emocionales y distintos niveles de consciencia.</div>
+    </div>
+    <div class="method-box">
+      <div class="lv">Objetivo único</div>
+      <div class="ti">Conversión a WhatsApp</div>
+      <div class="de">Todos los anuncios buscan una sola cosa: iniciar una conversación real por WhatsApp con un comprador o inversor calificado.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- CAMPAÑA 1 -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="campaign" style="margin-top:28px;">
+  <div class="campaign-header c1">
+    <div class="campaign-num">1</div>
+    <div class="campaign-info">
+      <div class="objective-badge">Conversión · WhatsApp</div>
+      <h2>Compradores urbanos — Rosario</h2>
+      <div class="audience">📍 Rosario · 28–55 años · Ingresos medios-altos · Intereses: inmobiliario, primera vivienda, mudanza, familia</div>
+    </div>
+  </div>
+  <div class="campaign-body">
+
+  <!-- ADSET 1.1 -->
+  <div class="adset">
+    <div class="adset-header">
+      <div class="adset-icon">😤</div>
+      <div class="adset-info">
+        <h3>Conjunto 1.1 — "Sigo pagando alquiler y el departamento nunca va a ser mío"</h3>
+        <p>Le hablamos a personas atrapadas en el ciclo del alquiler que sienten la frustración pero no tomaron acción. La investigación muestra que el ángulo de frustración + comparación financiera es el más efectivo para audiencias frías en inmobiliaria.</p>
+        <span class="awareness-badge aw-cold">Audiencia fría · Tiene el problema, no buscó solución todavía</span>
+      </div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">1</div><span class="format-badge fmt-reel">Reel 20–30s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Frustración + Dato financiero</div>
+          <div class="card-title">Cuánto le regalaste al dueño de tu departamento</div>
+          <div class="card-desc">Arranca con texto en pantalla grande con el monto total de alquiler pagado en 3 años. Sin intro, sin logo, directo al número impactante. Voz en off explica que ese dinero podría haber sido la entrada de un departamento propio. Cierra con propiedades disponibles y CTA.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"¿Sabés cuánto le pagaste al dueño de tu depto en los últimos 3 años? Te lo mostramos."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Los números concretos en el frame 1 retienen 3x más que imágenes de propiedades.</div>
+          </div>
+          <div class="card-cta">"Consultame sin compromiso"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">2</div><span class="format-badge fmt-carru">Carrusel 5 slides</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Comparación financiera</div>
+          <div class="card-title">Alquiler vs cuota propia: los números reales de Rosario</div>
+          <div class="card-desc">Slide 1: "¿Alquilás en Rosario?" con imagen de recibo. Slide 2: promedio de alquiler actual. Slide 3: total pagado en 5 años. Slide 4: a qué equivale en cuotas de propiedad propia. Slide 5: propiedades disponibles ahora con precio. Datos reales, sin inventar cifras.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primer slide</div>
+            <div class="hook-text">"Dos caminos. Uno te deja con nada. El otro, con un departamento. Los números."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">El carrusel imita el comportamiento de exploración de portales inmobiliarios — genera más tiempo de visualización.</div>
+          </div>
+          <div class="card-cta">"Hablemos y encontramos la tuya"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">3</div><span class="format-badge fmt-reel">Reel 30–45s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Lifestyle — cómo se vive ahí</div>
+          <div class="card-title">No mostrés el depto, mostrá la vida dentro</div>
+          <div class="card-desc">Tour de propiedad pero contado como escenas de vida: "acá desayunás con luz natural", "acá tus hijos tienen su espacio", "acá terminás el día con tranquilidad". Sin listar metros cuadrados ni ambientes — puro storytelling de cómo cambia la vida cuando la propiedad es tuya. Voz en off cálida.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Esto es lo que se siente cuando el departamento finalmente es tuyo."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Los mejores anuncios inmobiliarios venden estilos de vida, no fichas técnicas. "3 dorm, 90m²" no vende. La escena de vida sí.</div>
+          </div>
+          <div class="card-cta">"Contame qué estás buscando"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">4</div><span class="format-badge fmt-static">Estático</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Urgencia / Inflación</div>
+          <div class="card-title">Lo que perdés cada mes que esperás</div>
+          <div class="card-desc">Imagen estática con diseño minimalista. Tipografía grande con dato concreto sobre cómo subieron los precios en Rosario en el último año. Subtítulo directo: "El que espera, paga más." Foto de fondo: interior luminoso de departamento. Sin decoración innecesaria. Logo Fransa pequeño.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — texto principal</div>
+            <div class="hook-text">"Las propiedades en Rosario subieron X% en el último año. Cada mes que esperás, tu acceso se aleja."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">La especificidad vende: "subieron X%" vence a "subieron mucho". Usar datos reales de mercado siempre.</div>
+          </div>
+          <div class="card-cta">"Hablemos antes de que suba más"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">5</div><span class="format-badge fmt-reel">Reel 15–20s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Historia antes-después</div>
+          <div class="card-title">Testimonio: pasé de alquilar a dueño</div>
+          <div class="card-desc">Reel grabado con celular (no producción formal), vertical, 15–20 segundos. Un cliente real de Fransa habla directo a cámara contando brevemente su cambio: antes alquilaba, ahora tiene su propiedad. Sin guión rígido — que suene natural. Si no hay cliente disponible todavía, narración en off con fotos reales de la propiedad.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Estuve 4 años alquilando pensando que era imposible. Hace 6 meses compré mi depto con Fransa."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Testimonios en video grabados con celular son 10x más efectivos que los producidos formalmente. La imperfección genera credibilidad.</div>
+          </div>
+          <div class="card-cta">"Yo también quiero lograrlo"</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /adset 1.1 -->
+
+  <!-- ADSET 1.2 -->
+  <div class="adset">
+    <div class="adset-header">
+      <div class="adset-icon">🔍</div>
+      <div class="adset-info">
+        <h3>Conjunto 1.2 — "Quiero comprar pero no sé por dónde empezar ni si puedo"</h3>
+        <p>Ya decidieron que quieren comprar pero tienen miedos, dudas del proceso o creen que no calificarán. El contenido educativo que desmitifica el proceso convierte muy bien en este segmento porque genera confianza antes de la venta.</p>
+        <span class="awareness-badge aw-warm">Audiencia tibia · Sabe que quiere comprar, evalúa cómo y con quién</span>
+      </div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">1</div><span class="format-badge fmt-reel">Reel 30–40s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Educativo / Desmitificador</div>
+          <div class="card-title">3 mitos sobre comprar un depto en Rosario (y la realidad)</div>
+          <div class="card-desc">Formato de lista rápida. "Mito 1: necesitás todo el dinero cash. Falso, te explicamos las opciones. Mito 2: el proceso lleva meses. Falso. Mito 3: es solo para gente con muchos ingresos. Falso." Cada mito derribado con su realidad concreta. Tono cercano y sin tecnicismos.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Si creés que comprar un departamento en Rosario es complicado, alguien te mintió. Mirá esto."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">El contenido de "lo que nadie te dice" genera altísimo engagement y califica leads porque atrae a personas con intención real.</div>
+          </div>
+          <div class="card-cta">"Preguntame lo que necesitás saber"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">2</div><span class="format-badge fmt-reel">Reel 30–45s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Proceso simplificado</div>
+          <div class="card-title">Cómo se compra un departamento con Fransa, paso a paso</div>
+          <div class="card-desc">Muestra el proceso de manera visual y simple. Paso 1: me contacto por WhatsApp. Paso 2: asesoramiento sin costo. Paso 3: visito las propiedades que me interesan. Paso 4: encontramos la indicada y negociamos. Paso 5: escritura y es mío. Mostrar al equipo real de Fransa trabajando. Transmite cercanía.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Comprás tu departamento en Rosario en 5 pasos. Nosotros te guiamos en cada uno."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Mostrar al equipo humano de la inmobiliaria genera confianza y diferencia de portales digitales impersonales.</div>
+          </div>
+          <div class="card-cta">"Empezamos con un mensaje"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">3</div><span class="format-badge fmt-reel">Reel 30–60s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Tour de propiedad real</div>
+          <div class="card-title">Recorrido por dentro — propiedad disponible hoy</div>
+          <div class="card-desc">Recorrido con cámara en mano por una de las propiedades más atractivas disponibles. Sin producción forzada — natural, con voz en off que cuenta la historia del espacio: "acá entra el sol de la tarde", "la cocina está integrada al living". Precio, zona y datos clave en pantalla. Terminar con CTA claro.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">[El ambiente más impactante de la propiedad en el primer frame. Sin intro.]</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Empezar con el ambiente más impactante del inmueble en el frame 1 — sin logo, sin música lenta, directo al interior.</div>
+          </div>
+          <div class="card-cta">"Quiero conocer más de esta propiedad"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">4</div><span class="format-badge fmt-carru">Carrusel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Catálogo específico con precio</div>
+          <div class="card-title">Propiedades disponibles en Rosario — con precio desde el primer slide</div>
+          <div class="card-desc">Carrusel de propiedades con precio visible desde el principio. Según la investigación, mencionar precios desde el primer párrafo auto-selecciona a los compradores serios y filtra los curiosos. Cada slide: foto, zona, ambientes, m², precio. Último slide: "¿Ninguna? Tenemos más — escribinos."</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primer slide</div>
+            <div class="hook-text">"Departamentos disponibles en Rosario desde USD [precio]. Deslizá y encontrá el tuyo."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Mostrar precios desde el inicio filtra leads no calificados y sube la calidad de las consultas que llegan.</div>
+          </div>
+          <div class="card-cta">"Me interesa esta propiedad"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">5</div><span class="format-badge fmt-reel">Reel 15–20s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Objeción de precio / Accesibilidad</div>
+          <div class="card-title">"Pensé que no llegaba. Pude."</div>
+          <div class="card-desc">Reel corto que rompe la objeción más común: creer que no se tiene suficiente dinero para comprar. Puede ser un cliente real hablando o voz en off con números concretos de opciones de entrada. Sin prometer lo que no existe — honesto sobre lo que sí hay disponible para distintos presupuestos en Rosario hoy.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"¿Creés que no llegás a comprar un depto en Rosario? Puede que estés equivocado."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">La objeción del precio es la más común y la más fácil de derribar con números reales. Hacerlo en el anuncio pre-califica al lead.</div>
+          </div>
+          <div class="card-cta">"Contame tu situación, evaluamos juntos"</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /adset 1.2 -->
+
+  <!-- ADSET 1.3 -->
+  <div class="adset">
+    <div class="adset-header">
+      <div class="adset-icon">🤝</div>
+      <div class="adset-info">
+        <h3>Conjunto 1.3 — "Ya busqué propiedades pero no encontré la indicada o no confío en una inmobiliaria"</h3>
+        <p>Estuvieron buscando activamente, vieron opciones, pero no tomaron el paso de confiarle el proceso a una inmobiliaria. El mensaje construye confianza y diferencia a Fransa de forma concreta, no genérica.</p>
+        <span class="awareness-badge aw-hot">Audiencia caliente · Conoce el producto, evalúa si Fransa es la opción correcta</span>
+      </div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">1</div><span class="format-badge fmt-reel">Reel 30–45s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Testimonio real en video</div>
+          <div class="card-title">Cliente real habla de su experiencia con Fransa</div>
+          <div class="card-desc">Reel grabado con celular, informal, sin guión rígido. Un cliente cuenta brevemente su situación anterior (buscaba sin encontrar, no confiaba), cómo fue el proceso con Fransa y cómo terminó. 30–45 segundos máximo. Mostrar la propiedad que compraron al final si es posible. Natural y sin edición excesiva.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Estuve 8 meses buscando y no encontraba. Con Fransa cerré en 3 semanas."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">El testimonio en video es el formato de mayor conversión en retargeting inmobiliario. 10x más efectivo que el escrito.</div>
+          </div>
+          <div class="card-cta">"Quiero que me ayuden a encontrar la mía"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">2</div><span class="format-badge fmt-reel">Reel 20–30s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Presentación humana del equipo</div>
+          <div class="card-title">Las personas detrás de Fransa — quiénes son y cómo trabajan</div>
+          <div class="card-desc">Reel que muestra al equipo de Fransa: en la oficina, en visitas a propiedades, atendiendo clientes. Sin video corporativo estático — cercano, dinámico, que transmita que hay personas reales y comprometidas detrás. Hablar brevemente de cuántos años llevan, cuántas operaciones, qué los diferencia.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Esto es lo que hacemos diferente en Fransa. Y por qué nuestros clientes nos eligen."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Humanizar la marca con video del equipo real genera confianza inmediata. Los compradores no compran propiedades, compran a las personas que los acompañan.</div>
+          </div>
+          <div class="card-cta">"Hablemos sin compromiso"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">3</div><span class="format-badge fmt-static">Estático</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Prueba social con número</div>
+          <div class="card-title">El número de operaciones que habla por Fransa</div>
+          <div class="card-desc">Imagen estática limpia con número grande de operaciones cerradas o familias asesoradas. Tipografía grande, fondo oscuro, color dorado. Sin texto de más. El número hace el trabajo. Opcional: incluir minifotos de propiedades vendidas alrededor del número central. Logo Fransa pequeño y CTA.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — texto principal</div>
+            <div class="hook-text">"Más de X familias ya encontraron su propiedad en Rosario con nosotros. La tuya puede ser la siguiente."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Los números concretos de volumen de operaciones son la forma más directa de construir credibilidad en pocos segundos.</div>
+          </div>
+          <div class="card-cta">"Quiero trabajar con Fransa"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">4</div><span class="format-badge fmt-carru">Carrusel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Diferenciadores concretos</div>
+          <div class="card-title">Por qué Fransa y no otra inmobiliaria en Rosario</div>
+          <div class="card-desc">Carrusel de 4–5 slides, cada uno con un diferencial específico: asesoramiento personalizado sin costo, acceso a propiedades antes de ser publicadas, acompañamiento hasta la escritura, conocimiento profundo del mercado rosarino, transparencia total en precios. Sin frases genéricas — ejemplo concreto en cada slide.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primer slide</div>
+            <div class="hook-text">"Hay muchas inmobiliarias en Rosario. Estas son las razones concretas por las que nuestros clientes nos eligen."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">La validación de terceros y los diferenciales concretos son los más efectivos para convertir a quienes están evaluando opciones.</div>
+          </div>
+          <div class="card-cta">"Quiero ese asesoramiento"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">5</div><span class="format-badge fmt-reel">Reel 15s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Cero fricción / Sin presión</div>
+          <div class="card-title">¿Qué pasa cuando mandás el primer mensaje?</div>
+          <div class="card-desc">Reel ultra corto que elimina el miedo al primer contacto. Explicar exactamente qué sucede: te responde una persona real en minutos, sin presión ni compromiso, solo te escuchan y te dicen si pueden ayudarte. Para quienes están en el borde de decidir pero temen sentirse presionados a comprar.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"¿No sabés qué pasa cuando escribís? En Fransa es así: sin presión, sin compromiso."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">La CTA "Pedí info sin compromiso" reduce la fricción del primer paso y aumenta la tasa de conversión en audiencias calientes.</div>
+          </div>
+          <div class="card-cta">"Escribinos, es sin compromiso"</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /adset 1.3 -->
+
+  </div>
+</div><!-- /campaña 1 -->
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- CAMPAÑA 2 -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="campaign">
+  <div class="campaign-header c2">
+    <div class="campaign-num">2</div>
+    <div class="campaign-info">
+      <div class="objective-badge">Conversión · WhatsApp</div>
+      <h2>Inversores del interior productivo</h2>
+      <div class="audience">📍 Armstrong · Firmat · Las Rosas · Marcos Juárez · San Genaro · Pergamino y zona · 30–60 años · Productores agropecuarios · Empresarios · Bienes de alto valor</div>
+    </div>
+  </div>
+  <div class="campaign-body">
+
+  <div class="insight-callout">
+    <div class="icon">⚠️</div>
+    <p>Este segmento requiere un tono completamente diferente al comprador urbano. <strong>El productor agropecuario piensa en términos de retorno, no de emociones.</strong> Los mensajes deben ser directos, con números concretos, sin lenguaje aspiracional ni estética de revista. La credibilidad se gana con datos, no con imágenes bonitas.</p>
+  </div>
+
+  <!-- ADSET 2.1 -->
+  <div class="adset">
+    <div class="adset-header">
+      <div class="adset-icon">💸</div>
+      <div class="adset-info">
+        <h3>Conjunto 2.1 — "Tengo capital que se licúa y no sé dónde ponerlo seguro"</h3>
+        <p>Productores y empresarios del interior con capital disponible (pesos o dólares) preocupados por la inflación y la volatilidad. El ángulo correcto es educativo-financiero: posicionar el inmueble en Rosario como la herramienta de resguardo más inteligente del contexto argentino.</p>
+        <span class="awareness-badge aw-cold">Audiencia fría · Tiene el problema, no necesariamente piensa en Rosario todavía</span>
+      </div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">1</div><span class="format-badge fmt-reel">Reel 30–40s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Argentina — dólares vs ladrillo</div>
+          <div class="card-title">¿Dólares en el colchón o metros cuadrados en Rosario?</div>
+          <div class="card-desc">Reel con datos concretos que comparan la pérdida de poder adquisitivo del dólar guardado vs la valorización real de propiedades en Rosario en los últimos 3 años. Gráficos simples, voz en off directa. Sin lenguaje financiero complejo — hablarle como hablaría un asesor de confianza, no un vendedor.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"¿Dólares en el colchón o metros cuadrados en Rosario? Los números dicen algo que vale la pena escuchar."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">El ángulo "dólares vs ladrillo" es específicamente efectivo en Argentina por el contexto cambiario. Es el hook más relevante culturalmente para este segmento.</div>
+          </div>
+          <div class="card-cta">"Quiero analizar opciones de inversión"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">2</div><span class="format-badge fmt-reel">Reel 30s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Identificación de perfil</div>
+          <div class="card-title">Por qué los productores del sur de Santa Fe invierten en Rosario</div>
+          <div class="card-desc">Reel que habla directamente al productor agropecuario de la zona. Mencionar localidades específicas (Firmat, Marcos Juárez, Armstrong) para crear identificación inmediata. Explicar por qué el ladrillo en Rosario es el destino natural del capital del interior. Sin lenguaje corporativo — directo y claro.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Cada vez más productores de Firmat, Armstrong y Marcos Juárez tienen propiedades en Rosario. Esto no es casualidad."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Nombrar la ciudad o localidad exacta del target en el hook aumenta drásticamente el stop-scroll. La gente para cuando ve su ciudad mencionada.</div>
+          </div>
+          <div class="card-cta">"Hablemos de opciones en Rosario"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">3</div><span class="format-badge fmt-carru">Carrusel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Comparativa de inversiones</div>
+          <div class="card-title">¿Dónde conviene poner el capital hoy en Argentina?</div>
+          <div class="card-desc">Carrusel tipo infografía comparando: plazo fijo (rendimiento en ARS), dólar guardado (sin renta), acciones (volatilidad), y propiedad en Rosario (valorización + posible renta si se alquila). Datos reales de cada uno. Último slide: "¿Querés analizar tu caso específico?" Ningún dato inventado.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primer slide</div>
+            <div class="hook-text">"Tenés capital y querés que trabaje. Comparamos las opciones reales que existen en Argentina hoy."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Para inversores, los creativos con datos de rentabilidad concretos superan ampliamente a los creativos aspiracionales o emocionales.</div>
+          </div>
+          <div class="card-cta">"Quiero analizar mi caso"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">4</div><span class="format-badge fmt-reel">Reel 20–25s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Miedo a perder oportunidad</div>
+          <div class="card-title">Los que compraron en [año] hoy tienen X% más</div>
+          <div class="card-desc">Reel corto con dato real de valorización de propiedades en Rosario en un período específico. "Los que compraron en 2022 hoy tienen X% más en USD." Conecta con el instinto del productor de no perder una oportunidad de negocio — el mismo que lo lleva a vender soja en el momento correcto.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Los que compraron en Rosario hace 3 años, hoy tienen X% más. Los que esperaron, pagaron más."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">"Los que compraron en [etapa X] ya ganaron X%" es uno de los ángulos de mayor conversión para inversores en real estate.</div>
+          </div>
+          <div class="card-cta">"Ver qué está disponible ahora"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">5</div><span class="format-badge fmt-static">Estático</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Rentabilidad concreta</div>
+          <div class="card-title">Lo que rinde un departamento en Rosario — los números</div>
+          <div class="card-desc">Imagen estática tipo infografía con datos de: precio de entrada en USD, rentabilidad anual si se alquila (en %) y valorización histórica del metro cuadrado en Rosario. Diseño limpio, tipografía clara, sin decoración excesiva. Para el productor que evalúa en números, no en imágenes bonitas.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — texto principal</div>
+            <div class="hook-text">"Un departamento en Rosario hoy: desde USD X de entrada · X% de rentabilidad anual · valorización comprobada."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Para inversores: el CTA "Calculá tu retorno estimado" o "Analizá tu caso" convierte mejor que CTAs orientados a vivir o comprar.</div>
+          </div>
+          <div class="card-cta">"Quiero analizar la rentabilidad"</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /adset 2.1 -->
+
+  <!-- ADSET 2.2 -->
+  <div class="adset">
+    <div class="adset-header">
+      <div class="adset-icon">📡</div>
+      <div class="adset-info">
+        <h3>Conjunto 2.2 — "Quiero invertir en Rosario pero no sé cómo manejarlo desde lejos"</h3>
+        <p>Ya decidieron que quieren un inmueble en Rosario. La barrera es la distancia y el desconocimiento del mercado local. El mensaje elimina esa fricción mostrando que el proceso se puede hacer completamente a distancia, con acompañamiento de principio a fin.</p>
+        <span class="awareness-badge aw-warm">Audiencia tibia-caliente · Decidió invertir, necesita quien lo guíe desde el interior</span>
+      </div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">1</div><span class="format-badge fmt-reel">Reel 30–45s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Eliminación de fricción / A distancia</div>
+          <div class="card-title">Comprás en Rosario sin moverte de tu ciudad</div>
+          <div class="card-desc">Reel que muestra cómo es el proceso de compra a distancia con Fransa: videollamada para mostrar la propiedad, documentación digital, firma y escritura sin necesidad de viajar. Mostrar al equipo en acción durante una videollamada. El mensaje: la distancia no es un obstáculo, Fransa maneja todo.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Sos de Firmat, Marcos Juárez o Armstrong y querés invertir en Rosario. La distancia no es problema — nosotros manejamos todo."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Mencionar localidades específicas del interior en el hook genera stop-scroll inmediato en ese segmento. Es la forma más directa de crear identificación.</div>
+          </div>
+          <div class="card-cta">"Hablemos por WhatsApp desde donde estés"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">2</div><span class="format-badge fmt-reel">Reel 45–60s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Tour de propiedad premium con datos de inversión</div>
+          <div class="card-title">Recorrido por propiedad de inversión — precio y rentabilidad en pantalla</div>
+          <div class="card-desc">Reel de recorrido por una de las propiedades con mejor perfil de inversión del catálogo. A diferencia del tour para compradores, acá los datos son el foco: precio en USD en pantalla, rentabilidad estimada si se alquila, zona, potencial de valorización. Drone del entorno si corresponde. Producción con más cuidado para este segmento de ticket alto.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Esta propiedad en Rosario vale USD [precio]. Te la mostramos por dentro con todos los datos."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Para real estate premium, el drone/aerial diferencia y muestra entorno y ubicación estratégica — datos clave para el inversor que no conoce la zona.</div>
+          </div>
+          <div class="card-cta">"Quiero saber más de esta inversión"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">3</div><span class="format-badge fmt-carru">Carrusel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Catálogo de inversión con datos duros</div>
+          <div class="card-title">Propiedades de inversión disponibles — precio en USD y zona estratégica</div>
+          <div class="card-desc">Carrusel enfocado en propiedades con mejor perfil de inversión. Cada slide: foto, zona de Rosario (con descripción breve de por qué esa zona es estratégica), precio en USD, m², y un dato de inversión (en crecimiento, a X cuadras de Y, alta demanda de alquiler). Último slide: "¿Cuál te interesa? Analizamos juntos."</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primer slide</div>
+            <div class="hook-text">"Las mejores propiedades de Rosario para inversión. Precio en USD, zona estratégica y potencial de retorno."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Para el inversor, mostrar precio desde USD X desde el primer elemento auto-selecciona al comprador serio y filtra consultas no calificadas.</div>
+          </div>
+          <div class="card-cta">"Me interesa esta para inversión"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">4</div><span class="format-badge fmt-reel">Reel 30–45s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Caso real de inversor del interior</div>
+          <div class="card-title">"Soy de Armstrong. Así compré en Rosario sin moverme."</div>
+          <div class="card-desc">Reel testimonial de un cliente del interior que compró en Rosario a través de Fransa sin necesidad de viajar en exceso. Contar desde el primer contacto hasta la escritura: cuánto tardó, cómo fue el proceso remoto, qué compró, qué resultado tuvo. Grabado con celular, natural, sin guión forzado.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Soy de Armstrong. Nunca había comprado en Rosario. Así fue el proceso con Fransa, desde mi ciudad."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">El testimonio de alguien del mismo perfil geográfico y profesional es el de mayor conversión para este segmento. Crear identificación total.</div>
+          </div>
+          <div class="card-cta">"Quiero hacer lo mismo"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">5</div><span class="format-badge fmt-reel">Reel 20–30s</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Asesoría personalizada por capital</div>
+          <div class="card-title">Te decimos exactamente qué conviene comprar según tu capital disponible</div>
+          <div class="card-desc">Reel que posiciona a Fransa como asesor de inversión honesto y directo. "Con USD 80.000 en Rosario podés acceder a esto. Con USD 120.000, a esto otro." Sin rodeos. El productor agropecuario piensa en negocios — hablarle como habla un socio de negocio, no un vendedor, genera credibilidad inmediata.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Antes de invertir en Rosario, necesitás saber exactamente qué podés comprar con tu capital. Sin vueltas."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Para inversores de ticket alto, el CTA "Asesoría privada para tu caso" o "Acceso anticipado" funciona mejor que CTAs de venta directa.</div>
+          </div>
+          <div class="card-cta">"Asesorame según mi capital disponible"</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /adset 2.2 -->
+
+  </div>
+</div><!-- /campaña 2 -->
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- CAMPAÑA 3 -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="campaign">
+  <div class="campaign-header c3">
+    <div class="campaign-num">3</div>
+    <div class="campaign-info">
+      <div class="objective-badge">Conversión · WhatsApp</div>
+      <h2>Remarketing — Los que ya nos conocen</h2>
+      <div class="audience">📍 Interactuantes con IG/FB · Visitantes del sitio web · Leads que no cerraron · Temperatura alta · Ya conocen Fransa — falta el empujón final</div>
+    </div>
+  </div>
+  <div class="campaign-body">
+
+  <div class="insight-callout">
+    <div class="icon">🎯</div>
+    <p><strong>Esta campaña es la de mayor retorno sobre la inversión.</strong> Son personas que ya mostraron interés — el costo de convertirlas es significativamente menor que el de audiencia fría. El error más común es mostrarles el mismo anuncio que ya vieron. Acá los creativos deben ser diferentes: nueva propiedad, nuevo ángulo, nueva razón para contactar.</p>
+  </div>
+
+  <!-- ADSET 3.1 -->
+  <div class="adset">
+    <div class="adset-header">
+      <div class="adset-icon">👀</div>
+      <div class="adset-info">
+        <h3>Conjunto 3.1 — Interactuantes con Instagram/Facebook en los últimos 14 días</h3>
+        <p>Vieron videos al 50%+, guardaron posts, dieron me gusta o comentaron. Ya conocen la marca. El mensaje mantiene presencia y busca generar el primer contacto.</p>
+        <span class="awareness-badge aw-warm">Tibia · Conoce Fransa, tuvo interés, no contactó todavía</span>
+      </div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">1</div><span class="format-badge fmt-reel">Reel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Novedad</div>
+          <div class="card-title">Acaba de entrar algo que no estaba</div>
+          <div class="card-desc">Mostrar una propiedad completamente nueva que no existía cuando la persona interactuó. El objetivo: que Fransa siga apareciendo con algo fresco, no repetitivo. Reel de recorrido o presentación rápida. Tono de "te cuento antes que a otros". Natural, sin forzar urgencia falsa.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Acaba de entrar algo que puede ser exactamente lo que estabas buscando. Mirá."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">El error más común en remarketing inmobiliario es repetir el mismo anuncio. Siempre mostrar algo nuevo o un ángulo diferente.</div>
+          </div>
+          <div class="card-cta">"Consultá antes de que se vaya"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">2</div><span class="format-badge fmt-carru">Carrusel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Opciones disponibles</div>
+          <div class="card-title">Estas propiedades siguen disponibles</div>
+          <div class="card-desc">Carrusel con 3–4 propiedades que todavía están sin vender. Sin mencionar que ya vieron el perfil. Presentarlas como si fuera la primera vez — limpio, con datos, con foto. El mensaje implícito: "Todavía estás a tiempo." Último slide con CTA directo a WhatsApp.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primer slide</div>
+            <div class="hook-text">"Algunas de las mejores propiedades de Rosario todavía están disponibles. ¿Cuál es la tuya?"</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Los Dynamic Ads (que muestran propiedades específicas que el usuario ya visitó) tienen la mayor tasa de conversión en remarketing inmobiliario web.</div>
+          </div>
+          <div class="card-cta">"Me interesa esta"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">3</div><span class="format-badge fmt-reel">Reel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Urgencia real</div>
+          <div class="card-title">Esta propiedad tiene consultas activas esta semana</div>
+          <div class="card-desc">Reel corto con urgencia genuina basada en datos reales. Si la propiedad tiene consultas activas, mencionarlo. "Esta propiedad recibió X consultas en la última semana — cuando alguien hace reserva, ya no está disponible." Solo usar si es real. La urgencia falsa destruye la confianza.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Esta propiedad tuvo X consultas esta semana. Cuando alguien reserva, desaparece del mercado."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">La urgencia legítima (escasez real, consultas reales) convierte muy bien. La urgencia falsa destruye credibilidad permanentemente.</div>
+          </div>
+          <div class="card-cta">"Quiero consultar antes de que se cierre"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">4</div><span class="format-badge fmt-reel">Reel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Testimonio de cierre</div>
+          <div class="card-title">Alguien que también dudó y terminó comprando</div>
+          <div class="card-desc">Reel testimonial de alguien que estuvo mirando, dudó, y terminó cerrando. El mensaje emocional: dudar es normal, el arrepentimiento de no haber actuado antes, no. Para personas que están en el limbo entre el interés y la acción. Formato celular, natural, breve.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Estuve 6 meses mirando propiedades sin decidirme. Lo único que lamento es no haberlo hecho antes."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">El testimonio de "alguien igual a mí que tomó la decisión" es el activo más valioso en retargeting. Activa FOMO y validación social al mismo tiempo.</div>
+          </div>
+          <div class="card-cta">"Quiero dar el paso"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">5</div><span class="format-badge fmt-static">Estático</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Servicio de búsqueda</div>
+          <div class="card-title">¿Seguís buscando? Nosotros buscamos por vos</div>
+          <div class="card-desc">Imagen estática simple y directa. Mensaje empático: saben que la búsqueda es larga. Ofrecen hacer ellos el trabajo: "Contanos qué querés y nosotros lo buscamos." Para personas en modo búsqueda activa que no encuentran por su cuenta. Tono de servicio, no de venta.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — texto principal</div>
+            <div class="hook-text">"¿Todavía buscando tu propiedad en Rosario? Contanos qué querés — nosotros lo buscamos por vos."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Posicionar a la inmobiliaria como "buscador activo" en lugar de "catálogo pasivo" es un diferencial que convierte muy bien en personas frustradas con la búsqueda.</div>
+          </div>
+          <div class="card-cta">"Escribinos qué buscás"</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /adset 3.1 -->
+
+  <!-- ADSET 3.2 -->
+  <div class="adset">
+    <div class="adset-header">
+      <div class="adset-icon">🌐</div>
+      <div class="adset-info">
+        <h3>Conjunto 3.2 — Visitantes del sitio web en los últimos 30 días</h3>
+        <p>Entraron a fransapropiedades.com.ar, vieron propiedades específicas y no contactaron. Son la audiencia con mayor intención de compra de toda la cuenta. El mensaje es directo, orientado a la decisión final, sin demoras.</p>
+        <span class="awareness-badge aw-hot">Muy caliente · Evaluó propiedades concretas, está cerca de decidir</span>
+      </div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">1</div><span class="format-badge fmt-reel">Reel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Urgencia directa</div>
+          <div class="card-title">La propiedad que viste puede no estar mañana</div>
+          <div class="card-desc">Reel corto y directo. Sin mencionar que los vieron en el sitio — simplemente comunicar que las buenas propiedades en Rosario tienen alta rotación. Mostrar el proceso de reserva: es simple, rápido y no requiere el total del precio para asegurarla. Tono de aviso amistoso, no de presión.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Las mejores propiedades de Rosario no duran semanas. Si la viste, el momento de preguntar es ahora."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Los visitantes web tienen la mayor intención de compra. Un mensaje directo y de urgencia legítima aquí convierte muy por encima del promedio.</div>
+          </div>
+          <div class="card-cta">"Consultá antes de que se vaya"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">2</div><span class="format-badge fmt-static">Estático</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: CTA ultra directo</div>
+          <div class="card-title">Un mensaje es todo lo que se necesita para empezar</div>
+          <div class="card-desc">Imagen estática ultra simple. Fondo oscuro, texto dorado y blanco. Mensaje mínimo y directo: un solo mensaje de WhatsApp inicia todo el proceso. Sin formularios, sin trámites. Para quien ya sabe lo que quiere y solo necesita el último empujón para dar el paso.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — texto principal</div>
+            <div class="hook-text">"Un mensaje de WhatsApp. Eso es todo lo que necesitás para empezar a hacer tuya esa propiedad."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Simplificar el primer paso al máximo ("solo un mensaje") reduce la fricción de conversión en personas que ya tienen intención pero aún no actúan.</div>
+          </div>
+          <div class="card-cta">"Escribinos ahora"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">3</div><span class="format-badge fmt-reel">Reel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Ampliar opciones</div>
+          <div class="card-title">Lo que se ve en el sitio es solo una parte</div>
+          <div class="card-desc">Reel que habla a quien navegó el sitio pero no encontró exactamente lo que buscaba. "El catálogo online es solo una parte de lo que tenemos. Hay propiedades que no están publicadas todavía." Crea percepción de acceso exclusivo y motiva el contacto directo para conocer el inventario completo.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Lo que se ve en el sitio es solo una parte. Tenemos propiedades que no están publicadas todavía — preguntanos."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">"Acceso anticipado a propiedades fuera del mercado público" es uno de los ángulos más efectivos para buyers y investors de perfil premium.</div>
+          </div>
+          <div class="card-cta">"Quiero ver el catálogo completo"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">4</div><span class="format-badge fmt-carru">Carrusel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Prueba social de cierre</div>
+          <div class="card-title">Propiedades cerradas esta semana en Rosario</div>
+          <div class="card-desc">Carrusel con propiedades que Fransa vendió recientemente (sin datos privados del comprador). "Vendida", "Reservada", "Escriturada". Genera el efecto: "otros están tomando decisiones, el mercado se mueve." Último slide: "¿Cuándo es la tuya?" + CTA. El cierre más efectivo para audiencia de alta intención.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primer slide</div>
+            <div class="hook-text">"Esta semana cerramos X operaciones en Rosario. El mercado se mueve. ¿Te quedás afuera?"</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Mostrar operaciones cerradas recientes activa el principio de prueba social y el FOMO. Muy efectivo en audiencia caliente cerca de la decisión.</div>
+          </div>
+          <div class="card-cta">"Quiero cerrar la mía"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">5</div><span class="format-badge fmt-reel">Reel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Eliminar fricción final</div>
+          <div class="card-title">¿Qué pasa exactamente cuando contactás a Fransa?</div>
+          <div class="card-desc">Reel que explica paso a paso qué sucede cuando alguien manda el primer mensaje. "Te responde una persona real en minutos. No hay presión ni compromiso. Te escuchamos, entendemos qué buscás, y si podemos ayudarte te lo decimos." Elimina el miedo a ser presionado a comprar. Muy efectivo para quienes están en el borde.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"¿No sabés qué pasa cuando escribís a Fransa? Así es el primer contacto — sin presión, sin compromiso."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">El tiempo de respuesta es crítico: un lead de WhatsApp tiene vida útil de minutos. Mencionar que la respuesta es rápida y humana en el anuncio prepara la expectativa correcta.</div>
+          </div>
+          <div class="card-cta">"Escribinos, sin presión"</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /adset 3.2 -->
+
+  <!-- ADSET 3.3 -->
+  <div class="adset">
+    <div class="adset-header">
+      <div class="adset-icon">🔁</div>
+      <div class="adset-info">
+        <h3>Conjunto 3.3 — Leads fríos y contactos de WhatsApp que no cerraron</h3>
+        <p>Iniciaron una conversación, preguntaron por una propiedad y no avanzaron. El error es repetirles el mismo mensaje. El mensaje debe ofrecer algo nuevo — propiedad diferente, nuevo ángulo, nueva razón para retomar la conversación.</p>
+        <span class="awareness-badge aw-hot">Muy caliente · Ya contactó, tuvo intención de compra, no cerró por algún motivo</span>
+      </div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">1</div><span class="format-badge fmt-reel">Reel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Novedad absoluta</div>
+          <div class="card-title">Entró algo que no existía cuando hablamos</div>
+          <div class="card-desc">Reel con una propiedad completamente nueva, no relacionada con lo que consultaron antes. El tono no recuerda el contacto previo — simplemente presenta algo nuevo. Si la propiedad anterior no les convenció por precio, zona o características, esta puede ser la que los reactive. Sin presión.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Acaba de entrar algo que no estaba disponible hace unas semanas. Puede cambiar el panorama."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">En remarketing a leads fríos, siempre mostrar algo nuevo. Repetir el mismo anuncio genera fatiga y asociación negativa con la marca.</div>
+          </div>
+          <div class="card-cta">"Quiero verla"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">2</div><span class="format-badge fmt-carru">Carrusel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Catálogo actualizado</div>
+          <div class="card-title">Nuevas propiedades que entraron este mes</div>
+          <div class="card-desc">Carrusel con las incorporaciones más recientes al catálogo de Fransa. El mensaje implícito: el portafolio se renueva constantemente — lo que no existía cuando consultaron puede estar disponible ahora. Tono fresco, sin recordar el contacto previo. Presentar como si fuera la primera vez.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primer slide</div>
+            <div class="hook-text">"Estas propiedades acaban de sumarse a nuestro catálogo en Rosario este mes. ¿Alguna te llama la atención?"</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">El portfolio inmobiliario se renueva. Comunicar "lo nuevo que entró" es una razón legítima y no invasiva para volver a aparecer en el feed de un lead frío.</div>
+          </div>
+          <div class="card-cta">"Quiero consultar por esta"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">3</div><span class="format-badge fmt-reel">Reel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Prueba social de velocidad</div>
+          <div class="card-title">Una de las propiedades más consultadas acaba de entrar en reserva</div>
+          <div class="card-desc">Reel que comunica que una propiedad está por cerrarse. Si hay una propiedad con reserva activa o en proceso de escritura, comunicarlo genera el instinto de no perderse la siguiente oportunidad. "Esta ya está tomada — pero tenemos estas otras disponibles ahora." Directo al CTA.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Una de nuestras propiedades más consultadas acaba de entrar en reserva. Las que siguen disponibles, por poco tiempo."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">La escasez legítima basada en hechos reales (no inventada) es la forma más efectiva de urgencia en remarketing a leads que ya consultaron.</div>
+          </div>
+          <div class="card-cta">"Ver qué está disponible ahora"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">4</div><span class="format-badge fmt-static">Estático</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Empatía / Sin presión</div>
+          <div class="card-title">¿Todavía no encontraste lo que buscabas? Contanos de nuevo</div>
+          <div class="card-desc">Imagen estática con mensaje empático. Reconoce que la búsqueda puede ser larga y frustrante, y ofrece una conversación nueva sin presión. Reposiciona a Fransa como aliado activo, no como vendedor. Para personas que necesitan sentir que alguien los escucha de verdad antes de volver a confiar.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — texto principal</div>
+            <div class="hook-text">"Encontrar la propiedad ideal lleva tiempo. Si todavía no la encontraste, contanos de nuevo qué buscás y empezamos de cero."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Los leads inmobiliarios maduran en 60–90 días. Mantenerse presente con mensajes de servicio (no de venta) es fundamental para cerrar en el momento correcto.</div>
+          </div>
+          <div class="card-cta">"Hablemos otra vez"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-num">5</div><span class="format-badge fmt-reel">Reel</span></div>
+        <div class="card-body">
+          <div class="card-angle">Ángulo: Diferencial de servicio</div>
+          <div class="card-title">Lo que hacemos que otras inmobiliarias en Rosario no hacen</div>
+          <div class="card-desc">Reel con diferenciales concretos y específicos de Fransa para reactivar el interés: "te buscamos la propiedad según tu presupuesto exacto", "te avisamos antes de publicar", "negociamos el precio por vos". Para alguien que ya conoce la marca y necesita una razón diferente para volver a contactar.</div>
+          <div class="card-hook">
+            <div class="hook-label">Hook — primeros 2 segundos</div>
+            <div class="hook-text">"Esto es lo que hacemos que la mayoría de las inmobiliarias en Rosario no hacen. Por eso nuestros clientes vuelven."</div>
+          </div>
+          <div class="card-tip">
+            <div class="tip-label">💡 Insight de investigación</div>
+            <div class="tip-text">Para leads fríos, los diferenciales de servicio concretos son más efectivos que mostrar otra propiedad. Cambian el motivo de contacto de "esa propiedad" a "esa inmobiliaria".</div>
+          </div>
+          <div class="card-cta">"Quiero ese servicio"</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /adset 3.3 -->
+
+  </div>
+</div><!-- /campaña 3 -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>Fransa Negocios Inmobiliarios</strong> · Estrategia de Creativos Meta Ads · Preparado por <strong>Algoritmia</strong> · Marzo 2026<br><br>
+  <span style="font-size:10px;opacity:0.7;">Todos los creativos deben ejecutarse con imágenes y datos reales de las propiedades disponibles. Los hooks son guías — adaptarlos al tono natural de la marca. Los números mencionados en ejemplos deben reemplazarse con datos reales del mercado de Rosario.</span>
+</div>
+
+</body>
+</html>
