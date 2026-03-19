@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "el-altar-de-tu-inmunidad",
+        titulo: "El Altar de tu Inmunidad",
+        categoria: "Ayurveda & Bienestar",
+        foto: "altar-inmunidad.png",
+        descripcion: "Tradicionalmente, vemos al sistema inmune como un \"ejército\" de células. Sin embargo, desde la sabiduría del Ayurveda, entendemos que la verdadera inmunidad es un tejido complejo donde la salud física se entrelaza con nuestra paz mental.",
+        fecha: "2026-03-19"
+    },
+    {
         slug: "la-inteligencia-de-las-hormonas",
         titulo: "La Inteligencia de las Hormonas",
         categoria: "Ayurveda & Nutrición",
