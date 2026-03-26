@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "el-despertar-del-agni",
+        titulo: "El Despertar del Agni",
+        categoria: "Ayurveda & Bienestar",
+        foto: "agni-digestivo.png",
+        descripcion: "En el mundo del bienestar, el factor determinante no es solo el alimento, sino nuestra capacidad para transformarlo. Descubre el Agni, la clave de tu metabolismo y bienestar integral.",
+        fecha: "2026-03-26"
+    },
+    {
         slug: "el-altar-de-tu-inmunidad",
         titulo: "El Altar de tu Inmunidad",
         categoria: "Ayurveda & Bienestar",
