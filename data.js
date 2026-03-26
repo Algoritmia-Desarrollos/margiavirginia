@@ -235,6 +235,14 @@ const recetas = [
         foto: "pesto-albahaca.png",
         descripcion: "Nutrición y Sabor Antiinflamatorio. Una mezcla diseñada para nutrir tus tejidos y calmar tu sistema nervioso.",
         fecha: "2026-01-23"
+    },
+    {
+        slug: "volver-a-las-legumbres",
+        titulo: "Volver a las Legumbres",
+        categoria: "Ayurveda & Nutrición",
+        foto: "volver-legumbres.png",
+        descripcion: "Guía consciente para una digestión ligera y un cuerpo en armonía. Convierte las legumbres en verdadera medicina.",
+        fecha: "2026-03-25"
     }
 ];
 
