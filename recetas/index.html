@@ -1,37 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWWX2F70HP"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-ZWWX2F70HP');
-    </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWWX2F70HP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZWWX2F70HP');
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recetas - Virginia González Scherer</title>
-    <link rel="icon" type="image/jpeg" href="../favicon.jpeg">
+    <title>Recetas Ayurvédicas - Virginia González Scherer</title>
+    <meta name="description" content="Recetas ayurvédicas para el bienestar integral. Kitchari, blends, bowls y más — diseñadas para nutrir cuerpo y mente según los principios del Ayurveda.">
+    <link rel="canonical" href="https://www.virginia-bienestar.site/recetas/">
+
+    <link rel="icon" type="image/png" href="/favicon.jpeg">
+
+    <meta property="og:title" content="Recetas Ayurvédicas - Virginia González Scherer">
+    <meta property="og:description" content="Recetas para nutrir cuerpo y mente según los principios del Ayurveda.">
+    <meta property="og:image" content="https://www.virginia-bienestar.site/hero.webp">
+    <meta property="og:url" content="https://www.virginia-bienestar.site/recetas/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Recetas Ayurvédicas - Virginia González Scherer">
+    <meta name="twitter:description" content="Recetas para nutrir cuerpo y mente según los principios del Ayurveda.">
+    <meta name="twitter:image" content="https://www.virginia-bienestar.site/hero.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Vercel Web Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
     <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KW87W229');</script>
+<!-- End Google Tag Manager -->
+
+
 </head>
 <body>
 
-    <div id="navbar-placeholder"></div>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KW87W229"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
+    <div id="navbar-placeholder"></div>
+    
     <header class="hero-section fade-in" id="hero">
         <div class="hero-overlay"></div>
+        
         <div class="hero-content">
-            <span class="hero-tag">Cocina Consciente</span>
-            <h1 class="hero-title">Recetas Ayurvédicas</h1>
-            <p class="hero-subtitle">Alimentos que sanan, nutren y equilibran tu energía vital.</p>
+            <span class="hero-tag">Recetas de Bienestar</span>
+            <h1 class="hero-title">Maria Virginia <br> González Scherer</h1>
+            <p class="hero-subtitle">Un espacio para reconectar con tu naturaleza, sanar desde la raíz y encontrar el equilibrio que tu cuerpo necesita.</p>
+            
 
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Buscar receta..." class="search-input">
+                
                 <select id="categoryFilter" class="search-select">
                     <option value="all">Todas las categorías</option>
                 </select>
+
                 <select id="sortOrder" class="search-select">
                     <option value="newest">Más recientes</option>
                     <option value="oldest">Más antiguos</option>
@@ -44,10 +87,16 @@
         <div class="blog-grid" id="recipe-feed"></div>
     </main>
 
-    <div id="footer-placeholder"></div>
-    
-    <script src="../data.js"></script>
+     <div id="footer-placeholder"></div>
+
+    <script src="/data.js"></script>
+    <script src="/script.js"></script> 
     <script src="/components/loader.js"></script>
-    
+
+    <!-- Vercel Speed Insights -->
+    <script>
+      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>

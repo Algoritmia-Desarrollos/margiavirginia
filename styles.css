@@ -583,20 +583,88 @@ ul { list-style: none; }
 .site-footer {
     border-top: 1px solid var(--accent-light);
     margin-top: 2rem;
-    padding: 4rem 1rem;
+    padding: 3rem 2rem 2rem;
     background-color: #fff;
+}
+
+.footer-inner {
+    max-width: var(--container-width);
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--accent-light);
 }
 
 .footer-brand {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--text-title);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.footer-tagline {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-link {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: color var(--transition-timing);
+}
+
+.footer-link:hover { color: var(--accent-gold); }
+
+.footer-instagram {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    transition: color var(--transition-timing);
+}
+
+.footer-instagram:hover { color: var(--accent-gold); }
+
+.footer-bottom {
+    max-width: var(--container-width);
+    margin: 1.5rem auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #aaa;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.footer-legal {
+    color: #aaa;
+    font-size: 0.75rem;
+    transition: color var(--transition-timing);
+}
+
+.footer-legal:hover { color: var(--accent-gold); }
+
+@media (max-width: 768px) {
+    .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+    .footer-nav { justify-content: center; }
+    .footer-bottom { justify-content: center; text-align: center; }
 }
 
 /* --- RESPONSIVE FINAL --- */
@@ -604,8 +672,7 @@ ul { list-style: none; }
     .hero-section { padding: 4rem 1rem; text-align: center; align-items: center; }
     .hero-content { margin: 0 auto; }
     .food-grid { grid-template-columns: 1fr; }
-    /* .intro { margin: 0 auto; text-align: center; border-left: none; padding: 0; font-style: italic; } */
-    .container { padding: 0 1.5rem; text-align: center; }
+    .container { padding: 0 1.5rem; }
 }
 /* --- SOBRE M --- */
 .about-content {
@@ -630,29 +697,73 @@ ul { list-style: none; }
     font-style: italic;
 }
 
+/* --- SECCIÓN INTRO HOMEPAGE --- */
+.intro-section {
+    padding: 5rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--accent-light);
+    margin-bottom: 5rem;
+}
+
+.intro-tagline {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    color: var(--text-title);
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.75;
+    font-weight: 400;
+}
+
+.intro-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-secondary {
+    display: inline-block;
+    border: 1px solid var(--text-title);
+    color: var(--text-title);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-title);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .intro-section { padding: 3rem 1.5rem; }
+    .intro-tagline { font-size: 1.15rem; }
+}
+
 /* --- MOBILE BLOG POST FIXES --- */
 @media (max-width: 768px) {
     .ingredient-list {
-        padding: 1.5rem; 
+        padding: 1.5rem;
         margin: 1.5rem 0;
     }
-    
+
     .post-header h1 {
         font-size: 2rem;
     }
 
     .post-content {
-        text-align: center; /* Center everything as requested */
+        text-align: left;
     }
-    
+
     .intro {
         font-size: 1.1rem;
-        border-left: none; /* Remove border for centered layout */
-        padding-left: 0;
-        font-style: normal;
-        margin: 0 auto; /* Center the block */
-        text-align: center; /* Center the text */
-        max-width: 90%; /* Prevent full width for better reading if centered */
+        text-align: left;
     }
 
     .food-grid {
