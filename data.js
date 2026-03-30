@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "el-arte-de-conectar-con-tu-ser",
+        titulo: "El Arte de Conectar con tu Ser",
+        categoria: "Meditación & Bienestar",
+        foto: "conectar-con-tu-ser.jpeg",
+        descripcion: "Meditar no es una tarea más en tu lista de pendientes. Es el arte de conectar con tu ser: ese espacio sagrado donde tu claridad mental florece y tu cuerpo recupera su equilibrio integral.",
+        fecha: "2026-03-30"
+    },
+    {
         slug: "el-despertar-del-agni",
         titulo: "El Despertar del Agni",
         categoria: "Ayurveda & Bienestar",
