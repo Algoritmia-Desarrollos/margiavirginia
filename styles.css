@@ -2,7 +2,7 @@
    ESTILO PREMIUM WELLNESS - VIRGINIA
    (Versión: Unificada y Limpia)
    ========================================= */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Dancing+Script:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400;500;600&display=swap');
 
 :root {
     --bg-color: #FAFAF9;       
@@ -408,7 +408,7 @@ ul { list-style: none; }
     text-align: center;
     font-family: var(--font-poetry);
     font-style: italic;
-    font-weight: 500;
+    font-weight: 700;
     color: #3b332c;
     font-size: 1.45rem;
     line-height: 1.7;
