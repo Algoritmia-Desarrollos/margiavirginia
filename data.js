@@ -342,6 +342,11 @@ function mostrarItems(lista) {
             `;
         }
 
+        let excerptContent = `<p class="card-excerpt">${item.descripcion}</p>`;
+        if (typeof poetryContainer !== 'undefined' && currentContainer === poetryContainer) {
+            excerptContent = '';
+        }
+
         const tarjeta = `
         <article class="article-card fade-in visible">
             <a href="${linkPath}"> 
@@ -354,7 +359,7 @@ function mostrarItems(lista) {
                         <span class="card-date">${fechaFormateada}</span>
                     </div>
                     <h3 class="card-title">${item.titulo}</h3>
-                    <p class="card-excerpt">${item.descripcion}</p>
+                    ${excerptContent}
                     <span class="read-more">Ver más &rarr;</span>
                 </div>
             </a>
