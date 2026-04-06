@@ -262,9 +262,21 @@ const recetas = [
     }
 ];
 
+const poesias = [
+    {
+        slug: "el-amor-como-fuerza-motora",
+        titulo: "El Amor como Fuerza Motora",
+        categoria: "Poesía & Bienestar",
+        foto: "amor_motora.png",
+        descripcion: "Comprendí que el amor es la fuerza motora que nos permite sostenernos y reconstruirnos, pase lo que pase.",
+        fecha: "2026-04-06"
+    }
+];
+
 // Lógica de renderizado
 const blogContainer = document.getElementById('blog-feed');
 const recipeContainer = document.getElementById('recipe-feed');
+const poetryContainer = document.getElementById('poetry-feed');
 const searchInput = document.getElementById('searchInput');
 const categoryFilter = document.getElementById('categoryFilter');
 const sortOrder = document.getElementById('sortOrder');
@@ -282,6 +294,10 @@ let pathPrefix = "";
         currentData = recetas;
         currentContainer = recipeContainer;
         pathPrefix = "/recetas/";
+    } else if (poetryContainer) {
+        currentData = poesias;
+        currentContainer = poetryContainer;
+        pathPrefix = "/poesias/";
     }
 
 function mostrarItems(lista) {
