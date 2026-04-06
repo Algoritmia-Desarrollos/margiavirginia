@@ -449,6 +449,7 @@ ul { list-style: none; }
     max-width: 600px;
     margin: 0 auto;
     color: var(--text-title);
+    white-space: pre-line;
 }
 
 @media (max-width: 768px) {
