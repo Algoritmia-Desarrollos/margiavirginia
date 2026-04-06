@@ -440,6 +440,29 @@ ul { list-style: none; }
     transform: none;
 }
 
+/* --- POETRY ARTICLE CONTENT --- */
+.poetry-content {
+    text-align: center;
+    font-family: var(--font-poetry);
+    font-size: 1.35rem;
+    line-height: 2.2;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--text-title);
+}
+
+@media (max-width: 768px) {
+    .poetry-content {
+        font-size: 1.25rem !important;
+        line-height: 2.0 !important;
+        padding: 0 1rem;
+    }
+    
+    .poetry-content p {
+        margin-bottom: 1.5rem;
+    }
+}
+
 
 .card-content { padding: 0 0.5rem; }
 
