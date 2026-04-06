@@ -149,6 +149,14 @@ const articulos = [
 
 const recetas = [
     {
+        slug: "crema-de-oro",
+        titulo: "Crema de Oro: Calabaza, Jengibre y Especias",
+        categoria: "Almuerzo / Cena",
+        foto: "crema-de-oro.png",
+        descripcion: "Un bálsamo tridóshico para armonizar Vata, Pitta y Kapha. Reconfortante, antiinflamatoria y digestiva, esta crema nutre los tejidos y equilibra el fuego digestivo.",
+        fecha: "2026-04-06"
+    },
+    {
         slug: "equilibrio-quinoa",
         titulo: "El Poder de la Quinoa en el Equilibrio Integral",
         categoria: "Almuerzo / Cena",
