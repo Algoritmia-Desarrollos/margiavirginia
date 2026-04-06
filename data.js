@@ -321,19 +321,32 @@ function mostrarItems(lista) {
         const linkPath = `${pathPrefix}${item.slug}/`;
         const imgPath = `${pathPrefix}${item.slug}/${item.foto}`;
 
+        let mediaContent = '';
+        if (typeof poetryContainer !== 'undefined' && currentContainer === poetryContainer) {
+            mediaContent = `
+                <div class="poetry-card-cover">
+                    "${item.descripcion}"
+                </div>
+            `;
+        } else {
+            mediaContent = `
+                <img 
+                    src="${imgPath}" 
+                    alt="${item.titulo}" 
+                    class="card-img"
+                    loading="lazy" 
+                    width="400" 
+                    height="400"
+                    onerror="this.src='/favicon.jpeg'"
+                > 
+            `;
+        }
+
         const tarjeta = `
         <article class="article-card fade-in visible">
             <a href="${linkPath}"> 
-                <div class="card-img-container">
-                    <img 
-                        src="${imgPath}" 
-                        alt="${item.titulo}" 
-                        class="card-img"
-                        loading="lazy" 
-                        width="400" 
-                        height="400"
-                        onerror="this.src='/favicon.jpeg'"
-                    > 
+                <div class="card-img-container" style="background: transparent;">
+                    ${mediaContent}
                 </div>
                 <div class="card-content">
                     <div class="card-meta">

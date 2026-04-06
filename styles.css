@@ -393,6 +393,47 @@ ul { list-style: none; }
 
 .article-card:hover .card-img { transform: scale(1.03); }
 
+/* --- POETRY CARD COVER --- */
+.poetry-card-cover {
+    width: 100%;
+    aspect-ratio: 1; 
+    background-color: #FAF5F0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+    text-align: center;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--text-title);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    box-sizing: border-box;
+    border: 1px solid var(--accent-light);
+    border-radius: var(--radius);
+    transition: transform 0.7s ease, border-color 0.4s ease, background-color 0.4s ease;
+}
+
+.article-card:hover .poetry-card-cover {
+    border-color: var(--accent-gold);
+    transform: scale(1.03);
+}
+
+.featured-image .poetry-card-cover {
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    aspect-ratio: auto;
+    min-height: 300px;
+    font-size: 1.4rem;
+    transform: none;
+    border-color: var(--accent-gold);
+    background-color: transparent;
+}
+.featured-image .poetry-card-cover:hover {
+    transform: none;
+}
+
+
 .card-content { padding: 0 0.5rem; }
 
 .card-meta {
