@@ -272,6 +272,22 @@ const recetas = [
 
 const poesias = [
     {
+        slug: "el-cielo-del-pensamiento",
+        titulo: "El Cielo del Pensamiento",
+        categoria: "Poesía & Bienestar",
+        foto: "",
+        descripcion: "Ojalá pudiéramos mantener un cielo limpio en nuestra mente, y estar siempre conectados con nuestro Sol interior.",
+        fecha: "2026-04-09"
+    },
+    {
+        slug: "deseos-que-dan-vida",
+        titulo: "Deseos que dan Vida",
+        categoria: "Poesía & Bienestar",
+        foto: "",
+        descripcion: "Necesitamos deseos que den fuerza. Rutas nuevas para ver y alcanzar. Para lograr y, sobre todo, para gozar.",
+        fecha: "2026-04-09"
+    },
+    {
         slug: "el-amor-como-fuerza-motora",
         titulo: "El Amor como Fuerza Motora",
         categoria: "Poesía & Bienestar",
