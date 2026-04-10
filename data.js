@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "ojas",
+        titulo: "Ojas",
+        categoria: "Ayurveda & Bienestar",
+        foto: "cover.png",
+        descripcion: "Ese \"brillo especial\" que nace de tu interior. Descubre cómo cultivar tu resplandor vital y fortalecer tu sistema inmune natural.",
+        fecha: "2026-04-10"
+    },
+    {
         slug: "el-arte-de-conectar-con-tu-ser",
         titulo: "El Arte de Conectar con tu Ser",
         categoria: "Meditación & Bienestar",
