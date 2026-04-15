@@ -157,6 +157,14 @@ const articulos = [
 
 const recetas = [
     {
+        slug: "nutricion-verde",
+        titulo: "Sopa Verde: Nutrición para alma y cuerpo 🌿",
+        categoria: "Almuerzo / Cena",
+        foto: "cover.png",
+        descripcion: "Esta sopa verde tridóshica es un bálsamo de energía vital. Limpia profundamente y nutre con amor, equilibrando Vata, Pitta y Kapha.",
+        fecha: "2026-04-15"
+    },
+    {
         slug: "crema-de-oro",
         titulo: "Crema de Oro: Calabaza, Jengibre y Especias",
         categoria: "Almuerzo / Cena",
