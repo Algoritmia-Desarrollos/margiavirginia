@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "la-ciencia-y-el-ayurveda",
+        titulo: "La Ciencia y el Ayurveda",
+        categoria: "Ayurveda & Bienestar",
+        foto: "cover.png",
+        descripcion: "El Diálogo entre el Intestino y la Mente. Descubrimos que el cuerpo no es una serie de sistemas aislados, sino una red interconectada de mensajes y energía.",
+        fecha: "2026-04-17"
+    },
+    {
         slug: "ojas",
         titulo: "Ojas",
         categoria: "Ayurveda & Bienestar",
