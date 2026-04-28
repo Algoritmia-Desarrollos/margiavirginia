@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "snehana",
+        titulo: "Snehana",
+        categoria: "Ayurveda & Bienestar",
+        foto: "cover.png",
+        descripcion: "Entre todas las terapias, el Snehana u oleación destaca como la técnica más amorosa y efectiva para restaurar la vitalidad.",
+        fecha: "2026-04-28"
+    },
+    {
         slug: "la-ciencia-y-el-ayurveda",
         titulo: "La Ciencia y el Ayurveda",
         categoria: "Ayurveda & Bienestar",
