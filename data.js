@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "el-higado",
+        titulo: "El Hígado",
+        categoria: "Ayurveda & Bienestar",
+        foto: "cover.png",
+        descripcion: "En la sabiduría del Ayurveda, el hígado es mucho más que un simple filtro biológico; es el asiento de Ranjaka Pitta, el fuego sagrado que transforma el plasma en sangre y nos otorga claridad mental.",
+        fecha: "2026-05-19"
+    },
+    {
         slug: "snehana",
         titulo: "Snehana",
         categoria: "Ayurveda & Bienestar",
@@ -172,6 +180,14 @@ const articulos = [
 ];
 
 const recetas = [
+    {
+        slug: "leche-dorada",
+        titulo: "El Poder de la Leche Dorada",
+        categoria: "Desayuno / Merienda",
+        foto: "cover.png",
+        descripcion: "Más que una simple bebida, es un bálsamo reconfortante diseñado para devolverle la armonía a tu cuerpo, mente y espíritu, respetando la individualidad de tu ser.",
+        fecha: "2026-05-19"
+    },
     {
         slug: "nutricion-verde",
         titulo: "Sopa Verde: Nutrición para alma y cuerpo 🌿",
