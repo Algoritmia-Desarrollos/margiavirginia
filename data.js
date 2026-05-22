@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "regular-energia-vital",
+        titulo: "El Arte de Regular la Energía Vital",
+        categoria: "Ayurveda & Bienestar",
+        foto: "cover.png",
+        descripcion: "En el día a día, el estrés y la sobreestimulación nos sacan del centro. Descubre cómo regresar al eje a través de la respiración consciente y el Pranayama.",
+        fecha: "2026-05-22"
+    },
+    {
         slug: "el-higado",
         titulo: "El Hígado",
         categoria: "Ayurveda & Bienestar",
@@ -319,6 +327,14 @@ const recetas = [
 ];
 
 const poesias = [
+    {
+        slug: "la-danza-del-presente",
+        titulo: "La danza del presente",
+        categoria: "Poesía & Bienestar",
+        foto: "cover.png",
+        descripcion: "Quizás la vida no es un destino, sino el arte de habitar cada presente...",
+        fecha: "2026-05-22"
+    },
     {
         slug: "el-cielo-del-pensamiento",
         titulo: "El Cielo del Pensamiento",
