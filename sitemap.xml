@@ -29,6 +29,18 @@
 
   <!-- Artículos -->
   <url>
+    <loc>https://www.virginia-bienestar.site/articulos/hridaya/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.virginia-bienestar.site/articulos/regular-energia-vital/</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.virginia-bienestar.site/articulos/el-despertar-del-agni/</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>

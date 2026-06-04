@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "hridaya",
+        titulo: "Hridaya: Tu Corazón, el Centro de tu Equilibrio",
+        categoria: "Ayurveda & Bienestar",
+        foto: "cover.png",
+        descripcion: "En el Ayurveda, el corazón —llamado Hridaya— es nuestro centro más vital: el lugar donde se encuentran el cuerpo, la mente y el alma.",
+        fecha: "2026-06-04"
+    },
+    {
         slug: "regular-energia-vital",
         titulo: "El Arte de Regular la Energía Vital",
         categoria: "Ayurveda & Bienestar",
