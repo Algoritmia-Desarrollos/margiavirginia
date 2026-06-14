@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "el-cuerpo-como-refugio",
+        titulo: "El cuerpo como refugio",
+        categoria: "Ayurveda & Bienestar",
+        foto: "cuerpo-refugio.png",
+        descripcion: "Cómo equilibrar la agitación mental con la sabiduría del Ayurveda. Ritmo, calor y sostén cuando hay ansiedad.",
+        fecha: "2026-06-14"
+    },
+    {
         slug: "hridaya",
         titulo: "Hridaya: Tu Corazón, el Centro de tu Equilibrio",
         categoria: "Ayurveda & Bienestar",
