@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "las-8-claves-de-la-alimentacion-ayurvedica",
+        titulo: "Las 8 claves de la alimentación ayurvédica para lograr tu equilibrio integral",
+        categoria: "Ayurveda & Nutrición",
+        foto: "claves-ayurveda.png",
+        descripcion: "En Ayurveda, la alimentación es mucho más que contar calorías o nutrientes; es nuestra principal fuente de vitalidad, claridad mental y energía. Descubre los 8 factores esenciales que determinan cómo te sientan tus platos.",
+        fecha: "2026-06-22"
+    },
+    {
         slug: "el-cuerpo-como-refugio",
         titulo: "El cuerpo como refugio",
         categoria: "Ayurveda & Bienestar",
