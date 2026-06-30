@@ -2,6 +2,14 @@
 
 const articulos = [
     {
+        slug: "sistema-linfatico-equilibrio-integral",
+        titulo: "El Sistema Linfático y el Secreto del Equilibrio Integral",
+        categoria: "Ayurveda & Bienestar",
+        foto: "sistema_linfatico.png",
+        descripcion: "El sistema linfático es una red vital que la salud integrativa y la medicina ancestral Ayurveda consideran una de las piezas maestras para mantener nuestro equilibrio integral. Descubre claves y rituales para activar tu flujo.",
+        fecha: "2026-06-30"
+    },
+    {
         slug: "las-8-claves-de-la-alimentacion-ayurvedica",
         titulo: "Las 8 claves de la alimentación ayurvédica para lograr tu equilibrio integral",
         categoria: "Ayurveda & Nutrición",
@@ -113,14 +121,7 @@ const articulos = [
         descripcion: "La relación entre lo que ingerimos y cómo nos sentimos es profunda; no solo alimentamos el cuerpo, sino también la mente y el espíritu. Un Camino hacia el Equilibrio Integral.",
         fecha: "2026-03-05"
     },
-    {
-        slug: "sistema-linfatico-equilibrio-integral",
-        titulo: "Sistema Linfático y Equilibrio Integral",
-        categoria: "Ayurveda & Bienestar",
-        foto: "sistema_linfatico.png",
-        descripcion: "Limpiando las aguas internas. El sistema linfático es el gran héroe invisible: es nuestra red de drenaje, limpieza y defensa.",
-        fecha: "2026-02-27"
-    },
+
     {
         slug: "tiroides-equilibrio-integral",
         titulo: "Tiroides y Equilibrio Integral",

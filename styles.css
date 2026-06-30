@@ -578,7 +578,8 @@ ul { list-style: none; }
 
 .featured-image img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: var(--radius);
     margin-bottom: 4rem;
     box-shadow: var(--shadow-soft);
